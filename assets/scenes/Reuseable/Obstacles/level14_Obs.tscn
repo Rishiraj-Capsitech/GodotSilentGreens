@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://v4n1fgbfb4ss"]
+
+[ext_resource type="Texture2D" uid="uid://b6cwcrssdsely" path="res://assets/sprites/Obstacles/level 14 staic obstacle.png" id="1_3mbft"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=784260596]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1804585335]
+scale = Vector2(0.16000038, 0.16000038)
+polygon = PackedVector2Array(2344.5, -1600.5, 1469.5, -1600.5, 1469.5, -941.1, 1490.5, -933.1, 1490.5, -932, 2313.5, -670.1, 2313.5, -669, 2335.5, -663.1, 2335.5, -660.3, 2342, -663.5, 2344.5, -663.5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1110028296]
+scale = Vector2(0.16000038, 0.16000038)
+polygon = PackedVector2Array(83.5, -1110.5, 83.5, -1108.3, 82.69995, -1107.5, 80.5, -1107.5, 80.5, -484.40002, 83.5, -482.40002, 83.5, -480.5, 1040.6001, -480.5, 1042.6001, -483.5, 1044.5, -483.5, 1044.5, -1106.6, 1041.5, -1108.6, 1041.5, -1110.5)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="." unique_id=517241217]
+scale = Vector2(0.16000038, 0.16000038)
+polygon = PackedVector2Array(2348.5, 1330.5, 2348.5, 91.30005, 1471.5, -195.30005, 1471.5, 1330.5)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="." unique_id=1756559703]
+scale = Vector2(0.16000038, 0.16000038)
+polygon = PackedVector2Array(82.5, -39.5, 82.5, -37.80005, 80.5, -36.69995, 80.5, 1121.5, 1044.5, 1121.5, 1044.5, -37.5)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="." unique_id=1318206791]
+scale = Vector2(0.16000038, 0.16000038)
+polygon = PackedVector2Array(-278.5, 59.5, -2348.5, 59.5, -2348.5, 1600.5, -276.5, 1600.5, -276.5, 61.5, -277.5, 61.5, -277.5, 60.5, -278.5, 60.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1738298281]
+scale = Vector2(0.16000038, 0.16000038)
+texture = ExtResource("1_3mbft")

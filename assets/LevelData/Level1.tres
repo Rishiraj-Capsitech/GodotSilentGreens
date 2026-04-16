@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://whs5gt0j6gby"]
+
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="1_pp5sw"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="2_gj7k8"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_gmfff"]
+[ext_resource type="PackedScene" uid="uid://jvh1yvypspie" path="res://assets/scenes/Reuseable/LevelLands/Level1Land.tscn" id="3_fmpcf"]
+
+[sub_resource type="Resource" id="Resource_qelet"]
+script = ExtResource("1_pp5sw")
+scene = ExtResource("2_gj7k8")
+position = Vector2(1518, 730)
+scale = Vector2(0.44, 0.44)
+metadata/_custom_type_script = "uid://bfsyf6kcrbauu"
+
+[sub_resource type="Resource" id="Resource_fmpcf"]
+script = ExtResource("1_pp5sw")
+scene = ExtResource("3_fmpcf")
+position = Vector2(958, 1077)
+metadata/_custom_type_script = "uid://bfsyf6kcrbauu"
+
+[resource]
+script = ExtResource("2_gmfff")
+land = SubResource("Resource_fmpcf")
+ball_spawn_position = Vector2(631, 790)
+goal = SubResource("Resource_qelet")
+metadata/_custom_type_script = "uid://70jfr6v8styy"

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d3dxlbr0d3n22"]
+
+[ext_resource type="Script" uid="uid://kk6edjyli5hf" path="res://assets/scripts/LevelsManagers/LevelBuilder.gd" id="1_bsujg"]
+[ext_resource type="PackedScene" uid="uid://bk02hi5vyx42s" path="res://assets/scenes/prefabs/Core/ball.tscn" id="2_1cyye"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_hh3qc"]
+[ext_resource type="Resource" uid="uid://c5sgbk3pnxrq8" path="res://assets/LevelData/level1.tres" id="3_8tmc4"]
+[ext_resource type="Resource" uid="uid://bstqluu0qfo7t" path="res://assets/LevelData/level2.tres" id="4_eu5vx"]
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="5_8tmc4"]
+[ext_resource type="Resource" uid="uid://dfup1k57nofuv" path="res://assets/LevelData/level3.tres" id="6_3rsi6"]
+
+[node name="Game" type="Node2D" unique_id=2141789961]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=9154930]
+position = Vector2(582, 323)
+scale = Vector2(0.15351117, 0.15056512)
+texture = ExtResource("5_8tmc4")
+
+[node name="LevelLoader" type="Node2D" parent="." unique_id=1529268812]
+script = ExtResource("1_bsujg")
+levels = Array[ExtResource("2_hh3qc")]([ExtResource("6_3rsi6"), ExtResource("4_eu5vx"), ExtResource("3_8tmc4")])
+ball_scene = ExtResource("2_1cyye")

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bk02hi5vyx42s"]
+
+[ext_resource type="Texture2D" uid="uid://dxa3h0rx41vic" path="res://assets/sprites/handel.webp" id="1_wf3kl"]
+[ext_resource type="PackedScene" uid="uid://byrexcglac4w7" path="res://assets/scenes/prefabs/dots.tscn" id="2_d42dg"]
+[ext_resource type="Script" uid="uid://c7r0sh4q1nwjx" path="res://assets/scripts/playerMovement.gd" id="2_fg1pn"]
+[ext_resource type="Script" uid="uid://c7gxtmskfugjl" path="res://assets/scripts/trail.gd" id="4_x46uw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wf3kl"]
+friction = 0.45
+bounce = 0.56
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fg1pn"]
+
+[node name="ball" type="RigidBody2D" unique_id=1301821953]
+position = Vector2(575, 328)
+scale = Vector2(2.3599596, 2.3599596)
+physics_material_override = SubResource("PhysicsMaterial_wf3kl")
+script = ExtResource("2_fg1pn")
+dot_scene = ExtResource("2_d42dg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1740825000]
+position = Vector2(0.00015997887, -6.151199e-05)
+scale = Vector2(0.06621436, 0.06621436)
+texture = ExtResource("1_wf3kl")
+
+[node name="dots" parent="." unique_id=613193221 instance=ExtResource("2_d42dg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1923962811]
+process_physics_priority = 2
+position = Vector2(-0.00015950203, 3.1471252e-05)
+scale = Vector2(1.1750176, 1.1750176)
+shape = SubResource("CircleShape2D_fg1pn")
+
+[node name="Trail" type="Node2D" parent="." unique_id=1178991707]
+
+[node name="Line2D" type="Line2D" parent="Trail" unique_id=1304692462]
+script = ExtResource("4_x46uw")

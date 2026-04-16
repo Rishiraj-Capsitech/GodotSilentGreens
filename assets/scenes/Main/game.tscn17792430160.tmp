@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d3dxlbr0d3n22"]
+
+[ext_resource type="PackedScene" uid="uid://6d6duvmtwhja" path="res://assets/scenes/prefabs/land1.tscn" id="1_tvtyt"]
+[ext_resource type="PackedScene" uid="uid://bk02hi5vyx42s" path="res://assets/scenes/prefabs/ball.tscn" id="2_1cyye"]
+[ext_resource type="Texture2D" uid="uid://c2ica0q6ai6bb" path="res://assets/sprites/bg2.png" id="2_8tmc4"]
+[ext_resource type="PackedScene" uid="uid://cdyjsswq7na00" path="res://assets/scenes/prefabs/dynamicLand.tscn" id="2_hh3qc"]
+[ext_resource type="PackedScene" uid="uid://b7gfhmow36sxa" path="res://assets/scenes/prefabs/TreeObs.tscn" id="5_8tmc4"]
+
+[node name="Node2D" type="Node2D" unique_id=2141789961]
+
+[node name="StaticBody2D" parent="." unique_id=1996260645 instance=ExtResource("2_hh3qc")]
+position = Vector2(870, 7)
+scale = Vector2(0.78880715, 0.78880715)
+
+[node name="Bg2" type="Sprite2D" parent="." unique_id=523626512]
+position = Vector2(528, 314)
+scale = Vector2(1.5815628, 1.5815628)
+texture = ExtResource("2_8tmc4")
+
+[node name="land" parent="." unique_id=198867441 instance=ExtResource("1_tvtyt")]
+
+[node name="ball" parent="." unique_id=1301821953 instance=ExtResource("2_1cyye")]
+position = Vector2(-145, 370)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=278502503]
+position = Vector2(545, 66)
+scale = Vector2(0.079999685, 0.079999685)
+zoom = Vector2(0.575, 0.575)
+
+[node name="StaticBody2D2" parent="." unique_id=311550435 instance=ExtResource("5_8tmc4")]
+position = Vector2(997, 178)

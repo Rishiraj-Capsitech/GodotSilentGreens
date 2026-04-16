@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://e0400aidvqj2"]
+
+[ext_resource type="Texture2D" uid="uid://0vrbhh2esrkk" path="res://assets/sprites/Obstacles/level14Obs2.png" id="1_ofp13"]
+[ext_resource type="Script" uid="uid://ccmuyf61ktem5" path="res://assets/scripts/Reuseables/MovingPlatform.gd" id="1_scog3"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="2_wnksk"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1571497085]
+script = ExtResource("1_scog3")
+speed = 50.0
+distance = 40.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2046212086]
+polygon = PackedVector2Array(-126.5, -58.5, -126.5, 58.5, 126.5, 58.5, 126.5, -58.5)
+
+[node name="MainFlag" parent="." unique_id=493944793 instance=ExtResource("2_wnksk")]
+position = Vector2(-36, -130)
+scale = Vector2(0.36800408, 0.3734035)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1048417751]
+texture = ExtResource("1_ofp13")

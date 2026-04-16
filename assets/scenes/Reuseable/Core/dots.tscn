@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://byrexcglac4w7"]
+
+[ext_resource type="Texture2D" uid="uid://dxa3h0rx41vic" path="res://assets/sprites/Core/handel.webp" id="1_3rvqr"]
+
+[node name="dots" type="Node2D" unique_id=613193221]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1120394690]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_3rvqr")

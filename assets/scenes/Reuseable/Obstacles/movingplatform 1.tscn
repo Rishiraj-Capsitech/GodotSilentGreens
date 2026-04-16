@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ebtmykcqumrk"]
+
+[ext_resource type="Script" uid="uid://ccmuyf61ktem5" path="res://assets/scripts/Reuseables/MovingPlatform.gd" id="1_knh6s"]
+[ext_resource type="Texture2D" uid="uid://0vrbhh2esrkk" path="res://assets/sprites/Obstacles/level14Obs2.png" id="1_mb4x7"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1571497085]
+script = ExtResource("1_knh6s")
+speed = 50.0
+distance = 40.0
+direction = -1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1886305130]
+polygon = PackedVector2Array(-126.5, -58.5, -126.5, 58.5, 126.5, 58.5, 126.5, -58.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1544106183]
+texture = ExtResource("1_mb4x7")
