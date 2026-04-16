@@ -6,18 +6,18 @@ extends RigidBody2D
 @export var power := 8.0
 @export var max_drag := 200.0
 @onready var dots_container = $dots
-@onready var trail=$Line2D
-@onready var sprite:Sprite2D = $Sprite2D
-@onready var colider:CollisionShape2D = $CollisionShape2D
-@onready var DotNode:Node2D = $dots
+@onready var trail = $Line2D
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var colider: CollisionShape2D = $CollisionShape2D
+@onready var DotNode: Node2D = $dots
 
-var timeout=7
-var can_shoot=true
-var goal= false
+var timeout = 7
+var can_shoot = true
+var goal = false
 var dots = []
 var dragging = false
 var drag_start = Vector2.ZERO
-var spawn_position 
+var spawn_position
 var min_drag := 10.0
 var out_of_screen_time := 0.0
 var max_out_time := 0.5
@@ -47,8 +47,6 @@ func _input(event):
 				
 				if drag_distance > min_drag:
 					shoot()
-				else:
-					print("Ignored small drag")  # debug
 				
 			dragging = false
 			hide_dots()
@@ -60,7 +58,6 @@ func _process(delta):
 	check_out_of_bounds(delta)
 	
 	
-
 func check_out_of_bounds(delta):
 	var camera = get_viewport().get_camera_2d()
 	if camera == null:
@@ -78,7 +75,6 @@ func check_out_of_bounds(delta):
 	else:
 		out_of_screen_time += delta
 		if out_of_screen_time >= max_out_time:
-
 			losseLife()
 			out_of_screen_time = 0.0
 
@@ -127,12 +123,11 @@ func update_dots():
 #  SHOOT BALL
 func shoot():
 	if not can_shoot: return
-	can_shoot=false
+	can_shoot = false
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0
 
 	freeze = false
-	
 	
 	
 	var mouse_pos = get_global_mouse_position()
@@ -143,13 +138,11 @@ func shoot():
 	apply_impulse(drag_vector * power)
 	await get_tree().create_timer(1).timeout
 	detect_low_velovity()
-	for i in range(timeout-1):
+	for i in range(timeout - 1):
 		if can_shoot:
-			print("Early Timeout")  
-			return 
+			return
 		await get_tree().create_timer(1).timeout
-		print(str(timeout-i) +" sec left to timeout")
-	print("timeout")
+
 	
 	losseLife()
 	
@@ -158,9 +151,6 @@ func adjustball(level_data):
 	spawn_position = level_data.ball_spawn_position
 	
 	
-	
-
-
 func detect_low_velovity():
 	while true:
 		if linear_velocity.length() < 30:
@@ -169,19 +159,15 @@ func detect_low_velovity():
 		await get_tree().create_timer(0.5).timeout
 	
 
-
 func hide_dots():
 	for dot in dots:
 		dot.visible = false
 		
 		
-		
 func losseLife():
 	if not goal:
-		print("called")
-		can_shoot=true
+		can_shoot = true
 		freeze = true
 		freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
-		position =spawn_position
+		position = spawn_position
 		trail.clear_points()
-		

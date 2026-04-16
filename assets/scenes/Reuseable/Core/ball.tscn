@@ -10,7 +10,7 @@ friction = 0.45
 bounce = 0.56
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fg1pn"]
-radius = 10.4536915
+radius = 62.49811
 
 [sub_resource type="Curve" id="Curve_x46uw"]
 _data = [Vector2(0.075, 0), 0.0, 0.0, 0, 0, Vector2(0.995, 1), 0.0, 0.0, 0, 0]
@@ -28,17 +28,16 @@ dot_scene = ExtResource("2_d42dg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1740825000]
 z_index = 1
-scale = Vector2(0.073679015, 0.073679015)
+scale = Vector2(0.12900001, 0.12900001)
 texture = ExtResource("4_qj3el")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1923962811]
 process_physics_priority = 2
-position = Vector2(-0.00015950203, 3.1471252e-05)
-scale = Vector2(0.5193742, 0.5193742)
+scale = Vector2(0.12900001, 0.12900001)
 shape = SubResource("CircleShape2D_fg1pn")
 
 [node name="dots" parent="." unique_id=613193221 instance=ExtResource("2_d42dg")]
-scale = Vector2(0.4636622, 0.4636622)
+scale = Vector2(0.7, 0.7)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=784151493]
 top_level = true

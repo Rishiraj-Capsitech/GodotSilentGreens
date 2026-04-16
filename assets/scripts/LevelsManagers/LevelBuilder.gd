@@ -3,12 +3,10 @@ extends Node2D
 
 @export var levels: Array[LevelData] = []
 @onready var background = $"../Background"
-@export var ball_scene: PackedScene   
+@export var ball_scene: PackedScene
 
 
-
-
-var ball: Node2D  
+var ball: Node2D
 var current_level: int = 0
 var last_level_data
 
@@ -18,8 +16,6 @@ func _ready():
 	build_level()
 
 
-
-
 func spawn(data: SpawnData):
 	if data == null or data.scene == null:
 		return
@@ -27,14 +23,13 @@ func spawn(data: SpawnData):
 	var obj = data.scene.instantiate()
 	obj.position = data.position
 	obj.scale = data.scale
-	obj.z_index =data.zIndex
+	obj.z_index = data.zIndex
 	
 	call_deferred("add_child", obj)
 
 
 func build_level():
 	if levels.is_empty():
-		print("No levels assigned!")
 		return
 
 	var level_data: LevelData = levels[current_level]
@@ -47,16 +42,15 @@ func build_level():
 
 	if level_data.background != null:
 		background.texture = level_data.background
-		background.scale = level_data.bgscale   
-		background.position = level_data.bgpos 
+		background.scale = level_data.bgscale
+		background.position = level_data.bgpos
 	
-	if  level_data.bgscale != Vector2.ONE:
+	if level_data.bgscale != Vector2.ONE:
 		background.scale = level_data.bgscale
 		
-	if level_data.bgpos != Vector2(0,0):
+	if level_data.bgpos != Vector2(0, 0):
 		background.position = level_data.bgpos
 		 
-
 
 	for data in level_data.small_obstacles:
 		spawn(data)
@@ -78,12 +72,10 @@ func build_level():
 	
 	ball = ball_scene.instantiate()
 	get_parent().call_deferred("add_child", ball)
-	await get_tree().process_frame  
+	await get_tree().process_frame
 
-	ball.name = "ball"  
+	ball.name = "ball"
 	ball.adjustball(level_data)
-	
-
 	
 
 func next_level():

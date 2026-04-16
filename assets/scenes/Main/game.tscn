@@ -24,5 +24,5 @@ levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("4_7
 ball_scene = ExtResource("2_1cyye")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=305853947]
-position = Vector2(955, 543)
+position = Vector2(957, 543)
 script = ExtResource("10_uhqxe")
