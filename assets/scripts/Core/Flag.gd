@@ -9,11 +9,10 @@ func _ready():
 func _on_body_entered(body):
 	print(body.name)
 	print(body)
-	if body.name in ["ball" , "@RigidBody2D@33"]:
-		print("hit")
+	if body.name in ["ball"]:
 		body.goal = true
 
 		var builder = get_tree().get_first_node_in_group("LevelLoader")
 		if builder:
 			print(builder)
-			builder.next_level()
+			builder.call_deferred("next_level")

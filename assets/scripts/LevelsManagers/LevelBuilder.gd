@@ -4,7 +4,7 @@ extends Node2D
 @export var levels: Array[LevelData] = []
 @onready var background = $"../Background"
 @export var ball_scene: PackedScene   
-@export var DebugMode:bool = false
+
 
 
 
@@ -20,17 +20,6 @@ func _ready():
 
 
 
-func _process(delta):
-	if DebugMode:
-		var current = levels[current_level]
-		
-		if current != last_level_data:
-			last_level_data = current
-			if is_instance_valid(ball):
-				ball.queue_free()
-			build_level()
-
-
 func spawn(data: SpawnData):
 	if data == null or data.scene == null:
 		return
@@ -40,7 +29,7 @@ func spawn(data: SpawnData):
 	obj.scale = data.scale
 	obj.z_index =data.zIndex
 	
-	add_child(obj)
+	call_deferred("add_child", obj)
 
 
 func build_level():
@@ -53,7 +42,7 @@ func build_level():
 	# Clear old level
 	for child in get_children():
 		if child != ball and child != background:
-			child.queue_free()
+			child.call_deferred("queue_free")
 
 
 	if level_data.background != null:

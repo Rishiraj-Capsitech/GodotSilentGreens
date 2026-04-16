@@ -19,7 +19,8 @@ var dragging = false
 var drag_start = Vector2.ZERO
 var spawn_position 
 var min_drag := 10.0
- 
+var out_of_screen_time := 0.0
+var max_out_time := 0.5
 
 
 func _ready():
@@ -53,15 +54,33 @@ func _input(event):
 			hide_dots()
 
 func _process(delta):
-	var pos = global_position
-	
-		
 	if dragging:
 		update_dots()
-	
+
+	check_out_of_bounds(delta)
 	
 	
 
+func check_out_of_bounds(delta):
+	var camera = get_viewport().get_camera_2d()
+	if camera == null:
+		return
+
+	var screen_size = get_viewport_rect().size
+	var cam_pos = camera.global_position
+
+	var rect = Rect2(
+		cam_pos - screen_size * 0.5,
+		screen_size
+	)
+	if rect.has_point(global_position):
+		out_of_screen_time = 0.0
+	else:
+		out_of_screen_time += delta
+		if out_of_screen_time >= max_out_time:
+
+			losseLife()
+			out_of_screen_time = 0.0
 
 func update_dots():
 	var mouse_pos = get_global_mouse_position()

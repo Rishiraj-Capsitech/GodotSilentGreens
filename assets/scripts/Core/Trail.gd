@@ -5,7 +5,7 @@ var queue: Array
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var pos = get_parent().global_position
 	if get_parent().linear_velocity.length() <200:
 		if get_point_count() > 1:
