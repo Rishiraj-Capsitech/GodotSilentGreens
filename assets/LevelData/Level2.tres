@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://cakwjvkwqlawh"]
+
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_r5d58"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_ugkym"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="3_u0a7a"]
+[ext_resource type="PackedScene" uid="uid://d0sx3tfvjd2uf" path="res://assets/scenes/Reuseable/LevelLands/level16.tscn" id="4_wpf50"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="5_5d6o0"]
+[ext_resource type="PackedScene" uid="uid://dm2ykwe4lgfen" path="res://assets/scenes/Reuseable/Obstacles/WindMill.tscn" id="6_qq5og"]
+
+[sub_resource type="Resource" id="Resource_r5d58"]
+script = ExtResource("2_ugkym")
+scene = ExtResource("3_u0a7a")
+position = Vector2(1271, 392)
+scale = Vector2(0.4, 0.4)
+
+[sub_resource type="Resource" id="Resource_ugkym"]
+script = ExtResource("2_ugkym")
+scene = ExtResource("4_wpf50")
+position = Vector2(480, 401)
+zIndex = 2
+
+[sub_resource type="Resource" id="Resource_u0a7a"]
+script = ExtResource("2_ugkym")
+scene = ExtResource("6_qq5og")
+position = Vector2(1269, 715)
+zIndex = 1
+
+[resource]
+script = ExtResource("5_5d6o0")
+land = SubResource("Resource_ugkym")
+ball_spawn_position = Vector2(346, 884)
+goal = SubResource("Resource_r5d58")
+background = ExtResource("1_r5d58")
+bgscale = Vector2(0.3109994, 0.35566404)
+bgpos = Vector2(949.99994, 438)
+small_obstacles = Array[ExtResource("2_ugkym")]([SubResource("Resource_u0a7a")])
