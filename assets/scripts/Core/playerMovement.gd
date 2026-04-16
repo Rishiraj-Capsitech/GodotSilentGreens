@@ -62,32 +62,49 @@ func _process(delta):
 	
 	
 
-#  ACCURATE TRAJECTORY
+
 func update_dots():
 	var mouse_pos = get_global_mouse_position()
 	var drag_vector = drag_start - mouse_pos
 	
-	
 	if drag_vector.length() > max_drag:
 		drag_vector = drag_vector.normalized() * max_drag
 	
-	var simulated_velocity = (drag_vector * power) 
+	var simulated_velocity = drag_vector * power
 	var simulated_pos = global_position
 
 	var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-	var gravity_vec = Vector2(0, gravity-110)
+	var gravity_vec = Vector2(0, gravity - 110)
 
 	var base_step = 1 / 60.0
-	var step = base_step * (1.0 + spacing * 10)  #  THIS CONTROLS GAP
+	var step = base_step * (1.0 + spacing * 10)
+
+	var space_state = get_world_2d().direct_space_state
 
 	for i in range(dot_count):
+		var prev_pos = simulated_pos
+
+		# physics step
 		simulated_velocity += gravity_vec * step
 		simulated_velocity *= 0.99
 		simulated_pos += simulated_velocity * step
 
-		dots[i].global_position = simulated_pos
-		dots[i].visible = true
 
+		var query = PhysicsRayQueryParameters2D.create(prev_pos, simulated_pos)
+		var result = space_state.intersect_ray(query)
+
+		if result:
+			dots[i].global_position = result.position
+			dots[i].visible = true
+
+			for j in range(i + 1, dot_count):
+				dots[j].visible = false
+			
+			break
+		else:
+			dots[i].global_position = simulated_pos
+			dots[i].visible = true
+			
 #  SHOOT BALL
 func shoot():
 	if not can_shoot: return

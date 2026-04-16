@@ -3,32 +3,34 @@
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="1_3vqgo"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_esjw1"]
 [ext_resource type="PackedScene" uid="uid://dm2ykwe4lgfen" path="res://assets/scenes/Reuseable/Obstacles/WindMill.tscn" id="2_o7m6c"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="3_4jyf0"]
 [ext_resource type="PackedScene" uid="uid://d0sx3tfvjd2uf" path="res://assets/scenes/Reuseable/LevelLands/level16.tscn" id="3_ykd58"]
 
 [sub_resource type="Resource" id="Resource_4jyf0"]
 script = ExtResource("1_3vqgo")
 scene = ExtResource("2_o7m6c")
-position = Vector2(1238, 558)
+position = Vector2(1255, 732)
 zIndex = 1
 metadata/_custom_type_script = "uid://bfsyf6kcrbauu"
 
 [sub_resource type="Resource" id="Resource_3vqgo"]
 script = ExtResource("1_3vqgo")
-position = Vector2(225, 1242)
+scene = ExtResource("3_4jyf0")
+position = Vector2(1259, 398.46)
 scale = Vector2(0.44, 0.44)
 metadata/_custom_type_script = "uid://bfsyf6kcrbauu"
 
 [sub_resource type="Resource" id="Resource_xjclj"]
 script = ExtResource("1_3vqgo")
 scene = ExtResource("3_ykd58")
-position = Vector2(244, 449)
+position = Vector2(528, 416)
 zIndex = 2
 metadata/_custom_type_script = "uid://bfsyf6kcrbauu"
 
 [resource]
 script = ExtResource("2_esjw1")
 land = SubResource("Resource_xjclj")
-ball_spawn_position = Vector2(315, 727)
+ball_spawn_position = Vector2(309, 900)
 goal = SubResource("Resource_3vqgo")
 big_obstacles = Array[ExtResource("1_3vqgo")]([SubResource("Resource_4jyf0")])
 metadata/_custom_type_script = "uid://70jfr6v8styy"
