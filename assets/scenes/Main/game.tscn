@@ -5,12 +5,39 @@
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_hh3qc"]
 [ext_resource type="Resource" uid="uid://b02abb00r8we1" path="res://assets/LevelData/Level14.tres" id="4_7ergh"]
 [ext_resource type="Resource" uid="uid://whs5gt0j6gby" path="res://assets/LevelData/Level1.tres" id="4_eu5vx"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="4_kfp35"]
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="5_8tmc4"]
 [ext_resource type="Resource" uid="uid://csopglvm6to0s" path="res://assets/LevelData/Level15.tres" id="6_7ergh"]
 [ext_resource type="PackedScene" uid="uid://dm2ykwe4lgfen" path="res://assets/scenes/Reuseable/Obstacles/WindMill.tscn" id="9_7ergh"]
 [ext_resource type="PackedScene" uid="uid://d0sx3tfvjd2uf" path="res://assets/scenes/Reuseable/LevelLands/level16.tscn" id="10_kfp35"]
 [ext_resource type="Script" uid="uid://ce3lfr5sxmd1q" path="res://assets/scripts/Core/DynamicCamera.gd" id="10_uhqxe"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="11_io3sb"]
+
+[sub_resource type="Resource" id="Resource_5fvab"]
+script = ExtResource("4_kfp35")
+scene = ExtResource("11_io3sb")
+position = Vector2(1241.9999, 225)
+scale = Vector2(0.44, 0.44)
+
+[sub_resource type="Resource" id="Resource_7xffh"]
+script = ExtResource("4_kfp35")
+scene = ExtResource("10_kfp35")
+position = Vector2(449, 244)
+
+[sub_resource type="Resource" id="Resource_a5ygf"]
+script = ExtResource("4_kfp35")
+scene = ExtResource("9_7ergh")
+position = Vector2(1238, 558)
+
+[sub_resource type="Resource" id="Resource_io3sb"]
+script = ExtResource("2_hh3qc")
+land = SubResource("Resource_7xffh")
+ball_spawn_position = Vector2(315, 727)
+goal = SubResource("Resource_5fvab")
+background = ExtResource("5_8tmc4")
+bgscale = Vector2(0.3109994, 0.35566404)
+bgpos = Vector2(949.99994, 438)
+small_obstacles = Array[ExtResource("4_kfp35")]([SubResource("Resource_a5ygf")])
 
 [node name="Game" type="Node2D" unique_id=2141789961]
 
@@ -22,7 +49,7 @@ texture = ExtResource("5_8tmc4")
 [node name="LevelLoader" type="Node2D" parent="." unique_id=1529268812]
 position = Vector2(-1, 1)
 script = ExtResource("1_bsujg")
-levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("4_7ergh"), ExtResource("6_7ergh")])
+levels = Array[ExtResource("2_hh3qc")]([SubResource("Resource_io3sb"), ExtResource("4_eu5vx"), ExtResource("4_7ergh"), ExtResource("6_7ergh")])
 ball_scene = ExtResource("2_1cyye")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=305853947]
@@ -30,14 +57,15 @@ position = Vector2(955, 543)
 script = ExtResource("10_uhqxe")
 
 [node name="StaticBody2D" parent="." unique_id=1739083679 instance=ExtResource("9_7ergh")]
-position = Vector2(1238, 558)
+position = Vector2(1269, 715)
 
 [node name="Level16" parent="." unique_id=1513140274 instance=ExtResource("10_kfp35")]
-position = Vector2(449, 244)
+position = Vector2(480, 401)
 
 [node name="ball" parent="." unique_id=1301821953 instance=ExtResource("2_1cyye")]
-position = Vector2(315, 727)
+position = Vector2(346, 884)
 
 [node name="MainFlag" parent="." unique_id=493944793 instance=ExtResource("11_io3sb")]
-position = Vector2(1241.9999, 225)
-scale = Vector2(0.44, 0.44)
+z_index = -1
+position = Vector2(1271, 391)
+scale = Vector2(0.4, 0.4)
