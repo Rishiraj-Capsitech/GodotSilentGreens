@@ -11,6 +11,7 @@ extends RigidBody2D
 @onready var colider: CollisionShape2D = $CollisionShape2D
 @onready var DotNode: Node2D = $dots
 
+
 var timeout = 7
 var can_shoot = true
 var goal = false
@@ -21,6 +22,7 @@ var spawn_position
 var min_drag := 10.0
 var out_of_screen_time := 0.0
 var max_out_time := 0.5
+var wind_force := Vector2.ZERO
 
 
 func _ready():
@@ -32,7 +34,7 @@ func _ready():
 		dots_container.add_child(dot)
 		dots.append(dot)
 		dot.visible = false
-		
+
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -51,13 +53,18 @@ func _input(event):
 			dragging = false
 			hide_dots()
 
+
 func _process(delta):
 	if dragging:
 		update_dots()
-
 	check_out_of_bounds(delta)
-	
-	
+
+
+func _physics_process(delta):
+	if not freeze:
+		apply_central_force(wind_force)
+
+
 func check_out_of_bounds(delta):
 	var camera = get_viewport().get_camera_2d()
 	if camera == null:
@@ -65,7 +72,6 @@ func check_out_of_bounds(delta):
 
 	var screen_size = get_viewport_rect().size
 	var cam_pos = camera.global_position
-
 	var rect = Rect2(
 		cam_pos - screen_size * 0.5,
 		screen_size
@@ -77,6 +83,7 @@ func check_out_of_bounds(delta):
 		if out_of_screen_time >= max_out_time:
 			losseLife()
 			out_of_screen_time = 0.0
+
 
 func update_dots():
 	var mouse_pos = get_global_mouse_position()
@@ -100,10 +107,9 @@ func update_dots():
 		var prev_pos = simulated_pos
 
 		# physics step
-		simulated_velocity += gravity_vec * step
+		simulated_velocity += (gravity_vec + wind_force) * step
 		simulated_velocity *= 0.99
 		simulated_pos += simulated_velocity * step
-
 
 		var query = PhysicsRayQueryParameters2D.create(prev_pos, simulated_pos)
 		var result = space_state.intersect_ray(query)
@@ -119,16 +125,15 @@ func update_dots():
 		else:
 			dots[i].global_position = simulated_pos
 			dots[i].visible = true
-			
+
+
 #  SHOOT BALL
 func shoot():
 	if not can_shoot: return
 	can_shoot = false
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0
-
 	freeze = false
-	
 	
 	var mouse_pos = get_global_mouse_position()
 	var drag_vector = drag_start - mouse_pos
@@ -143,12 +148,13 @@ func shoot():
 			return
 		await get_tree().create_timer(1).timeout
 
-	
 	losseLife()
+	
 	
 func adjustball(level_data):
 	position = level_data.ball_spawn_position
 	spawn_position = level_data.ball_spawn_position
+	wind_force = level_data.wind_direction.normalized() * level_data.wind_strength
 	
 	
 func detect_low_velovity():
@@ -157,13 +163,13 @@ func detect_low_velovity():
 			losseLife()
 			break
 		await get_tree().create_timer(0.5).timeout
-	
+
 
 func hide_dots():
 	for dot in dots:
 		dot.visible = false
-		
-		
+
+
 func losseLife():
 	if not goal:
 		can_shoot = true

@@ -4,6 +4,7 @@ extends Node2D
 @export var levels: Array[LevelData] = []
 @onready var background = $"../Background"
 @export var ball_scene: PackedScene
+@export var wind_particle_scene: PackedScene
 
 
 var ball: Node2D
@@ -70,6 +71,15 @@ func build_level():
 
 	for data in level_data.decorations:
 		spawn(data)
+
+	if level_data.wind_strength > 0:
+		if wind_particle_scene != null:
+			var wind_particles = wind_particle_scene.instantiate()
+			add_child(wind_particles)
+			wind_particles.rotation = level_data.wind_direction.angle()
+			# Center it roughly on the screen/level if needed, 
+			# but assuming the scene is set up to cover the area.
+			wind_particles.position = Vector2(0, 266) # Center of 1920x1080
 
 	spawn(level_data.goal)
 	
