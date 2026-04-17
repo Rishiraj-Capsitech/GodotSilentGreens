@@ -60,7 +60,7 @@ func _process(delta):
 	check_out_of_bounds(delta)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if not freeze:
 		apply_central_force(wind_force)
 
@@ -175,7 +175,7 @@ func losseLife():
 		can_shoot = true
 		freeze = true
 		freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
-		position = spawn_position
 		trail.clear_points()
+		position = spawn_position
 		get_tree().get_root().get_node("Game/LevelLoader").build_level()
 		

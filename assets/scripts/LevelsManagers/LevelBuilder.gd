@@ -67,6 +67,7 @@ func build_level():
 
 
 	for data in level_data.clouds:
+		
 		spawn(data)
 
 	for data in level_data.decorations:
