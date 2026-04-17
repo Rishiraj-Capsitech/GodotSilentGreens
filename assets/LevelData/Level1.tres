@@ -23,4 +23,6 @@ script = ExtResource("2_gmfff")
 land = SubResource("Resource_fmpcf")
 ball_spawn_position = Vector2(631, 790)
 goal = SubResource("Resource_qelet")
+wind_strength = 500.0
+wind_direction = Vector2(1, 0)
 metadata/_custom_type_script = "uid://70jfr6v8styy"

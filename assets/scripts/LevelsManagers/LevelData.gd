@@ -20,3 +20,7 @@ class_name LevelData
 # Visual
 @export var clouds: Array[SpawnData] = []
 @export var decorations: Array[SpawnData] = []
+
+# Wind
+@export var wind_strength: float = 0.0
+@export var wind_direction: Vector2 = Vector2.ZERO
