@@ -74,7 +74,7 @@ func build_level():
 			wind_particles.rotation = level_data.wind_direction.angle()
 			# Center it roughly on the screen/level if needed, 
 			# but assuming the scene is set up to cover the area.
-			wind_particles.position = Vector2(960, 540) # Center of 1920x1080
+			wind_particles.position = Vector2(0, 266) # Center of 1920x1080
 
 	spawn(level_data.goal)
 	
