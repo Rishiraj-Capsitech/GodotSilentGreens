@@ -107,7 +107,7 @@ func update_dots():
 		var prev_pos = simulated_pos
 
 		# physics step
-		simulated_velocity += (gravity_vec + wind_force) * step
+		simulated_velocity += (gravity_vec) * step
 		simulated_velocity *= 0.99
 		simulated_pos += simulated_velocity * step
 
