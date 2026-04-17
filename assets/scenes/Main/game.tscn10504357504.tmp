@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="5_8tmc4"]
 [ext_resource type="Resource" uid="uid://dfup1k57nofuv" path="res://assets/LevelData/Level2.tres" id="5_eu5vx"]
 [ext_resource type="Resource" uid="uid://csopglvm6to0s" path="res://assets/LevelData/Level15.tres" id="6_7ergh"]
-[ext_resource type="Resource" uid="uid://cttble77cy1po" path="res://assets/LevelData/Level17.tres" id="9_7ergh"]
 [ext_resource type="Script" uid="uid://ce3lfr5sxmd1q" path="res://assets/scripts/Core/DynamicCamera.gd" id="10_uhqxe"]
 
 [node name="Game" type="Node2D" unique_id=2141789961]
@@ -22,7 +21,7 @@ texture = ExtResource("5_8tmc4")
 [node name="LevelLoader" type="Node2D" parent="." unique_id=1529268812]
 position = Vector2(-1, 1)
 script = ExtResource("1_bsujg")
-levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6"), ExtResource("9_7ergh")])
+levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6")])
 ball_scene = ExtResource("2_1cyye")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=305853947]

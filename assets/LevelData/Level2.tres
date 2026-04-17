@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://dfup1k57nofuv"]
+
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_u0a7a"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_wpf50"]
+[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="3_5d6o0"]
+[ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="4_qq5og"]
+[ext_resource type="PackedScene" uid="uid://bueixvtmon56l" path="res://assets/scenes/Reuseable/Other/Bush.tscn" id="5_ddfqy"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="6_eid1o"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="7_nwppo"]
+[ext_resource type="PackedScene" uid="uid://bgn0rjjltcwsk" path="res://assets/scenes/Reuseable/LevelLands/level2land.tscn" id="7_wpf50"]
+[ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="8_fms7u"]
+
+[sub_resource type="Resource" id="Resource_0qemc"]
+script = ExtResource("2_wpf50")
+scene = ExtResource("3_5d6o0")
+position = Vector2(359, 270)
+
+[sub_resource type="Resource" id="Resource_b0y3w"]
+script = ExtResource("2_wpf50")
+scene = ExtResource("3_5d6o0")
+position = Vector2(942, 382)
+
+[sub_resource type="Resource" id="Resource_ivaxb"]
+script = ExtResource("2_wpf50")
+scene = ExtResource("4_qq5og")
+position = Vector2(1736.0001, 844)
+scale = Vector2(0.70122707, 0.5329326)
+
+[sub_resource type="Resource" id="Resource_2hmiu"]
+script = ExtResource("2_wpf50")
+scene = ExtResource("4_qq5og")
+position = Vector2(1842, 829)
+scale = Vector2(0.98122704, 0.74573255)
+
+[sub_resource type="Resource" id="Resource_3vp2f"]
+script = ExtResource("2_wpf50")
+scene = ExtResource("5_ddfqy")
+position = Vector2(1737, 888)
+scale = Vector2(0.5, 0.51941746)
+
+[sub_resource type="Resource" id="Resource_40vev"]
+script = ExtResource("2_wpf50")
+scene = ExtResource("5_ddfqy")
+position = Vector2(1844, 888)
+scale = Vector2(0.5, 0.51941746)
+
+[sub_resource type="Resource" id="Resource_577hv"]
+script = ExtResource("2_wpf50")
+scene = ExtResource("6_eid1o")
+position = Vector2(1485, 826.205)
+scale = Vector2(0.36000246, 0.36000246)
+
+[sub_resource type="Resource" id="Resource_opaka"]
+script = ExtResource("2_wpf50")
+scene = ExtResource("7_wpf50")
+position = Vector2(-94, -123.00001)
+scale = Vector2(1.080001, 1.080001)
+
+[sub_resource type="Resource" id="Resource_ncby6"]
+script = ExtResource("2_wpf50")
+scene = ExtResource("8_fms7u")
+position = Vector2(942, 791)
+scale = Vector2(0.42994153, 0.42994153)
+
+[resource]
+script = ExtResource("7_nwppo")
+land = SubResource("Resource_opaka")
+ball_spawn_position = Vector2(548, 856)
+goal = SubResource("Resource_577hv")
+background = ExtResource("1_u0a7a")
+bgscale = Vector2(0.4709994, 0.35566404)
+bgpos = Vector2(888, 372)
+small_obstacles = Array[ExtResource("2_wpf50")]([SubResource("Resource_ncby6")])
+clouds = Array[ExtResource("2_wpf50")]([SubResource("Resource_0qemc"), SubResource("Resource_b0y3w")])
+decorations = Array[ExtResource("2_wpf50")]([SubResource("Resource_ivaxb"), SubResource("Resource_2hmiu"), SubResource("Resource_3vp2f"), SubResource("Resource_40vev")])
