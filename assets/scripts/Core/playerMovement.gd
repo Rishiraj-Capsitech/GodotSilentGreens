@@ -171,11 +171,11 @@ func hide_dots():
 
 
 func losseLife():
+	#get_tree().get_root().get_node("Game/AudioStreamPlayer").play()
 	if not goal:
 		can_shoot = true
 		freeze = true
 		freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
 		trail.clear_points()
-		position = spawn_position
 		get_tree().get_root().get_node("Game/LevelLoader").build_level()
 		

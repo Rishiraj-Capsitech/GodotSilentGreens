@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://oyabylul7shu"]
+
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_co5j5"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_8kql6"]
+[ext_resource type="PackedScene" uid="uid://b7gfhmow36sxa" path="res://assets/scenes/Reuseable/BigObstacles/TreeObs.tscn" id="3_atv7w"]
+[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="4_8vc57"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="5_ev1xh"]
+[ext_resource type="PackedScene" uid="uid://cdyjsswq7na00" path="res://assets/scenes/Reuseable/LevelLands/DynamicLand.tscn" id="6_crl5m"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="7_is55h"]
+
+[sub_resource type="Resource" id="Resource_qbdar"]
+script = ExtResource("2_8kql6")
+scene = ExtResource("3_atv7w")
+position = Vector2(1468, 685)
+
+[sub_resource type="Resource" id="Resource_obcx3"]
+script = ExtResource("2_8kql6")
+scene = ExtResource("4_8vc57")
+position = Vector2(1618, 315)
+
+[sub_resource type="Resource" id="Resource_g7bhr"]
+script = ExtResource("2_8kql6")
+scene = ExtResource("4_8vc57")
+position = Vector2(802, 418)
+
+[sub_resource type="Resource" id="Resource_5c230"]
+script = ExtResource("2_8kql6")
+scene = ExtResource("4_8vc57")
+position = Vector2(334, 308)
+
+[sub_resource type="Resource" id="Resource_4oa2i"]
+script = ExtResource("2_8kql6")
+scene = ExtResource("5_ev1xh")
+position = Vector2(1714, 574)
+scale = Vector2(0.39999026, 0.39999026)
+
+[sub_resource type="Resource" id="Resource_2wrn1"]
+script = ExtResource("2_8kql6")
+scene = ExtResource("6_crl5m")
+position = Vector2(1309, 395)
+
+[resource]
+script = ExtResource("7_is55h")
+land = SubResource("Resource_2wrn1")
+ball_spawn_position = Vector2(397, 696)
+goal = SubResource("Resource_4oa2i")
+background = ExtResource("1_co5j5")
+bgscale = Vector2(0.4709994, 0.35566404)
+bgpos = Vector2(888, 372)
+big_obstacles = Array[ExtResource("2_8kql6")]([SubResource("Resource_qbdar")])
+clouds = Array[ExtResource("2_8kql6")]([SubResource("Resource_obcx3"), SubResource("Resource_g7bhr"), SubResource("Resource_5c230")])

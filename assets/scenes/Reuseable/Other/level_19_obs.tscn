@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bxj8ke1lbfg3o"]
+
+[ext_resource type="Texture2D" uid="uid://b0q2teoeech03" path="res://assets/sprites/Others/Level19obs.png" id="1_axmxh"]
+
+[node name="Level19Obs" type="Sprite2D" unique_id=1233473719]
+position = Vector2(1.000001, 1.0000001)
+scale = Vector2(0.25832304, 0.25832307)
+texture = ExtResource("1_axmxh")
