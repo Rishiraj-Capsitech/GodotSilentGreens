@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://dfup1k57nofuv" path="res://assets/LevelData/Level2.tres" id="5_eu5vx"]
 [ext_resource type="Resource" uid="uid://csopglvm6to0s" path="res://assets/LevelData/Level15.tres" id="6_7ergh"]
 [ext_resource type="Resource" uid="uid://cttble77cy1po" path="res://assets/LevelData/Level17.tres" id="9_7ergh"]
+[ext_resource type="Resource" uid="uid://ei5pfoasayan" path="res://assets/LevelData/Level18.tres" id="10_io3sb"]
 [ext_resource type="Script" uid="uid://ce3lfr5sxmd1q" path="res://assets/scripts/Core/DynamicCamera.gd" id="10_uhqxe"]
 [ext_resource type="PackedScene" uid="uid://5yd7vhea6f5n" path="res://assets/scenes/Reuseable/Effects/game_wind_particle_effect.tscn" id="11_kfp35"]
 
@@ -23,7 +24,7 @@ texture = ExtResource("5_8tmc4")
 [node name="LevelLoader" type="Node2D" parent="." unique_id=1529268812]
 position = Vector2(-1, 1)
 script = ExtResource("1_bsujg")
-levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6"), ExtResource("9_7ergh")])
+levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6"), ExtResource("9_7ergh"), ExtResource("10_io3sb")])
 ball_scene = ExtResource("2_1cyye")
 wind_particle_scene = ExtResource("11_kfp35")
 
