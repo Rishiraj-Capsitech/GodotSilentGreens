@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Level-18-obs.png-e3f4963aae90e684bf0fabd76059
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

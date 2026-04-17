@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/level 14 staic obstacle.png-ee2b7cb5bca76853b
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3dkg42oa2l6m"
-path="res://.godot/imported/landTop.png-646ac02564afbf72c7848f75f48c7cdd.ctex"
+uid="uid://0ol1p1yqget8"
+path="res://.godot/imported/game icon.png-98ec36c1f33849839a121c9fad149cde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/LandTextureUp/landTop.png"
-dest_files=["res://.godot/imported/landTop.png-646ac02564afbf72c7848f75f48c7cdd.ctex"]
+source_file="res://assets/sprites/Core/game icon.png"
+dest_files=["res://.godot/imported/game icon.png-98ec36c1f33849839a121c9fad149cde.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

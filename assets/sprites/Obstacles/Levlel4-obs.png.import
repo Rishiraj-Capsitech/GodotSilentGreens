@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/Levlel4-obs.png-fa60b62ff4509ed4ba83d4eefe9a1
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
