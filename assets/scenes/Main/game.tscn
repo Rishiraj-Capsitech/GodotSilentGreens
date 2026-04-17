@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://whs5gt0j6gby" path="res://assets/LevelData/Level1.tres" id="4_eu5vx"]
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="5_8tmc4"]
 [ext_resource type="Resource" uid="uid://csopglvm6to0s" path="res://assets/LevelData/Level15.tres" id="6_7ergh"]
+[ext_resource type="PackedScene" uid="uid://5yd7vhea6f5n" path="res://assets/scenes/Reuseable/Effects/game_wind_particle_effect.tscn" id="10_7ergh"]
 [ext_resource type="Script" uid="uid://ce3lfr5sxmd1q" path="res://assets/scripts/Core/DynamicCamera.gd" id="10_uhqxe"]
 
 [node name="Game" type="Node2D" unique_id=2141789961]
@@ -26,3 +27,6 @@ ball_scene = ExtResource("2_1cyye")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=305853947]
 position = Vector2(957, 543)
 script = ExtResource("10_uhqxe")
+
+[node name="GameWindParticleEffect" parent="." unique_id=1362806056 instance=ExtResource("10_7ergh")]
+position = Vector2(23, 493)

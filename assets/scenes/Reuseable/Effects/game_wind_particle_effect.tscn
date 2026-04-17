@@ -6,7 +6,7 @@
 [node name="GameWindParticleEffect" type="Node2D" unique_id=1362806056]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1081676187]
-position = Vector2(20, 12)
+amount = 15
 texture = ExtResource("1_4evd8")
 lifetime = 5.0
 speed_scale = 1.2
