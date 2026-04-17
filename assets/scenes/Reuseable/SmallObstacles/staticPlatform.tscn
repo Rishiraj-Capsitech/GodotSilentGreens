@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cqph56s013uh"]
+
+[ext_resource type="Texture2D" uid="uid://0vrbhh2esrkk" path="res://assets/sprites/Obstacles/level14Obs2.png" id="1_ptsea"]
+
+[node name="StaticPlatform" type="StaticBody2D" unique_id=607835738]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1657330242]
+position = Vector2(0, 2)
+scale = Vector2(1.6422925, 1)
+polygon = PackedVector2Array(-126.5, -58.5, -126.5, 58.5, 126.5, 58.5, 126.5, -58.5)
+
+[node name="Level14Obs2" type="Sprite2D" parent="." unique_id=239444565]
+position = Vector2(0, 2)
+scale = Vector2(1.6422925, 1)
+texture = ExtResource("1_ptsea")

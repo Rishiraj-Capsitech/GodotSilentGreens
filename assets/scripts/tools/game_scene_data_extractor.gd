@@ -71,10 +71,10 @@ func _on_extract_pressed() -> void:
 			level_data.goal = spawn_data
 		elif "LevelLands" in scene_path:
 			level_data.land = spawn_data
-		elif "Obstacles" in scene_path:
-			# For now, put all in small_obstacles. 
-			# User can manually move to big_obstacles if needed or we could add logic here.
+		elif "SmallObstacles" in scene_path:
 			level_data.small_obstacles.append(spawn_data)
+		elif "BigObstacles" in scene_path:
+			level_data.big_obstacles.append(spawn_data)
 		elif "Other" in scene_path:
 			if "Cloud" in child.name or "cloud" in scene_path:
 				level_data.clouds.append(spawn_data)

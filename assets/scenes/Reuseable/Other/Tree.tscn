@@ -2,5 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cs6q0ajo4bqyw" path="res://assets/sprites/Others/Tree.png" id="1_8fe66"]
 
-[node name="Sprite2D" type="Sprite2D" unique_id=1355700982]
+[node name="Tree" type="Sprite2D" unique_id=1355700982]
+modulate = Color(1, 1, 1, 0.40784314)
 texture = ExtResource("1_8fe66")

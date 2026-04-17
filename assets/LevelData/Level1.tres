@@ -1,26 +1,47 @@
 [gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://whs5gt0j6gby"]
 
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_4pd3m"]
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="1_pp5sw"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="2_gj7k8"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_gmfff"]
 [ext_resource type="PackedScene" uid="uid://jvh1yvypspie" path="res://assets/scenes/Reuseable/LevelLands/Level1Land.tscn" id="3_fmpcf"]
+[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="3_xxe8y"]
+[ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="4_bnn0q"]
 
-[sub_resource type="Resource" id="Resource_qelet"]
+[sub_resource type="Resource" id="Resource_3jqhr"]
+script = ExtResource("1_pp5sw")
+scene = ExtResource("3_xxe8y")
+position = Vector2(485, 330)
+
+[sub_resource type="Resource" id="Resource_6c0jd"]
+script = ExtResource("1_pp5sw")
+scene = ExtResource("3_xxe8y")
+position = Vector2(1468, 330)
+
+[sub_resource type="Resource" id="Resource_5b8an"]
+script = ExtResource("1_pp5sw")
+scene = ExtResource("4_bnn0q")
+position = Vector2(1865, 756)
+
+[sub_resource type="Resource" id="Resource_mgwd3"]
 script = ExtResource("1_pp5sw")
 scene = ExtResource("2_gj7k8")
-position = Vector2(1518, 730)
+position = Vector2(1682, 743.335)
 scale = Vector2(0.44, 0.44)
-metadata/_custom_type_script = "uid://bfsyf6kcrbauu"
 
-[sub_resource type="Resource" id="Resource_fmpcf"]
+[sub_resource type="Resource" id="Resource_4spvo"]
 script = ExtResource("1_pp5sw")
 scene = ExtResource("3_fmpcf")
-position = Vector2(958, 1077)
-metadata/_custom_type_script = "uid://bfsyf6kcrbauu"
+position = Vector2(971, 1092)
+zIndex = 3
 
 [resource]
 script = ExtResource("2_gmfff")
-land = SubResource("Resource_fmpcf")
-ball_spawn_position = Vector2(631, 790)
-goal = SubResource("Resource_qelet")
-metadata/_custom_type_script = "uid://70jfr6v8styy"
+land = SubResource("Resource_4spvo")
+ball_spawn_position = Vector2(658, 804)
+goal = SubResource("Resource_mgwd3")
+background = ExtResource("1_4pd3m")
+bgscale = Vector2(0.4709994, 0.35566404)
+bgpos = Vector2(888, 372)
+clouds = Array[ExtResource("1_pp5sw")]([SubResource("Resource_3jqhr"), SubResource("Resource_6c0jd")])
+decorations = Array[ExtResource("1_pp5sw")]([SubResource("Resource_5b8an")])

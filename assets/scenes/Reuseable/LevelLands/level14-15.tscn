@@ -4,11 +4,6 @@
 
 [node name="Level14" type="StaticBody2D" unique_id=198867441]
 
-[node name="Level14Land" type="Sprite2D" parent="." unique_id=721979339]
-position = Vector2(535.00006, 568)
-scale = Vector2(0.16000003, 0.16000003)
-texture = ExtResource("1_ccici")
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=304724639]
 position = Vector2(535.00006, 568)
 scale = Vector2(0.16000003, 0.16000003)
@@ -288,3 +283,8 @@ polygon = PackedVector2Array(5058, 710.6, 5058, 713.9, 5053, 716.9, 5053, 723.80
 position = Vector2(535.00006, 568)
 scale = Vector2(0.16000003, 0.16000003)
 polygon = PackedVector2Array(-2521, 712.4, -2521, 715.19995, -2523.8, 718, -2525.7, 718, -2526.7, 724, -2528.8, 724, -2527, 729.30005, -2527, 734, -2523, 737, -2523, 739, -2515.4, 739, -2502.5, 730, -2498.6, 730, -2505, 718.5, -2505, 716.4)
+
+[node name="Level14Land" type="Sprite2D" parent="." unique_id=721979339]
+position = Vector2(535.00006, 568)
+scale = Vector2(0.16000003, 0.16000003)
+texture = ExtResource("1_ccici")

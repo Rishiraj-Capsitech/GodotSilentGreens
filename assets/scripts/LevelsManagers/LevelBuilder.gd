@@ -36,8 +36,13 @@ func build_level():
 
 	# Clear old level
 	for child in get_children():
-		if child != ball and child != background:
+		if is_instance_valid(ball):
+			ball.queue_free()
+			
+		if  child != background:
 			child.call_deferred("queue_free")
+			
+		
 
 
 	if level_data.background != null:
