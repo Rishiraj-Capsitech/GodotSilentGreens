@@ -21,8 +21,8 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1080
+window/size/viewport_height=720
 window/size/initial_position_type=0
 
 [editor]
@@ -32,6 +32,10 @@ movie_writer/fps=120
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+
+[global_group]
+
+can_interact_with_water=""
 
 [physics]
 
