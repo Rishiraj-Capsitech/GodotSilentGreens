@@ -65,7 +65,7 @@ scale = Vector2(0.42994153, 0.42994153)
 [resource]
 script = ExtResource("7_nwppo")
 land = SubResource("Resource_opaka")
-ball_spawn_position = Vector2(548, 856)
+ball_spawn_position = Vector2(548, 859.215)
 goal = SubResource("Resource_577hv")
 background = ExtResource("1_u0a7a")
 bgscale = Vector2(0.4709994, 0.35566404)

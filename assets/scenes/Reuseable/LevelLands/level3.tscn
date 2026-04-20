@@ -49,7 +49,7 @@ _next_key = 5
 [sub_resource type="ArrayMesh" id="ArrayMesh_8r6j1"]
 _surfaces = [{
 "aabb": AABB(-6531.7627, -852.83936, 0, 13001.694, 1530.1238, 1e-05),
-"attribute_data": PackedByteArray("//////vLT0A4hPm++8tPQDiE+b7/////B1dQQHUnxj4HV1BAdSfGPv////+8VFLAQ9y9PrxUUsBD3L0+/////8OIUcARFvm+w4hRwBEW+b4="),
+"attribute_data": PackedByteArray("//////1PEUCvfK6+/U8RQK98rr7/////ObERQL+Rij45sRFAv5GKPv////+pFRPA/sSEPqkVE8D+xIQ+/////waHEsCoL66+BocSwKgvrr4="),
 "format": 34359742527,
 "index_count": 9,
 "index_data": PackedByteArray("AAABAAIAAgADAAMAAwAAAAIA"),
@@ -63,7 +63,6 @@ _surfaces = [{
 script = ExtResource("4_fh46t")
 texture = ExtResource("5_gis8k")
 mesh = SubResource("ArrayMesh_8r6j1")
-z_index = -10
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vdrmx"]
 _surfaces = [{
@@ -119,7 +118,7 @@ script = ExtResource("4_fh46t")
 texture = ExtResource("6_0u10c")
 mesh = SubResource("ArrayMesh_pds6a")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ui21u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wp0f6"]
 _surfaces = [{
 "aabb": AABB(-6535.4243, -812.6783, 0, 66.4668, 1423.0046, 1e-05),
 "attribute_data": PackedByteArray("/////wAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAgD8AAAAAAACAP/////8AAPBBAACAPwAA8EEAAIA//////wAA8EEAAAAAAADwQQAAAAA="),
@@ -132,10 +131,10 @@ _surfaces = [{
 "vertex_data": PackedByteArray("ZTvMxeSOGEQAAAAAZuPKxeSUGEQAAAAAqSfKxWkrS8QAAAAAqX/LxRkrS8QAAAAA/3//fxOC9X7/f/9/E4L1fv9//38TgvV+/3//fxOC9X4=")
 }]
 
-[sub_resource type="Resource" id="Resource_lypcq"]
+[sub_resource type="Resource" id="Resource_ily6l"]
 script = ExtResource("4_fh46t")
 texture = ExtResource("6_0u10c")
-mesh = SubResource("ArrayMesh_ui21u")
+mesh = SubResource("ArrayMesh_wp0f6")
 
 [sub_resource type="Resource" id="Resource_saiu5"]
 script = ExtResource("8_jlrh4")
@@ -157,6 +156,8 @@ metadata/_custom_type_script = "uid://0lhxan4cqrc1"
 script = ExtResource("10_3dr83")
 _edge_meta_materials = Array[ExtResource("7_j5vxu")]([SubResource("Resource_7rfry")])
 fill_textures = Array[Texture2D]([ExtResource("5_gis8k")])
+fill_texture_z_index = 0
+fill_texture_scale = 1.4300000000000002
 
 [node name="Level3" type="StaticBody2D" unique_id=198867441]
 
@@ -168,7 +169,7 @@ position = Vector2(535.00006, 568)
 scale = Vector2(0.16000003, 0.16000003)
 script = ExtResource("1_ily6l")
 _points = SubResource("Resource_10xwj")
-_meshes = Array[ExtResource("4_fh46t")]([SubResource("Resource_pkw4l"), SubResource("Resource_85tvv"), SubResource("Resource_lqerw"), SubResource("Resource_x3d7i"), SubResource("Resource_lypcq")])
+_meshes = Array[ExtResource("4_fh46t")]([SubResource("Resource_pkw4l"), SubResource("Resource_85tvv"), SubResource("Resource_lqerw"), SubResource("Resource_x3d7i"), SubResource("Resource_ily6l")])
 shape_material = SubResource("Resource_pwbf4")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://c6kxvfqr4ewu1"

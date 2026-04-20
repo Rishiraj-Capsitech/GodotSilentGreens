@@ -32,13 +32,13 @@ scale = Vector2(0.44, 0.44)
 [sub_resource type="Resource" id="Resource_4spvo"]
 script = ExtResource("1_pp5sw")
 scene = ExtResource("3_fmpcf")
-position = Vector2(971, 1092)
+position = Vector2(971, 1104.94)
 zIndex = 10
 
 [resource]
 script = ExtResource("2_gmfff")
 land = SubResource("Resource_4spvo")
-ball_spawn_position = Vector2(658, 804)
+ball_spawn_position = Vector2(658, 799)
 goal = SubResource("Resource_mgwd3")
 background = ExtResource("1_4pd3m")
 bgscale = Vector2(0.4709994, 0.35566404)

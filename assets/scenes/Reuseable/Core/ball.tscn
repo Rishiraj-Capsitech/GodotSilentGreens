@@ -20,7 +20,7 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.37037036, 0.7839506, 1)
 colors = PackedColorArray(0.7325927, 0.23436928, 0, 1, 0.9865878, 0.41376662, 0.14995468, 1, 0.99380416, 0.63319516, 3.85046e-07, 1, 0.9721944, 0.7385659, 0, 1)
 
-[node name="ball" type="RigidBody2D" unique_id=1301821953]
+[node name="ball" type="RigidBody2D" unique_id=1301821953 groups=["can_interact_with_water"]]
 z_index = 15
 physics_material_override = SubResource("PhysicsMaterial_wf3kl")
 script = ExtResource("2_fg1pn")
@@ -39,7 +39,7 @@ shape = SubResource("CircleShape2D_fg1pn")
 [node name="dots" parent="." unique_id=613193221 instance=ExtResource("2_d42dg")]
 scale = Vector2(0.7, 0.7)
 
-[node name="Line2D" type="Line2D" parent="." unique_id=784151493]
+[node name="Line2D" type="Line2D" parent="." unique_id=784151493 groups=["can_interact_with_water"]]
 top_level = true
 width = 15.3
 width_curve = SubResource("Curve_x46uw")

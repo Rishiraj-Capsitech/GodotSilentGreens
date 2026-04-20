@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bf577acff33u5"]
+
+[ext_resource type="Texture2D" uid="uid://d2s5js7lfmgqv" path="res://assets/sprites/Obstacles/Level-3-Obs.png" id="1_f05o5"]
+[ext_resource type="Script" uid="uid://dlx3hijv5c6b2" path="res://assets/scripts/Reuseables/waterfall.gd" id="2_6plwt"]
+[ext_resource type="Texture2D" uid="uid://kj1mdnwetset" path="res://assets/sprites/Obstacles/Waterfall.png" id="2_ufuid"]
+
+[sub_resource type="Gradient" id="Gradient_6plwt"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hjo2g"]
+gradient = SubResource("Gradient_6plwt")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=41070063]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=624809186]
+position = Vector2(0, -2)
+scale = Vector2(1.6889169, 1.6889169)
+polygon = PackedVector2Array(-149.5, -225, -152.3, -222, -154, -222, -157.5, -210.3, -157.5, -200.6, -153.5, -191.7, -153.5, -189, -146.5, -184, -146.5, -182, 3.699997, -182, 8.699997, -177, 12.5, -166.7, 12.5, -147.4, 7.5, -136.4, 7.5, -135.5, 4.7367635, -130.261, -146.83966, -129.6689, -155.129, -126.70843, -161.04996, -121.971664, -165.19463, -114.866516, -165.78673, -108.35347, -168.7472, -98.87994, -169.9314, -92.36689, -173.5, -2.300003, -178.8, 0, -192.1, 0, -198.5, 4.5, -198.5, 39.5, -195.5, 41.899994, -195.5, 44, -81.7, 44, -76.7, 39, -74.9, 39, -72.9, 30, -71.1, 30, -74.5, 12.600006, -74.5, 10.199997, -78.5, 6.199997, -78.5, 4.800003, -84, 2, -90.7, 2, -94.5, -1.800003, -94.5, -81, -90.5, -84, 1.699997, -84, 12.699997, -74, 13.300003, -74, 18.300003, -65, 19.100006, -65, 25.5, -47.600006, 25.5, 225, 117.70001, 225, 116.5, 222.5, 116.5, -31.5, 119.5, -36.399994, 119.5, -37.899994, 130.5, -44.899994, 130.5, -45.600006, 148.5, -50.5, 148.5, -51.300003, 177.79999, -55, 189.29999, -55, 198.29999, -64, 198.5, -128.8, 196.5, -130.8, 196.5, -132.2, 193, -134, 117.100006, -134, 111.100006, -138, 109.70001, -138, 105.70001, -146, 105.5, -174.2, 108.5, -177.2, 122.600006, -181, 164.29999, -181, 172.20001, -188, 173.9, -188, 176.5, -195.7, 176.5, -214.6, 170.5, -224.6)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=721931047]
+script = ExtResource("2_6plwt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=311774603]
+position = Vector2(-225.00002, 174.99998)
+scale = Vector2(1.9297204, 0.8794247)
+polygon = PackedVector2Array(-37.5, -119, -37.5, 119, 37.5, 119, 37.5, -119)
+
+[node name="Waterfall" type="Sprite2D" parent="Area2D/CollisionPolygon2D" unique_id=161269660]
+position = Vector2(0, -8.15786)
+scale = Vector2(0.99999994, 1.0685534)
+texture = ExtResource("2_ufuid")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=201831193]
+position = Vector2(-222, 273)
+scale = Vector2(1.4, 1.483006)
+amount = 250
+texture = SubResource("GradientTexture2D_hjo2g")
+emission_shape = 3
+emission_rect_extents = Vector2(66.9, 7.99)
+gravity = Vector2(0, 0)
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+
+[node name="Level3Obs" type="Sprite2D" parent="." unique_id=870840778]
+position = Vector2(0, -2)
+scale = Vector2(1.6889169, 1.6889169)
+texture = ExtResource("1_f05o5")

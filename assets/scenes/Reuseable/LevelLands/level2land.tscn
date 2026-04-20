@@ -215,18 +215,9 @@ normal_range = SubResource("Resource_a4um8")
 offset = -0.8
 metadata/_custom_type_script = "uid://0lhxan4cqrc1"
 
-[sub_resource type="Resource" id="Resource_yq8o7"]
-script = ExtResource("9_jiheu")
-distance = 360.0
-
-[sub_resource type="Resource" id="Resource_gokqf"]
-script = ExtResource("7_53mbc")
-normal_range = SubResource("Resource_yq8o7")
-metadata/_custom_type_script = "uid://0lhxan4cqrc1"
-
 [sub_resource type="Resource" id="Resource_bpcpj"]
 script = ExtResource("10_p6dja")
-_edge_meta_materials = Array[ExtResource("7_53mbc")]([SubResource("Resource_jdqpe"), SubResource("Resource_gokqf")])
+_edge_meta_materials = Array[ExtResource("7_53mbc")]([SubResource("Resource_jdqpe")])
 fill_textures = Array[Texture2D]([ExtResource("5_cwf0o")])
 fill_texture_z_index = 0
 render_offset = -0.19999999999999996

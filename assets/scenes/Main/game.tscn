@@ -8,7 +8,10 @@
 [ext_resource type="Resource" uid="uid://whs5gt0j6gby" path="res://assets/LevelData/Level1.tres" id="4_eu5vx"]
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="5_8tmc4"]
 [ext_resource type="Resource" uid="uid://dfup1k57nofuv" path="res://assets/LevelData/Level2.tres" id="5_eu5vx"]
+[ext_resource type="Resource" uid="uid://dqg0wxp88vpv7" path="res://assets/LevelData/Level3.tres" id="6_0spaw"]
 [ext_resource type="Resource" uid="uid://csopglvm6to0s" path="res://assets/LevelData/Level15.tres" id="6_7ergh"]
+[ext_resource type="Resource" uid="uid://cc2qyv701wlel" path="res://assets/LevelData/Level4.tres" id="7_g1d8a"]
+[ext_resource type="Resource" uid="uid://djd3ri8ewnd52" path="res://assets/LevelData/Level5.tres" id="8_3b0cj"]
 [ext_resource type="Resource" uid="uid://cttble77cy1po" path="res://assets/LevelData/Level17.tres" id="9_7ergh"]
 [ext_resource type="Resource" uid="uid://ei5pfoasayan" path="res://assets/LevelData/Level18.tres" id="10_io3sb"]
 [ext_resource type="Script" uid="uid://ce3lfr5sxmd1q" path="res://assets/scripts/Core/DynamicCamera.gd" id="10_uhqxe"]
@@ -23,14 +26,14 @@ data = PackedByteArray("SUQzBAAAAAABAFRYWFgAAAASAAADbWFqb3JfYnJhbmQAbXA0MgBUWFhY
 z_index = -10
 
 [node name="Background" type="Sprite2D" parent="." unique_id=9154930]
-position = Vector2(842.00006, 368.00003)
+position = Vector2(842, 353)
 scale = Vector2(0.4709994, 0.35566404)
 texture = ExtResource("5_8tmc4")
 
-[node name="LevelLoader" type="Node2D" parent="." unique_id=1529268812]
+[node name="LevelLoader" type="Node2D" parent="." unique_id=1529268812 groups=["can_interact_with_water"]]
 position = Vector2(-1, 1)
 script = ExtResource("1_bsujg")
-levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6"), ExtResource("9_7ergh"), ExtResource("10_io3sb"), ExtResource("12_a72lb"), ExtResource("13_0spaw")])
+levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("6_0spaw"), ExtResource("7_g1d8a"), ExtResource("8_3b0cj"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6"), ExtResource("9_7ergh"), ExtResource("10_io3sb"), ExtResource("12_a72lb"), ExtResource("13_0spaw")])
 ball_scene = ExtResource("2_1cyye")
 wind_particle_scene = ExtResource("11_kfp35")
 

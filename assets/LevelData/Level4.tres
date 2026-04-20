@@ -1,0 +1,93 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://cc2qyv701wlel"]
+
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_4ns61"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_eu8wp"]
+[ext_resource type="PackedScene" uid="uid://bf577acff33u5" path="res://assets/scenes/Reuseable/BigObstacles/Level4tap.tscn" id="3_nu5bl"]
+[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="4_ji0mk"]
+[ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="5_iwrvq"]
+[ext_resource type="PackedScene" uid="uid://bueixvtmon56l" path="res://assets/scenes/Reuseable/Other/Bush.tscn" id="6_bffs6"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="7_df1q0"]
+[ext_resource type="PackedScene" uid="uid://dfwwe2vk1gp71" path="res://assets/scenes/Reuseable/LevelLands/level4.tscn" id="8_re50a"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="9_mxdg8"]
+[ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="10_ea2m7"]
+
+[sub_resource type="Resource" id="Resource_nr7lk"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("3_nu5bl")
+position = Vector2(1329.9999, 664.99994)
+scale = Vector2(0.76, 0.76)
+
+[sub_resource type="Resource" id="Resource_ifjic"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("4_ji0mk")
+position = Vector2(881, 251)
+
+[sub_resource type="Resource" id="Resource_2edec"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("4_ji0mk")
+position = Vector2(622, 372)
+
+[sub_resource type="Resource" id="Resource_mw4kk"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("4_ji0mk")
+position = Vector2(213, 243)
+
+[sub_resource type="Resource" id="Resource_ymnas"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("4_ji0mk")
+position = Vector2(1612, 205)
+
+[sub_resource type="Resource" id="Resource_wnd3u"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("5_iwrvq")
+position = Vector2(1567, 836)
+scale = Vector2(0.56, 0.56)
+
+[sub_resource type="Resource" id="Resource_g6c7q"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("5_iwrvq")
+position = Vector2(1631, 833)
+scale = Vector2(0.56, 0.56)
+
+[sub_resource type="Resource" id="Resource_c248q"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("6_bffs6")
+position = Vector2(1567, 872)
+scale = Vector2(0.3216014, 0.32160145)
+
+[sub_resource type="Resource" id="Resource_qgens"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("6_bffs6")
+position = Vector2(1631.0001, 872.99994)
+scale = Vector2(0.3216014, 0.32160145)
+
+[sub_resource type="Resource" id="Resource_q7xjf"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("7_df1q0")
+position = Vector2(1284, 437)
+scale = Vector2(0.2800061, 0.2800061)
+
+[sub_resource type="Resource" id="Resource_bifgx"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("8_re50a")
+position = Vector2(417, 445)
+zIndex = 10
+
+[sub_resource type="Resource" id="Resource_xmos5"]
+script = ExtResource("2_eu8wp")
+scene = ExtResource("10_ea2m7")
+position = Vector2(706, 769)
+scale = Vector2(0.35066324, 0.35066324)
+
+[resource]
+script = ExtResource("9_mxdg8")
+land = SubResource("Resource_bifgx")
+ball_spawn_position = Vector2(491, 867)
+goal = SubResource("Resource_q7xjf")
+background = ExtResource("1_4ns61")
+bgscale = Vector2(0.4709994, 0.35566404)
+bgpos = Vector2(420, 374.00003)
+small_obstacles = Array[ExtResource("2_eu8wp")]([SubResource("Resource_xmos5")])
+big_obstacles = Array[ExtResource("2_eu8wp")]([SubResource("Resource_nr7lk")])
+clouds = Array[ExtResource("2_eu8wp")]([SubResource("Resource_ifjic"), SubResource("Resource_2edec"), SubResource("Resource_mw4kk"), SubResource("Resource_ymnas")])
+decorations = Array[ExtResource("2_eu8wp")]([SubResource("Resource_wnd3u"), SubResource("Resource_g6c7q"), SubResource("Resource_c248q"), SubResource("Resource_qgens")])
