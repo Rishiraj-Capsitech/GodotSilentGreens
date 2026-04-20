@@ -177,5 +177,6 @@ func losseLife():
 		freeze = true
 		freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
 		trail.clear_points()
+		position = spawn_position
 		get_tree().get_root().get_node("Game/LevelLoader").build_level()
 		

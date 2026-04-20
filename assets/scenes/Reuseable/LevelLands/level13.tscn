@@ -1,0 +1,129 @@
+[gd_scene format=4 uid="uid://0j774bb670su"]
+
+[ext_resource type="Texture2D" uid="uid://bljp48y04d677" path="res://assets/sprites/Silent Greens11-20/Final level 13.png" id="1_i2lm2"]
+[ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_ngara"]
+[ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="3_bxpcy"]
+[ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_7su40"]
+[ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="5_a2uur"]
+[ext_resource type="Texture2D" uid="uid://dfctxpr14eody" path="res://assets/sprites/LandTextureDown/Dirt 4.png" id="6_ateev"]
+[ext_resource type="Texture2D" uid="uid://drlgd6p8df11o" path="res://assets/sprites/LandTextureUp/Grass2.png" id="7_plycf"]
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_g5j0a"]
+[ext_resource type="Script" uid="uid://d0xjijisx1woh" path="res://addons/rmsmartshape/materials/edge_material.gd" id="9_etubw"]
+[ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="10_hxtdr"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="11_l1psx"]
+
+[sub_resource type="Resource" id="Resource_eb48f"]
+script = ExtResource("3_bxpcy")
+position = Vector2(-4152.7856, -59.703125)
+
+[sub_resource type="Resource" id="Resource_hnrlg"]
+script = ExtResource("3_bxpcy")
+position = Vector2(4561.7607, -61.24414)
+
+[sub_resource type="Resource" id="Resource_hta7l"]
+script = ExtResource("3_bxpcy")
+position = Vector2(6489.6387, 1947.9929)
+texture_idx = 6
+
+[sub_resource type="Resource" id="Resource_f4rmj"]
+script = ExtResource("3_bxpcy")
+position = Vector2(-6531.2314, 1949.344)
+
+[sub_resource type="Resource" id="Resource_hfvq2"]
+script = ExtResource("3_bxpcy")
+position = Vector2(-4152.7856, -59.703125)
+
+[sub_resource type="Resource" id="Resource_bifoe"]
+script = ExtResource("4_7su40")
+_points = {
+0: SubResource("Resource_eb48f"),
+23: SubResource("Resource_hnrlg"),
+24: SubResource("Resource_hta7l"),
+25: SubResource("Resource_f4rmj"),
+26: SubResource("Resource_hfvq2")
+}
+_point_order = PackedInt32Array(0, 23, 24, 25, 26)
+_constraints = {
+Vector2i(0, 26): 15
+}
+_next_key = 45
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_frb55"]
+_surfaces = [{
+"aabb": AABB(-6531.2314, -61.24414, 0, 13020.87, 2010.5881, 1e-05),
+"attribute_data": PackedByteArray("/////2EKXUDVBFe9YQpdQNUEV73/////YDqdQNu41T9gOp1A27jVP/////9YPJ7Azt7VP1g8nsDO3tU//////z85ScDNm1G9PzlJwM2bUb0="),
+"format": 34359742527,
+"index_count": 9,
+"index_data": PackedByteArray("AAABAAIAAgADAAMAAwAAAAIA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Fo6ORQD6dMIAAAAAHM3KRcZ/80QAAAAA2hnMxQKr80QAAAAAScaBxQDQbsIAAAAA/////////7//////////v/////////+//////////78=")
+}]
+
+[sub_resource type="Resource" id="Resource_mx3r4"]
+script = ExtResource("5_a2uur")
+texture = ExtResource("6_ateev")
+mesh = SubResource("ArrayMesh_frb55")
+z_index = -6
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i2lm2"]
+_surfaces = [{
+"aabb": AABB(-6545.18, -64.64881, 0, 13047.614, 2019.0963, 1e-05),
+"attribute_data": PackedByteArray("/////wAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAgD8AAAAAAACAP//////hMDlDAACAP+EwOUMAAIA//////+EwOUMAAAAA4TA5QwAAAAD/////qSh0QwAAgD+pKHRDAACAP/////+pKHRDAAAAAKkodEMAAAAA/////xpAAkQAAIA/GkACRAAAgD//////GkACRAAAAAAaQAJEAAAAAP////8AwBJEAACAPwDAEkQAAIA//////wDAEkQAAAAAAMASRAAAAAA="),
+"format": 34359742527,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAwACAAQAAwAEAAUABQAEAAYABQAGAAcABwAGAAgABwAIAAkA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("b8+BxXhPe8IAAAAAOVmBxVWSs8EAAAAAzhKORZC9yMEAAAAAspmORTFMgcIAAAAAB/fJRbcS8kQAAAAAeTPLRVUu9EQAAAAAY0bLxYZ18kQAAAAAcYnMxVJO9EQAAAAAOVmBxVWSs8EAAAAAb8+BxXhPe8IAAAAA/3//f/X/BED/f/9/9f8EQP9//38m2hMt/3//fxHaCC3/f/9/EVr3Ev9//3+bWTIT/3//f2ZeM2//f/9/2F3sbv9//39txUhd/3//f23FSF0=")
+}]
+
+[sub_resource type="Resource" id="Resource_ngara"]
+script = ExtResource("5_a2uur")
+texture = ExtResource("7_plycf")
+mesh = SubResource("ArrayMesh_i2lm2")
+
+[sub_resource type="Resource" id="Resource_jskie"]
+script = ExtResource("9_etubw")
+textures = Array[Texture2D]([ExtResource("7_plycf")])
+metadata/_custom_type_script = "uid://d0xjijisx1woh"
+
+[sub_resource type="Resource" id="Resource_7actt"]
+script = ExtResource("10_hxtdr")
+distance = 360.0
+
+[sub_resource type="Resource" id="Resource_2hw5e"]
+script = ExtResource("8_g5j0a")
+edge_material = SubResource("Resource_jskie")
+normal_range = SubResource("Resource_7actt")
+metadata/_custom_type_script = "uid://0lhxan4cqrc1"
+
+[sub_resource type="Resource" id="Resource_vlr33"]
+script = ExtResource("11_l1psx")
+_edge_meta_materials = Array[ExtResource("8_g5j0a")]([SubResource("Resource_2hw5e")])
+fill_textures = Array[Texture2D]([ExtResource("6_ateev")])
+fill_texture_z_index = -6
+render_offset = -0.9
+
+[node name="Level4" type="StaticBody2D" unique_id=198867441]
+
+[node name="Level5Obs" type="Sprite2D" parent="." unique_id=1021139682]
+z_index = -7
+position = Vector2(958, 542)
+scale = Vector2(0.9932004, 0.99320096)
+texture = ExtResource("1_i2lm2")
+
+[node name="SS2D_Shape_Closed" type="Node2D" parent="." unique_id=912822354]
+position = Vector2(915, 816)
+scale = Vector2(0.24076125, 0.23999938)
+script = ExtResource("2_ngara")
+_points = SubResource("Resource_bifoe")
+_meshes = Array[ExtResource("5_a2uur")]([SubResource("Resource_mx3r4"), SubResource("Resource_ngara")])
+shape_material = SubResource("Resource_vlr33")
+metadata/_custom_type_script = "uid://c6kxvfqr4ewu1"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1326943871]
+visible = false
+polygon = PackedVector2Array(-616.9431, 599.7155, -0.12585449, 692.3011, 262.0664, 690.4938, 265.63507, 692.2947, 269.87256, 695.75684, 280.05615, 706.68585, 305.16956, 737.7096, 332.63544, 767.901, 339.31036, 773.48315, 345.75952, 777.78955, 351.9084, 780.57544, 357.68243, 781.59607, 498.34903, 781.04236, 499.96188, 780.6935, 502.3671, 780.46735, 555.0898, 782.9862, 621.8381, 781.753, 671.61896, 782.6557, 716.2301, 778.66174, 723.8612, 777.1162, 731.3122, 776.7284, 755.3377, 779.55975, 757.28064, 779.6648, 758.905, 779.56464, 760.1861, 779.21436, 761.09894, 778.569, 762.2911, 777.8532, 764.34045, 777.3103, 770.4957, 776.6729, 787.4221, 776.70306, 810.86346, 778.06903, 847.2003, 779.5744, 849.2107, 778.88, 851.00525, 778.4738, 852.6305, 778.3132, 854.13293, 778.35535, 863.1725, 780.47925, 867.3112, 780.8759, 872.6327, 780.54816, 879.509, 779.15454, 902.0197, 777.72095, 913.93066, 775.4799, 930.1136, 775.6054, 932.63855, 775.95386, 933.6563, 776.2196, 934.50684, 776.55695, 935.1872, 776.9739, 935.6943, 777.4784, 936.0251, 778.07855, 936.1766, 778.7822, 971.4426, 779.5481, 973.1197, 779.8465, 981.6172, 781.95, 1010.9956, 779.87103, 1019.10956, 780.3404, 1044.3744, 780.74646, 1086.149, 781.3234, 1099.353, 780.45654, 1110.0084, 781.2479, 1126.1355, 783.03735, 1159.0981, 783.01483, 1201.9844, 782.673, 1236.3333, 773.57104, 1282.2222, 764.86163, 1293.0112, 760.9579, 1296.6011, 758.9994, 1299.4583, 756.991, 1310.6118, 747.77734, 1320.9608, 741.9851, 1338.2532, 735.0389, 1384.3733, 735.5955, 1393.9641, 733.6527, 1403.9819, 729.6582, 1415.0276, 723.0027, 1427.7026, 713.0766, 1475.2429, 644.7357, 1499.7513, 617.7153, 1511.0823, 608.70056, 1516.3784, 605.65564, 1521.3756, 603.7146, 1564.9758, 602.06006, 1585.958, 603.16864, 1595.365, 604.6825, 1603.7144, 607.0173, 1640.9106, 663.27954, 1660.717, 689.6873, 1685.5422, 715.94244, 1690.6907, 720.9807, 1695.7184, 724.95557, 1700.6326, 727.9433, 1705.4409, 730.02045, 1710.1509, 731.26337, 1714.7703, 731.7485, 1719.3063, 731.5522, 1723.7666, 730.7509, 1732.4904, 727.63916, 1741.0017, 723.02454, 1757.6284, 711.73175, 1758.6927, 711.07074, 1760.8394, 710.4418, 1767.8683, 709.35223, 1789.292, 708.3515, 1813.7234, 709.88446, 1824.5117, 711.9619, 1829.1019, 713.3916, 1832.9858, 715.10596, 1850.9707, 731.1732, 1870.7523, 744.8261, 1906.9304, 763.2639, 1915.0859, 765.7969, 2459.352, 836.7844, 2189.327, 847.7077, 2151.419, 852.6453, 2140.7705, 855.51166, 2137.0005, 858.6543, 2139.8677, 870.907, 2162.5083, 935.7413, 2165.442, 939.5045, 2170.1313, 937.54034, 2176.483, 930.6465, 2184.4028, 919.62085, 2229.8938, 850.1557, 2233, 801, 2292.9858, 778.405, 2310.8066, 766.0937, 2329.2588, 757.62854, 2348.2493, 753.80725, 2367.684, 755.42773, 2384.0498, 753.6261, 2392.427, 750.66956, 2393.7727, 746.7335, 2389.0432, 741.99347, 2379.1948, 736.62463, 2365.1846, 730.80255, 2328.5042, 718.49994, 2206.6096, 686.23517, 2471.966, 676.7204, 2480.8518, 1070.007, -616.1129, 1077.0676)
