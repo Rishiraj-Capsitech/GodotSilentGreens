@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/ObsTree.png-f74c8ef260155f3b4878c10be140e40e.
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

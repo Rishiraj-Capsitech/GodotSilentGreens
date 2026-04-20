@@ -171,6 +171,7 @@ func hide_dots():
 
 
 func losseLife():
+	#get_tree().get_root().get_node("Game/AudioStreamPlayer").play()
 	if not goal:
 		can_shoot = true
 		freeze = true

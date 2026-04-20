@@ -30,6 +30,8 @@ func spawn(data: SpawnData):
 
 
 func build_level():
+
+		
 	if levels.is_empty():
 		return
 
