@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://62u6tnr17eyy"]
 
-[ext_resource type="Texture2D" uid="uid://be3p3unf2rbb4" path="res://assets/sprites/Silent Greens11-20/level 19.png" id="1_1vga0"]
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_jj5ms"]
 [ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="3_rddi6"]
 [ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_otcrs"]
@@ -208,6 +207,9 @@ fill_texture_z_index = 0
 
 [node name="Level19land" type="StaticBody2D" unique_id=1122793804]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1746350222]
+polygon = PackedVector2Array(-732.53784, 763.2756, 729.16833, 760.47986, 730.3623, 761.55023, 731.27954, 763.00165, 731.9517, 764.779, 732.4104, 766.8272, 732.74255, 776.626, 732.1879, 786.3488, 732.2103, 790.0794, 732.40704, 791.4691, 732.76965, 792.4682, 894.87085, 793.1552, 893.1216, 781.1871, 892.81433, 772.19354, 893.53906, 765.4811, 894.8856, 760.35626, 2328.6548, 760.16473, 2321.9946, 1351.5964, -741.5211, 1323.7968)
+
 [node name="SS2D_Shape_Closed" type="Node2D" parent="." unique_id=1663647962]
 position = Vector2(895, 935)
 scale = Vector2(0.22, 0.22)
@@ -217,12 +219,3 @@ _meshes = Array[ExtResource("5_a8xmo")]([SubResource("Resource_jdx07"), SubResou
 shape_material = SubResource("Resource_oyccs")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://c6kxvfqr4ewu1"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1746350222]
-polygon = PackedVector2Array(-732.53784, 763.2756, 729.16833, 760.47986, 730.3623, 761.55023, 731.27954, 763.00165, 731.9517, 764.779, 732.4104, 766.8272, 732.74255, 776.626, 732.1879, 786.3488, 732.2103, 790.0794, 732.40704, 791.4691, 732.76965, 792.4682, 894.87085, 793.1552, 893.1216, 781.1871, 892.81433, 772.19354, 893.53906, 765.4811, 894.8856, 760.35626, 2328.6548, 760.16473, 2321.9946, 1351.5964, -741.5211, 1323.7968)
-
-[node name="Level19" type="Sprite2D" parent="." unique_id=1540281883]
-visible = false
-position = Vector2(895, 935)
-scale = Vector2(0.22, 0.22)
-texture = ExtResource("1_1vga0")

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_ttiap"]
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_aeemu"]
 [ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="3_y1vi4"]
-[ext_resource type="PackedScene" uid="uid://bmegtk3f1e37f" path="res://assets/scenes/Reuseable/Other/water.tscn" id="4_w3cv8"]
+[ext_resource type="PackedScene" uid="uid://dvcc4g28gvnga" path="res://assets/scenes/Reuseable/Other/water.tscn" id="4_w3cv8"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="5_na50b"]
 [ext_resource type="PackedScene" uid="uid://ead235hvwneq" path="res://assets/scenes/Reuseable/LevelLands/level5.tscn" id="6_f5p6r"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="7_4v3dn"]

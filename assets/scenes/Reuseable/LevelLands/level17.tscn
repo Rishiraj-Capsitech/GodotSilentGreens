@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://jrqmf5ls5y7c"]
 
-[ext_resource type="Texture2D" uid="uid://cngb5sfv238au" path="res://assets/sprites/LevelLands/level-17-land.png" id="1_duc3h"]
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="2_nxqoo"]
 [ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="3_wjj7t"]
 [ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_ae6m4"]
@@ -220,6 +219,9 @@ fill_texture_z_index = 0
 
 [node name="Level17Land" type="StaticBody2D" unique_id=326043456]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=839107440]
+polygon = PackedVector2Array(-396.38446, 825.3773, 511.4566, 824.5083, 513.64417, 824.4358, 516.64685, 824.9296, 524.5939, 827.3214, 544.7273, 835.6589, 573.73486, 850.0465, 581.0008, 854.3506, 589.15076, 860.5023, 596.82196, 867.495, 602.6515, 874.3217, 604.39575, 875.1697, 606.1847, 875.7969, 609.83417, 876.4822, 613.47473, 876.56476, 616.9812, 876.2318, 625.44275, 874.6101, 626.38855, 874.49457, 627.1599, 874.4856, 630.1518, 874.89136, 632.7757, 875.59644, 635.0592, 876.5584, 637.03, 877.73486, 638.71576, 879.0835, 640.14417, 880.5618, 642.33936, 883.7381, 645.62427, 891.97107, 645.98083, 892.7091, 646.35657, 893.15283, 2464.1553, 891.3971, 2476.888, 1408.2141, -605.5313, 1432.6777, -629.99506, 808.8548)
+
 [node name="SS2D_Shape_Closed" type="Node2D" parent="." unique_id=527889216]
 position = Vector2(885.00006, 1032)
 scale = Vector2(0.20000094, 0.20000094)
@@ -229,12 +231,3 @@ _meshes = Array[ExtResource("5_gcdiu")]([SubResource("Resource_d3r47"), SubResou
 shape_material = SubResource("Resource_58hc0")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://c6kxvfqr4ewu1"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=839107440]
-polygon = PackedVector2Array(-396.38446, 825.3773, 511.4566, 824.5083, 513.64417, 824.4358, 516.64685, 824.9296, 524.5939, 827.3214, 544.7273, 835.6589, 573.73486, 850.0465, 581.0008, 854.3506, 589.15076, 860.5023, 596.82196, 867.495, 602.6515, 874.3217, 604.39575, 875.1697, 606.1847, 875.7969, 609.83417, 876.4822, 613.47473, 876.56476, 616.9812, 876.2318, 625.44275, 874.6101, 626.38855, 874.49457, 627.1599, 874.4856, 630.1518, 874.89136, 632.7757, 875.59644, 635.0592, 876.5584, 637.03, 877.73486, 638.71576, 879.0835, 640.14417, 880.5618, 642.33936, 883.7381, 645.62427, 891.97107, 645.98083, 892.7091, 646.35657, 893.15283, 2464.1553, 891.3971, 2476.888, 1408.2141, -605.5313, 1432.6777, -629.99506, 808.8548)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=800677603]
-visible = false
-position = Vector2(885.00006, 1032)
-scale = Vector2(0.20000094, 0.20000094)
-texture = ExtResource("1_duc3h")

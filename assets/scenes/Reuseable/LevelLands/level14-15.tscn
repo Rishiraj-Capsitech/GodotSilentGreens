@@ -159,6 +159,9 @@ fill_texture_z_index = 0
 
 [node name="Level14" type="StaticBody2D" unique_id=198867441]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1414822969]
+polygon = PackedVector2Array(-492.84515, 432.82843, 1553.3083, 434.77716, 1561.1033, 670.57196, -485.05035, 672.5206)
+
 [node name="SS2D_Shape_Closed" type="Node2D" parent="." unique_id=2043979062]
 position = Vector2(535.00006, 568)
 scale = Vector2(0.16000003, 0.16000003)
@@ -168,6 +171,3 @@ _meshes = Array[ExtResource("5_15304")]([SubResource("Resource_38fr0"), SubResou
 shape_material = SubResource("Resource_0enia")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://c6kxvfqr4ewu1"
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1414822969]
-polygon = PackedVector2Array(-492.84515, 432.82843, 1553.3083, 434.77716, 1561.1033, 670.57196, -485.05035, 672.5206)
