@@ -33,7 +33,7 @@ scale = Vector2(0.44, 0.44)
 script = ExtResource("1_pp5sw")
 scene = ExtResource("3_fmpcf")
 position = Vector2(971, 1092)
-zIndex = 3
+zIndex = 10
 
 [resource]
 script = ExtResource("2_gmfff")
