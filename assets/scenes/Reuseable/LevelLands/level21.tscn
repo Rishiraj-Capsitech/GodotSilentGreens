@@ -115,7 +115,7 @@ fill_textures = Array[Texture2D]([ExtResource("5_m4usn")])
 fill_texture_z_index = 0
 metadata/_custom_type_script = "uid://nc5bfedvnpgm"
 
-[node name="Level14" type="StaticBody2D" unique_id=198867441]
+[node name="Level21" type="StaticBody2D" unique_id=198867441]
 
 [node name="SS2D_Shape_Closed" type="Node2D" parent="." unique_id=1627276753]
 script = ExtResource("1_bn5rg")
