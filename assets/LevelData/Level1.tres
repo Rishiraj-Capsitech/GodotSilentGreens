@@ -4,18 +4,18 @@
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="1_pp5sw"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="2_gj7k8"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_gmfff"]
+[ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="3_4pd3m"]
 [ext_resource type="PackedScene" uid="uid://jvh1yvypspie" path="res://assets/scenes/Reuseable/LevelLands/Level1Land.tscn" id="3_fmpcf"]
-[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="3_xxe8y"]
 [ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="4_bnn0q"]
 
 [sub_resource type="Resource" id="Resource_3jqhr"]
 script = ExtResource("1_pp5sw")
-scene = ExtResource("3_xxe8y")
+scene = ExtResource("3_4pd3m")
 position = Vector2(485, 330)
 
 [sub_resource type="Resource" id="Resource_6c0jd"]
 script = ExtResource("1_pp5sw")
-scene = ExtResource("3_xxe8y")
+scene = ExtResource("3_4pd3m")
 position = Vector2(1468, 330)
 
 [sub_resource type="Resource" id="Resource_5b8an"]

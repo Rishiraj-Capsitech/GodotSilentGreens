@@ -1,0 +1,100 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bv1f3vt5kct5m"]
+
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_m0u2j"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_r1cmk"]
+[ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="3_m0u2j"]
+[ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="4_o6m3h"]
+[ext_resource type="PackedScene" uid="uid://bueixvtmon56l" path="res://assets/scenes/Reuseable/Other/Bush.tscn" id="5_6fv1u"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="6_vxggx"]
+[ext_resource type="PackedScene" uid="uid://x04kvpq8hwib" path="res://assets/scenes/Reuseable/LevelLands/level8.tscn" id="7_pang6"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="8_ij4rp"]
+
+[sub_resource type="Resource" id="Resource_y6u15"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("3_m0u2j")
+position = Vector2(324, 423)
+
+[sub_resource type="Resource" id="Resource_si2s4"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("3_m0u2j")
+position = Vector2(890, 305)
+
+[sub_resource type="Resource" id="Resource_sp75a"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("3_m0u2j")
+position = Vector2(1152, 380)
+
+[sub_resource type="Resource" id="Resource_44q8u"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("3_m0u2j")
+position = Vector2(1470, 243)
+
+[sub_resource type="Resource" id="Resource_xhvgp"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("3_m0u2j")
+position = Vector2(1470, 243)
+
+[sub_resource type="Resource" id="Resource_dqowt"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("4_o6m3h")
+position = Vector2(1631, 781)
+scale = Vector2(0.32, 0.32)
+
+[sub_resource type="Resource" id="Resource_h6cob"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("4_o6m3h")
+position = Vector2(1664, 780)
+scale = Vector2(0.32, 0.32)
+
+[sub_resource type="Resource" id="Resource_hqu8j"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("4_o6m3h")
+position = Vector2(1698, 781)
+scale = Vector2(0.32, 0.32)
+
+[sub_resource type="Resource" id="Resource_gjg5i"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("5_6fv1u")
+position = Vector2(1632, 806)
+scale = Vector2(0.24000978, 0.24000978)
+
+[sub_resource type="Resource" id="Resource_ihlxu"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("5_6fv1u")
+position = Vector2(1665, 805.99994)
+scale = Vector2(0.24000978, 0.24000978)
+
+[sub_resource type="Resource" id="Resource_4fshf"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("5_6fv1u")
+position = Vector2(1699, 806)
+scale = Vector2(0.24000978, 0.24000978)
+
+[sub_resource type="Resource" id="Resource_tfil1"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("5_6fv1u")
+position = Vector2(1699, 806)
+scale = Vector2(0.24000978, 0.24000978)
+
+[sub_resource type="Resource" id="Resource_cvami"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("6_vxggx")
+position = Vector2(963, 758)
+scale = Vector2(0.44, 0.44)
+
+[sub_resource type="Resource" id="Resource_o63i8"]
+script = ExtResource("2_r1cmk")
+scene = ExtResource("7_pang6")
+position = Vector2(-973, -1154)
+scale = Vector2(2.119999, 2.119999)
+
+[resource]
+script = ExtResource("8_ij4rp")
+land = SubResource("Resource_o63i8")
+ball_spawn_position = Vector2(318, 807)
+goal = SubResource("Resource_cvami")
+background = ExtResource("1_m0u2j")
+bgscale = Vector2(0.4709994, 0.35566404)
+bgpos = Vector2(842, 353)
+clouds = Array[ExtResource("2_r1cmk")]([SubResource("Resource_y6u15"), SubResource("Resource_si2s4"), SubResource("Resource_sp75a"), SubResource("Resource_44q8u"), SubResource("Resource_xhvgp")])
+decorations = Array[ExtResource("2_r1cmk")]([SubResource("Resource_dqowt"), SubResource("Resource_h6cob"), SubResource("Resource_hqu8j"), SubResource("Resource_gjg5i"), SubResource("Resource_ihlxu"), SubResource("Resource_4fshf"), SubResource("Resource_tfil1")])

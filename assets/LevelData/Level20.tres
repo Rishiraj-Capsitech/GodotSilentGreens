@@ -17,7 +17,7 @@ scale = Vector2(0.449024, 0.449024)
 [sub_resource type="Resource" id="Resource_o16lc"]
 script = ExtResource("2_h3jds")
 scene = ExtResource("4_luhre")
-position = Vector2(1695, 772.00006)
+position = Vector2(1695, 765.71)
 scale = Vector2(0.35999998, 0.35999998)
 
 [sub_resource type="Resource" id="Resource_1c1h4"]

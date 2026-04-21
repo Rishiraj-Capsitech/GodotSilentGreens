@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cq6bow64fw377"]
+[gd_scene format=4 uid="uid://bmxglc5sblw8k"]
 
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="1_331p1"]
 [ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="2_5qqfk"]

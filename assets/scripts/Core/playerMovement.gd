@@ -4,7 +4,7 @@ extends RigidBody2D
 @export var dot_count := 25
 @export var spacing := 0.2
 @export var power := 8.0
-@export var max_drag := 200.0
+@export var max_drag := 300.0
 @onready var dots_container = $dots
 @onready var trail = $Line2D
 @onready var sprite: Sprite2D = $Sprite2D

@@ -2,73 +2,74 @@
 
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_mi8vk"]
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_jv10o"]
-[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="3_nvlgt"]
+[ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="3_jv10o"]
 [ext_resource type="PackedScene" uid="uid://bxj8ke1lbfg3o" path="res://assets/scenes/Reuseable/Other/level_19_obs.tscn" id="4_2x4sm"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="5_jv10o"]
-[ext_resource type="PackedScene" uid="uid://62u6tnr17eyy" path="res://assets/scenes/Reuseable/LevelLands/Level19.tscn" id="5_llwb4"]
+[ext_resource type="PackedScene" uid="uid://d1ss6o8ljf467" path="res://assets/scenes/Reuseable/LevelLands/Level19.tscn" id="5_llwb4"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="6_2nalh"]
 
-[sub_resource type="Resource" id="Resource_whbl8"]
+[sub_resource type="Resource" id="Resource_jv10o"]
 script = ExtResource("2_jv10o")
-scene = ExtResource("3_nvlgt")
-position = Vector2(339, 542)
-scale = Vector2(0.8, 0.8)
-
-[sub_resource type="Resource" id="Resource_o6jsy"]
-script = ExtResource("2_jv10o")
-scene = ExtResource("3_nvlgt")
-position = Vector2(478, 353)
-scale = Vector2(0.8, 0.8)
-
-[sub_resource type="Resource" id="Resource_p82e5"]
-script = ExtResource("2_jv10o")
-scene = ExtResource("3_nvlgt")
-position = Vector2(667, 563)
-scale = Vector2(0.8, 0.8)
-
-[sub_resource type="Resource" id="Resource_fwc7k"]
-script = ExtResource("2_jv10o")
-scene = ExtResource("3_nvlgt")
-position = Vector2(896, 454)
-scale = Vector2(0.8, 0.8)
-
-[sub_resource type="Resource" id="Resource_3epho"]
-script = ExtResource("2_jv10o")
-scene = ExtResource("3_nvlgt")
-position = Vector2(1165, 339)
-scale = Vector2(0.8, 0.8)
-
-[sub_resource type="Resource" id="Resource_xrw71"]
-script = ExtResource("2_jv10o")
-scene = ExtResource("3_nvlgt")
-position = Vector2(1255, 509)
-scale = Vector2(0.8, 0.8)
-
-[sub_resource type="Resource" id="Resource_fwhqw"]
-script = ExtResource("2_jv10o")
-scene = ExtResource("4_2x4sm")
-position = Vector2(1234, 778)
-scale = Vector2(0.1441121, 0.14411211)
+scene = ExtResource("3_jv10o")
+position = Vector2(727, 540)
+scale = Vector2(0.91999936, 0.91999936)
 
 [sub_resource type="Resource" id="Resource_nvlgt"]
 script = ExtResource("2_jv10o")
-scene = ExtResource("5_jv10o")
-position = Vector2(1219.92, 830.07)
-scale = Vector2(0.44, 0.44)
-metadata/_custom_type_script = "uid://bfsyf6kcrbauu"
+scene = ExtResource("3_jv10o")
+position = Vector2(333.00003, 420.00006)
+scale = Vector2(0.91999936, 0.91999936)
 
-[sub_resource type="Resource" id="Resource_2hd12"]
+[sub_resource type="Resource" id="Resource_2x4sm"]
+script = ExtResource("2_jv10o")
+scene = ExtResource("3_jv10o")
+position = Vector2(573, 253.00002)
+scale = Vector2(0.91999936, 0.91999936)
+
+[sub_resource type="Resource" id="Resource_llwb4"]
+script = ExtResource("2_jv10o")
+scene = ExtResource("3_jv10o")
+position = Vector2(963, 380)
+scale = Vector2(0.91999936, 0.91999936)
+
+[sub_resource type="Resource" id="Resource_2nalh"]
+script = ExtResource("2_jv10o")
+scene = ExtResource("3_jv10o")
+position = Vector2(1337.9999, 234.00002)
+scale = Vector2(0.91999936, 0.91999936)
+
+[sub_resource type="Resource" id="Resource_whbl8"]
+script = ExtResource("2_jv10o")
+scene = ExtResource("3_jv10o")
+position = Vector2(1386, 499)
+scale = Vector2(0.91999936, 0.91999936)
+
+[sub_resource type="Resource" id="Resource_o6jsy"]
+script = ExtResource("2_jv10o")
+scene = ExtResource("4_2x4sm")
+position = Vector2(1230, 737)
+scale = Vector2(0.16014048, 0.1601405)
+
+[sub_resource type="Resource" id="Resource_p82e5"]
+script = ExtResource("2_jv10o")
+scene = ExtResource("5_jv10o")
+position = Vector2(1240, 784)
+scale = Vector2(0.44, 0.44)
+
+[sub_resource type="Resource" id="Resource_fwc7k"]
 script = ExtResource("2_jv10o")
 scene = ExtResource("5_llwb4")
-position = Vector2(36, 32)
+position = Vector2(960, 903)
+scale = Vector2(0.7199988, 0.7199988)
+zIndex = 10
 
 [resource]
 script = ExtResource("6_2nalh")
-land = SubResource("Resource_2hd12")
-ball_spawn_position = Vector2(227, 910)
-goal = SubResource("Resource_nvlgt")
+land = SubResource("Resource_fwc7k")
+ball_spawn_position = Vector2(263, 867)
+goal = SubResource("Resource_p82e5")
 background = ExtResource("1_mi8vk")
 bgscale = Vector2(0.4709994, 0.35566404)
-bgpos = Vector2(842.00006, 368.00003)
-clouds = Array[ExtResource("2_jv10o")]([SubResource("Resource_whbl8"), SubResource("Resource_o6jsy"), SubResource("Resource_p82e5"), SubResource("Resource_fwc7k"), SubResource("Resource_3epho"), SubResource("Resource_xrw71")])
-decorations = Array[ExtResource("2_jv10o")]([SubResource("Resource_fwhqw")])
+bgpos = Vector2(842, 353)
+clouds = Array[ExtResource("2_jv10o")]([SubResource("Resource_jv10o"), SubResource("Resource_nvlgt"), SubResource("Resource_2x4sm"), SubResource("Resource_llwb4"), SubResource("Resource_2nalh"), SubResource("Resource_whbl8")])
+decorations = Array[ExtResource("2_jv10o")]([SubResource("Resource_o6jsy")])

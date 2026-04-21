@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="3_4jyf0"]
 [ext_resource type="PackedScene" uid="uid://dm2ykwe4lgfen" path="res://assets/scenes/Reuseable/BigObstacles/WindMill.tscn" id="3_ebfgu"]
 [ext_resource type="PackedScene" uid="uid://d0sx3tfvjd2uf" path="res://assets/scenes/Reuseable/LevelLands/level16.tscn" id="3_ykd58"]
-[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="4_dl48s"]
+[ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="4_dqruw"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="8_p3och"]
 
 [sub_resource type="Resource" id="Resource_w06k2"]
@@ -17,17 +17,17 @@ zIndex = 1
 
 [sub_resource type="Resource" id="Resource_kub4d"]
 script = ExtResource("1_3vqgo")
-scene = ExtResource("4_dl48s")
+scene = ExtResource("4_dqruw")
 position = Vector2(609, 178)
 
 [sub_resource type="Resource" id="Resource_o0suc"]
 script = ExtResource("1_3vqgo")
-scene = ExtResource("4_dl48s")
+scene = ExtResource("4_dqruw")
 position = Vector2(961, 324)
 
 [sub_resource type="Resource" id="Resource_qoijb"]
 script = ExtResource("1_3vqgo")
-scene = ExtResource("4_dl48s")
+scene = ExtResource("4_dqruw")
 position = Vector2(1443, 277)
 
 [sub_resource type="Resource" id="Resource_6qeo3"]

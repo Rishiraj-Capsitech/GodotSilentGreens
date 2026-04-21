@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c2uarfygy7ce6"]
+
+[ext_resource type="Script" uid="uid://btcxf4uc8gndo" path="res://assets/scripts/Reuseables/cloudController.gd" id="1_rak0f"]
+[ext_resource type="PackedScene" uid="uid://bco1x1rpuvwr2" path="res://assets/scenes/Reuseable/Other/explosion.tscn" id="2_1yh0w"]
+[ext_resource type="Texture2D" uid="uid://bxe1m8jfe2ktf" path="res://assets/sprites/Obstacles/Cloud.png" id="3_vjqim"]
+
+[node name="Cloud2" type="Area2D" unique_id=2076020674 node_paths=PackedStringArray("explosion", "sprite", "collider")]
+script = ExtResource("1_rak0f")
+explosion = NodePath("Explosion")
+sprite = NodePath("Sprite2D")
+collider = NodePath("CollisionPolygon2D")
+speed = 40
+distance = 150
+
+[node name="Explosion" parent="." unique_id=1136198474 instance=ExtResource("2_1yh0w")]
+position = Vector2(-2, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1377981141]
+scale = Vector2(0.19999915, 0.19999915)
+polygon = PackedVector2Array(449.2, -104, -447.4, -104, -457.3, -101, -460.6, -101, -485.6, -85, -487.9, -85, -510.9, -58, -512.4, -58, -524, -28.099998, -524, 29, -514, 52.300003, -514, 54.699997, -505, 65.600006, -505, 67.899994, -481, 88.8, -481, 90.3, -460, 100.2, -460, 101.600006, -449.3, 104, 449, 104, 472.3, 94, 474.7, 94, 485.7, 85, 487.90002, 85, 510.90002, 58, 512.4, 58, 524, 28, 524, -29.099998, 514, -52.4, 514, -54.7, 505, -65.7, 505, -67.9, 481, -88.9, 481, -90.3, 460, -100.3, 460, -101.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1963510889]
+scale = Vector2(0.19999915, 0.19999915)
+texture = ExtResource("3_vjqim")

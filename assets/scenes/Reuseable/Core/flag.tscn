@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dg17bqtquicqx" path="res://assets/sprites/Core/Flag_3.png" id="1_a1cen"]
 [ext_resource type="Texture2D" uid="uid://ctcm45mqc6qx1" path="res://assets/sprites/Core/FlagStand.png" id="2_1dvcm"]
-[ext_resource type="Script" uid="uid://vyp6uxpwwvgb" path="res://assets/scripts/Core/flag.gd" id="3_a1cen"]
+[ext_resource type="Script" uid="uid://vyp6uxpwwvgb" path="res://assets/scripts/Core/Flag.gd" id="3_a1cen"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8fhb"]
 size = Vector2(63, 30)
@@ -14,7 +14,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_a1cen")
 
 [node name="MainFlag" type="Area2D" unique_id=493944793]
-position = Vector2(14, 21)
+position = Vector2(15, 22)
+scale = Vector2(0.44, 0.44)
 script = ExtResource("3_a1cen")
 
 [node name="Flag" type="Sprite2D" parent="." unique_id=158801216]
@@ -33,5 +34,5 @@ texture = ExtResource("2_1dvcm")
 
 [node name="Base" type="Sprite2D" parent="." unique_id=424326727]
 position = Vector2(-14, 185)
-scale = Vector2(1, 0.48437497)
+scale = Vector2(2.181817, 0.48437497)
 texture = SubResource("GradientTexture2D_1dvcm")

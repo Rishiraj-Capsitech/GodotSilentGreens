@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_qfwmb"]
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_rryoy"]
 [ext_resource type="PackedScene" uid="uid://bsup01sb5lbu" path="res://assets/scenes/Reuseable/BigObstacles/Level3Tap.tscn" id="3_la0tc"]
-[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="4_amxij"]
+[ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="4_qfwmb"]
 [ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="5_r317p"]
 [ext_resource type="PackedScene" uid="uid://bueixvtmon56l" path="res://assets/scenes/Reuseable/Other/Bush.tscn" id="6_2smhw"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="7_inui7"]
@@ -20,17 +20,17 @@ zIndex = 1
 
 [sub_resource type="Resource" id="Resource_2hmiu"]
 script = ExtResource("2_rryoy")
-scene = ExtResource("4_amxij")
+scene = ExtResource("4_qfwmb")
 position = Vector2(586, 510)
 
 [sub_resource type="Resource" id="Resource_3vp2f"]
 script = ExtResource("2_rryoy")
-scene = ExtResource("4_amxij")
+scene = ExtResource("4_qfwmb")
 position = Vector2(249, 348)
 
 [sub_resource type="Resource" id="Resource_40vev"]
 script = ExtResource("2_rryoy")
-scene = ExtResource("4_amxij")
+scene = ExtResource("4_qfwmb")
 position = Vector2(1484, 219)
 
 [sub_resource type="Resource" id="Resource_577hv"]

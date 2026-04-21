@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="1_mjaf2"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_62d2b"]
 [ext_resource type="PackedScene" uid="uid://6d6duvmtwhja" path="res://assets/scenes/Reuseable/LevelLands/level14-15.tscn" id="3_3k4el"]
-[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="3_5qevx"]
 [ext_resource type="PackedScene" uid="uid://v4n1fgbfb4ss" path="res://assets/scenes/Reuseable/BigObstacles/level14_Obs.tscn" id="3_078db"]
+[ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="4_078db"]
 [ext_resource type="PackedScene" uid="uid://ebtmykcqumrk" path="res://assets/scenes/Reuseable/SmallObstacles/movingplatform 1.tscn" id="7_5qevx"]
 [ext_resource type="PackedScene" uid="uid://e0400aidvqj2" path="res://assets/scenes/Reuseable/SmallObstacles/movingplatform 2.tscn" id="8_iseaa"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="9_j7qub"]
@@ -18,18 +18,18 @@ scale = Vector2(1.3925446, 1.3925446)
 
 [sub_resource type="Resource" id="Resource_l13og"]
 script = ExtResource("1_mjaf2")
-scene = ExtResource("3_5qevx")
+scene = ExtResource("4_078db")
 position = Vector2(1530, 420)
 
 [sub_resource type="Resource" id="Resource_ryyja"]
 script = ExtResource("1_mjaf2")
-scene = ExtResource("3_5qevx")
+scene = ExtResource("4_078db")
 position = Vector2(309, 515)
 scale = Vector2(0.6120517, 0.6120517)
 
 [sub_resource type="Resource" id="Resource_q0tnm"]
 script = ExtResource("1_mjaf2")
-scene = ExtResource("3_5qevx")
+scene = ExtResource("4_078db")
 position = Vector2(526, 345)
 
 [sub_resource type="Resource" id="Resource_68rgf"]

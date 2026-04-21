@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_u0a7a"]
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_wpf50"]
-[ext_resource type="PackedScene" uid="uid://b3murhusjfx1u" path="res://assets/scenes/Reuseable/Other/cloud.tscn" id="3_5d6o0"]
+[ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="3_wpf50"]
 [ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="4_qq5og"]
 [ext_resource type="PackedScene" uid="uid://bueixvtmon56l" path="res://assets/scenes/Reuseable/Other/Bush.tscn" id="5_ddfqy"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="6_eid1o"]
@@ -12,12 +12,12 @@
 
 [sub_resource type="Resource" id="Resource_0qemc"]
 script = ExtResource("2_wpf50")
-scene = ExtResource("3_5d6o0")
+scene = ExtResource("3_wpf50")
 position = Vector2(359, 270)
 
 [sub_resource type="Resource" id="Resource_b0y3w"]
 script = ExtResource("2_wpf50")
-scene = ExtResource("3_5d6o0")
+scene = ExtResource("3_wpf50")
 position = Vector2(942, 382)
 
 [sub_resource type="Resource" id="Resource_ivaxb"]

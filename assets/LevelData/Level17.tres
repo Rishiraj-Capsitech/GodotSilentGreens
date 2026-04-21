@@ -25,60 +25,60 @@ scale = Vector2(0.40000123, 0.40000123)
 [sub_resource type="Resource" id="Resource_ac0yh"]
 script = ExtResource("2_ng30f")
 scene = ExtResource("5_7xffh")
-position = Vector2(1483, 513)
+position = Vector2(1483, 483)
 scale = Vector2(0.4083892, 0.4083892)
 
 [sub_resource type="Resource" id="Resource_7s8qg"]
 script = ExtResource("2_ng30f")
 scene = ExtResource("6_a5ygf")
-position = Vector2(38, 106)
+position = Vector2(38, 76)
 
 [sub_resource type="Resource" id="Resource_w2ni8"]
 script = ExtResource("2_ng30f")
 scene = ExtResource("8_ilve5")
-position = Vector2(650, 886.00006)
+position = Vector2(650, 856)
 scale = Vector2(0.4799999, 0.52000153)
 
 [sub_resource type="Resource" id="Resource_0xiyi"]
 script = ExtResource("2_ng30f")
 scene = ExtResource("8_ilve5")
-position = Vector2(652, 634.00006)
+position = Vector2(652, 604)
 scale = Vector2(0.4799999, 0.52000153)
 
 [sub_resource type="Resource" id="Resource_nyjjy"]
 script = ExtResource("2_ng30f")
 scene = ExtResource("8_ilve5")
-position = Vector2(985, 415.00003)
+position = Vector2(985, 385)
 scale = Vector2(0.4799999, 0.52000153)
 
 [sub_resource type="Resource" id="Resource_jih86"]
 script = ExtResource("2_ng30f")
 scene = ExtResource("8_ilve5")
-position = Vector2(1438, 623)
+position = Vector2(1438, 593)
 scale = Vector2(0.4799999, 0.52000153)
 
 [sub_resource type="Resource" id="Resource_rdcc2"]
 script = ExtResource("2_ng30f")
 scene = ExtResource("8_ilve5")
-position = Vector2(1072, 773)
+position = Vector2(1072, 743)
 scale = Vector2(0.4799999, 0.52000153)
 
 [sub_resource type="Resource" id="Resource_cr3yw"]
 script = ExtResource("2_ng30f")
 scene = ExtResource("8_ilve5")
-position = Vector2(1439.9999, 879)
+position = Vector2(1440, 849)
 scale = Vector2(0.4799999, 0.52000153)
 
 [sub_resource type="Resource" id="Resource_qjgmf"]
 script = ExtResource("2_ng30f")
 scene = ExtResource("9_t3dum")
-position = Vector2(689.00006, 557.00006)
+position = Vector2(689, 527)
 scale = Vector2(0.15999877, 0.15999877)
 
 [resource]
 script = ExtResource("7_hwiwd")
 land = SubResource("Resource_7s8qg")
-ball_spawn_position = Vector2(286, 920)
+ball_spawn_position = Vector2(286, 890)
 goal = SubResource("Resource_ac0yh")
 background = ExtResource("1_nl5nl")
 bgscale = Vector2(0.4709994, 0.35566404)
