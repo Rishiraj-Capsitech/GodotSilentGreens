@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="3_0cdjh"]
 [ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="4_pulpo"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="5_1ujuq"]
-[ext_resource type="PackedScene" uid="uid://bscragw8mxbg3" path="res://assets/scenes/Reuseable/LevelLands/level6.tscn" id="6_4via0"]
+[ext_resource type="PackedScene" path="res://assets/scenes/Reuseable/LevelLands/level6.tscn" id="6_4via0"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="7_173iw"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="8_j5mjh"]
 
