@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d04jlv6yjowi1" path="res://assets/scenes/Reuseable/BigObstacles/Dhanush.tscn" id="3_bbegr"]
 [ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="4_q0i8q"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="5_bucva"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Reuseable/LevelLands/level10.tscn" id="5_n581b"]
+[ext_resource type="PackedScene" uid="uid://chcxf200kogr3" path="res://assets/scenes/Reuseable/LevelLands/level10.tscn" id="5_n581b"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="6_6mk4w"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="7_d7fn4"]
 

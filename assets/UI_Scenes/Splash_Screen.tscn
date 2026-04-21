@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dejq3o44c50ti"]
+
+[ext_resource type="Texture2D" uid="uid://c3k4v6bq3srqw" path="res://assets/UI_art/Splash Screen.png" id="1_tvrdl"]
+
+[node name="SplashScreen" type="Control" unique_id=1749560548]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameWise_Logo" type="TextureRect" parent="." unique_id=131850074]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tvrdl")
+expand_mode = 1

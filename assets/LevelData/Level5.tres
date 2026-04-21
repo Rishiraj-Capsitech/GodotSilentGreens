@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_ttiap"]
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_aeemu"]
 [ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="3_ttiap"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Reuseable/Other/water.tscn" id="4_w3cv8"]
+[ext_resource type="PackedScene" uid="uid://dvcc4g28gvnga" path="res://assets/scenes/Reuseable/Other/water.tscn" id="4_w3cv8"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="5_na50b"]
-[ext_resource type="PackedScene" uid="uid://c84tqv2lflqk5" path="res://assets/scenes/Reuseable/LevelLands/level5.tscn" id="6_f5p6r"]
+[ext_resource type="PackedScene" uid="uid://ead235hvwneq" path="res://assets/scenes/Reuseable/LevelLands/level5.tscn" id="6_f5p6r"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="7_4v3dn"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="8_4gqsb"]
 
