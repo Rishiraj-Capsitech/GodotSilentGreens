@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_qfwmb"]
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_rryoy"]
-[ext_resource type="PackedScene" uid="uid://bsup01sb5lbu" path="res://assets/scenes/Reuseable/BigObstacles/Level3Tap.tscn" id="3_la0tc"]
+[ext_resource type="PackedScene" path="res://assets/scenes/Reuseable/BigObstacles/Level3Tap.tscn" id="3_la0tc"]
 [ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="4_qfwmb"]
 [ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="5_r317p"]
 [ext_resource type="PackedScene" uid="uid://bueixvtmon56l" path="res://assets/scenes/Reuseable/Other/Bush.tscn" id="6_2smhw"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="7_inui7"]
-[ext_resource type="PackedScene" uid="uid://c14412bgp6ves" path="res://assets/scenes/Reuseable/LevelLands/level3.tscn" id="8_n4lv0"]
+[ext_resource type="PackedScene" path="res://assets/scenes/Reuseable/LevelLands/level3.tscn" id="8_n4lv0"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="9_0qemc"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="10_b0y3w"]
 
