@@ -19,6 +19,11 @@ run/main_scene="uid://d3dxlbr0d3n22"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AdMobManager="*res://assets/scripts/Core/AdMobManager.gd"
+
+
 [display]
 
 window/size/viewport_width=1920
