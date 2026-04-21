@@ -29,6 +29,12 @@ func _ready() -> void:
 	interstitial_ad_load_callback.on_ad_loaded = _on_interstitial_ad_loaded
 	
 	print("AdMobManager: MobileAds initialized and callbacks configured.")
+	
+	# TESTING: Auto-load banner in debug builds to verify setup
+	if OS.is_debug_build():
+		print("AdMobManager: Debug build detected, auto-loading banner in 2 seconds...")
+		get_tree().create_timer(2.0).timeout.connect(load_banner)
+
 
 
 ## Loads a banner ad at the top of the screen.
