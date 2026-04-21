@@ -4,9 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://bk02hi5vyx42s" path="res://assets/scenes/Reuseable/Core/ball.tscn" id="2_1cyye"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_hh3qc"]
 [ext_resource type="Resource" uid="uid://dj43t4y17xhwu" path="res://assets/LevelData/Level16.tres" id="4_3rsi6"]
+[ext_resource type="Resource" uid="uid://bvtbj5xmafotf" path="res://assets/LevelData/level11.tres" id="4_6wnq6"]
 [ext_resource type="Resource" uid="uid://b02abb00r8we1" path="res://assets/LevelData/Level14.tres" id="4_7ergh"]
+[ext_resource type="Resource" uid="uid://b1002k1c3jdm5" path="res://assets/LevelData/Level12.tres" id="4_db5ja"]
 [ext_resource type="Resource" uid="uid://whs5gt0j6gby" path="res://assets/LevelData/Level1.tres" id="4_eu5vx"]
 [ext_resource type="Resource" uid="uid://csu3qw71pso7g" path="res://assets/LevelData/Level7.tres" id="4_n5vlt"]
+[ext_resource type="Resource" uid="uid://dfsydc6k3kn88" path="res://assets/LevelData/Level13.tres" id="4_ovvts"]
 [ext_resource type="Resource" uid="uid://c4bbjf14e0aok" path="res://assets/LevelData/Level9.tres" id="4_q88wm"]
 [ext_resource type="Resource" uid="uid://blwww3x4e6ojn" path="res://assets/LevelData/Level10.tres" id="4_wlrb8"]
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="5_8tmc4"]
@@ -31,14 +34,14 @@ data = PackedByteArray("SUQzBAAAAAABAFRYWFgAAAASAAADbWFqb3JfYnJhbmQAbXA0MgBUWFhY
 z_index = -10
 
 [node name="Background" type="Sprite2D" parent="." unique_id=9154930]
-position = Vector2(842, 353)
+position = Vector2(853.00006, 360.00003)
 scale = Vector2(0.4709994, 0.35566404)
 texture = ExtResource("5_8tmc4")
 
 [node name="LevelLoader" type="Node2D" parent="." unique_id=1529268812 groups=["can_interact_with_water"]]
 position = Vector2(-1, 1)
 script = ExtResource("1_bsujg")
-levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("6_0spaw"), ExtResource("7_g1d8a"), ExtResource("8_3b0cj"), ExtResource("9_rdh8f"), ExtResource("4_n5vlt"), ExtResource("18_66hse"), ExtResource("4_q88wm"), ExtResource("4_wlrb8"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6"), ExtResource("9_7ergh"), ExtResource("10_io3sb"), ExtResource("12_a72lb"), ExtResource("13_0spaw")])
+levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("6_0spaw"), ExtResource("7_g1d8a"), ExtResource("8_3b0cj"), ExtResource("9_rdh8f"), ExtResource("4_n5vlt"), ExtResource("18_66hse"), ExtResource("4_q88wm"), ExtResource("4_wlrb8"), ExtResource("4_6wnq6"), ExtResource("4_db5ja"), ExtResource("4_ovvts"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6"), ExtResource("9_7ergh"), ExtResource("10_io3sb"), ExtResource("12_a72lb"), ExtResource("13_0spaw")])
 ball_scene = ExtResource("2_1cyye")
 wind_particle_scene = ExtResource("11_kfp35")
 

@@ -25,6 +25,7 @@ func spawn(data: SpawnData):
 	obj.position = data.position
 	obj.scale = data.scale
 	obj.z_index = data.zIndex
+	obj.rotation=data.Rotaion
 	
 	call_deferred("add_child", obj)
 

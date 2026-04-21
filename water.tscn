@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cjmad77oc17tn"]
-
-[ext_resource type="Script" path="res://assets/scenes/Reuseable/Other/water.gd" id="1_qi1wl"]
-
-[node name="Water" type="Node2D" unique_id=1557693287]
-script = ExtResource("1_qi1wl")

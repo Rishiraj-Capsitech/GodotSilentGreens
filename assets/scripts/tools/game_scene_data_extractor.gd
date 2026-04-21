@@ -63,6 +63,7 @@ func _on_extract_pressed() -> void:
 		spawn_data.position = child.global_position
 		spawn_data.scale = child.scale
 		spawn_data.zIndex = child.z_index
+		spawn_data.Rotaion = child.rotation
 		
 		if "ball.tscn" in scene_path:
 			level_data.ball_spawn_position = child.global_position
