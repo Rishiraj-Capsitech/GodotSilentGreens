@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://lcu5f8v3gtwq"]
 
 [ext_resource type="Texture2D" uid="uid://dswlf3jeai7h2" path="res://assets/UI_art/pause.png" id="1_fosm0"]
-[ext_resource type="Theme" path="res://assets/Text_Font/NotoSans.tres" id="1_iy5op"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/Text_Font/NotoSans.tres" id="1_iy5op"]
 [ext_resource type="Texture2D" uid="uid://cva5aj0ouof34" path="res://assets/UI_art/chossing options (3).png" id="2_fosm0"]
 [ext_resource type="Texture2D" uid="uid://d3pjleijbgmge" path="res://assets/UI_art/yes (2).png" id="3_3jcr8"]
 [ext_resource type="Texture2D" uid="uid://dmplicticrpd2" path="res://assets/UI_art/No (2).png" id="4_fdhrh"]
+[ext_resource type="Script" uid="uid://nwii027ygkrq" path="res://assets/scripts/UI/HomeConfirmation.gd" id="5_scrpt"]
 
 [node name="HomeConfirmation" type="Control" unique_id=1251715950]
 layout_mode = 3
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_iy5op")
+script = ExtResource("5_scrpt")
 
 [node name="home_background" type="TextureRect" parent="." unique_id=154876299]
 layout_mode = 1

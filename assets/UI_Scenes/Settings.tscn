@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://dgujnooocvwvy"]
 
-[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://NotoSans.tres" id="1_j7x76"]
-[ext_resource type="Texture2D" uid="uid://dud7r5jsj2dg0" path="res://UI_art/Settings.png" id="1_sfvul"]
-[ext_resource type="Texture2D" uid="uid://dmplicticrpd2" path="res://UI_art/No (2).png" id="3_71mvm"]
-[ext_resource type="Texture2D" uid="uid://bqioeaewfv552" path="res://UI_art/sound (1).png" id="4_8uskx"]
-[ext_resource type="Texture2D" uid="uid://wbb1sdxmerys" path="res://UI_art/language not selected.png" id="4_71mvm"]
-[ext_resource type="Texture2D" uid="uid://evyhvkpe3sgc" path="res://UI_art/Sound_Off.png" id="4_blqn1"]
-[ext_resource type="Texture2D" uid="uid://jx4yuxxcvng1" path="res://UI_art/language selected.png" id="5_8uskx"]
-[ext_resource type="Texture2D" uid="uid://deu1goxcov2l8" path="res://UI_art/button (1).png" id="8_71mvm"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/Text_Font/NotoSans.tres" id="1_j7x76"]
+[ext_resource type="Texture2D" uid="uid://dud7r5jsj2dg0" path="res://assets/UI_art/Settings.png" id="1_sfvul"]
+[ext_resource type="Texture2D" uid="uid://dmplicticrpd2" path="res://assets/UI_art/No (2).png" id="3_71mvm"]
+[ext_resource type="Texture2D" uid="uid://bqioeaewfv552" path="res://assets/UI_art/sound (1).png" id="4_8uskx"]
+[ext_resource type="Texture2D" uid="uid://wbb1sdxmerys" path="res://assets/UI_art/language not selected.png" id="4_71mvm"]
+[ext_resource type="Texture2D" uid="uid://evyhvkpe3sgc" path="res://assets/UI_art/Sound_Off.png" id="4_blqn1"]
+[ext_resource type="Texture2D" uid="uid://jx4yuxxcvng1" path="res://assets/UI_art/language selected.png" id="5_8uskx"]
+[ext_resource type="Texture2D" uid="uid://deu1goxcov2l8" path="res://assets/UI_art/button (1).png" id="8_71mvm"]
+[ext_resource type="Script" uid="uid://dmk1jg77ybck3" path="res://assets/scripts/UI/SettingsPanel.gd" id="9_scrpt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uskx"]
 bg_color = Color(0.7607843, 0.85490197, 0.6901961, 1)
@@ -33,6 +34,14 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piqx6"]
+bg_color = Color(0.5803922, 0.75686276, 0.35686275, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 4.0
+
 [node name="Settings" type="Control" unique_id=329886370]
 layout_mode = 3
 anchors_preset = 15
@@ -41,6 +50,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_j7x76")
+script = ExtResource("9_scrpt")
 
 [node name="Settings_Background" type="TextureRect" parent="." unique_id=1669534142]
 layout_mode = 1
@@ -228,8 +238,12 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_icons/grabber = ExtResource("8_71mvm")
+theme_override_icons/grabber_highlight = ExtResource("8_71mvm")
+theme_override_icons/grabber_disabled = ExtResource("8_71mvm")
+theme_override_icons/tick = ExtResource("8_71mvm")
 theme_override_styles/slider = SubResource("StyleBoxFlat_8uskx")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_xffxv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_piqx6")
 
 [node name="Senstivity" type="Label" parent="." unique_id=1032713615]
 layout_mode = 1

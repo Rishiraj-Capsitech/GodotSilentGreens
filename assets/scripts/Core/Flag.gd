@@ -8,6 +8,4 @@ func _ready():
 func _on_body_entered(body):
 	if body.name in ["ball"]:
 		body.goal = true
-		var builder = get_tree().get_first_node_in_group("LevelLoader")
-		if builder:
-			builder.call_deferred("next_level")
+		GameManager.complete_level()

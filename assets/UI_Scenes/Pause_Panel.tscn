@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cg5h3amuj4rwr" path="res://assets/UI_art/restart (3).png" id="4_3bbij"]
 [ext_resource type="Texture2D" uid="uid://bdahmg10ieo4a" path="res://assets/UI_art/resume (1).png" id="5_7gjuu"]
 [ext_resource type="Texture2D" uid="uid://d1605an2m3sl2" path="res://assets/UI_art/settings icon (1).png" id="6_oxt76"]
+[ext_resource type="Script" uid="uid://3mh6nyu4scq7" path="res://assets/scripts/UI/PausePanel.gd" id="8_scrpt"]
 
 [node name="PausePanel" type="Control" unique_id=869592419]
 layout_mode = 3
@@ -16,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_y0lva")
+script = ExtResource("8_scrpt")
 
 [node name="Pause_Background" type="TextureRect" parent="." unique_id=375933595]
 layout_mode = 1

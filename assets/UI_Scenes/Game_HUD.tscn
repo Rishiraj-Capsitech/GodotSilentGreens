@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://d120dh8bsfkto"]
 
 [ext_resource type="Texture2D" uid="uid://bolf7t0by4lsy" path="res://assets/UI_art/coin.png" id="1_yhw7s"]
-[ext_resource type="Theme" path="res://assets/Text_Font/NotoSans.tres" id="2_pbmnm"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/Text_Font/NotoSans.tres" id="2_pbmnm"]
 [ext_resource type="Texture2D" uid="uid://dxpcm6vb8gnxf" path="res://assets/UI_art/Pause Icon (3).png" id="2_xfmwv"]
 [ext_resource type="Texture2D" uid="uid://y517n20wcw83" path="res://assets/UI_art/life used.png" id="3_ukaka"]
 [ext_resource type="Texture2D" uid="uid://cekyg1ivfggfj" path="res://assets/UI_art/Ellipse 7.png" id="5_4mt2i"]
 [ext_resource type="Texture2D" uid="uid://br4eyxqe7nr45" path="res://assets/UI_art/chossing options (2).png" id="5_7270q"]
+[ext_resource type="Script" uid="uid://dpwi30obhywyq" path="res://assets/scripts/UI/GameHUD.gd" id="7_scrpt"]
 
 [node name="GameHUD" type="Control" unique_id=1391440258]
 layout_mode = 3
@@ -15,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_pbmnm")
+script = ExtResource("7_scrpt")
 
 [node name="PauseButton" type="TextureButton" parent="." unique_id=1771694544]
 layout_mode = 1
@@ -138,6 +140,7 @@ layout_mode = 1
 offset_left = 95.0
 offset_right = 168.0
 offset_bottom = 88.0
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
 theme_override_font_sizes/font_size = 64
 text = "10"
 horizontal_alignment = 1
@@ -153,11 +156,12 @@ texture = ExtResource("3_ukaka")
 expand_mode = 1
 
 [node name="LevelCount" type="Label" parent="Level" unique_id=826673115]
-layout_mode = 0
+layout_mode = 1
 offset_left = 19.0
 offset_top = 21.0
 offset_right = 99.0
 offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
 theme_override_font_sizes/font_size = 54
 text = "11"
 horizontal_alignment = 1

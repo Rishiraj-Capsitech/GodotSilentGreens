@@ -1,11 +1,16 @@
 extends Node2D
 
+# ============================================================================
+# LevelBuilder.gd  —  Builds levels from LevelData resources.
+# Now reads current_level from GameManager (1-based → 0-indexed internally).
+# Creates the Game HUD on a CanvasLayer at startup.
+# Listens to GameManager.level_completed to advance levels automatically.
+# ============================================================================
 
 @export var levels: Array[LevelData] = []
 @onready var background = $"../Background"
 @export var ball_scene: PackedScene
 @export var wind_particle_scene: PackedScene
-
 
 var ball: Node2D
 var current_level: int = 0
@@ -14,8 +19,26 @@ var last_level_data
 
 func _ready():
 	add_to_group("LevelLoader")
+	# Read starting level from GameManager (1-based → 0-indexed)
+	current_level = GameManager.current_level - 1
+	GameManager.level_completed.connect(_on_level_completed)
+	_setup_hud()
 	build_level()
 
+
+# ── HUD Setup ────────────────────────────────────────────────────────────────
+
+func _setup_hud() -> void:
+	var canvas := CanvasLayer.new()
+	canvas.name = "HUDLayer"
+	canvas.layer = 10
+	# Add to the root of the scene tree so it's not affected by Camera2D
+	get_tree().root.call_deferred("add_child", canvas)
+	var hud = preload("res://assets/UI_Scenes/Game_HUD.tscn").instantiate()
+	canvas.call_deferred("add_child", hud)
+
+
+# ── Level Building ───────────────────────────────────────────────────────────
 
 func spawn(data: SpawnData):
 	if data == null or data.scene == null:
@@ -30,9 +53,12 @@ func spawn(data: SpawnData):
 
 
 func build_level():
-
-		
 	if levels.is_empty():
+		return
+
+	# Guard against out-of-bounds (more levels in UI than data files)
+	if current_level < 0 or current_level >= levels.size():
+		push_warning("LevelBuilder: level index %d out of range (0–%d)" % [current_level, levels.size() - 1])
 		return
 
 	var level_data: LevelData = levels[current_level]
@@ -46,7 +72,6 @@ func build_level():
 			child.call_deferred("queue_free")
 			
 		
-
 
 	if level_data.background != null:
 		background.texture = level_data.background
@@ -94,18 +119,33 @@ func build_level():
 
 	ball.name = "ball"
 	ball.adjustball(level_data)
-	
+
+
+# ── Level Advancement ────────────────────────────────────────────────────────
+
+func _on_level_completed(_completed: int) -> void:
+	next_level()
+
 
 func next_level():
 	if is_instance_valid(ball):
 		ball.queue_free()
 
-	current_level += 1
+	# Sync with GameManager (which already incremented current_level)
+	current_level = GameManager.current_level - 1
+
 	if current_level >= levels.size():
-		current_level = 0
+		# No more level data available — all_levels_completed is
+		# handled by GameHUD listening to GameManager's signal.
+		return
 
 	build_level()
 
 
 func restart_level():
 	build_level()
+
+
+func _exit_tree() -> void:
+	if GameManager.level_completed.is_connected(_on_level_completed):
+		GameManager.level_completed.disconnect(_on_level_completed)
