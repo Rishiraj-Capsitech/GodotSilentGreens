@@ -95,6 +95,7 @@ func build_level():
 
 	ball.name = "ball"
 	ball.adjustball(level_data)
+	ball.timeout =7+level_data.ExtraTimeout
 	
 
 func next_level():

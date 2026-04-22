@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cb1fcsu8atbyi"]
+
+[ext_resource type="Texture2D" uid="uid://dm0tr5xbjdxgd" path="res://assets/sprites/Obstacles/Level-23_drum.png" id="1_rgvq6"]
+[ext_resource type="Script" uid="uid://cnc0o4e1euv7p" path="res://assets/scripts/Reuseables/Bounce.gd" id="2_mmwom"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uss4t"]
+friction = 0.0
+bounce = 132.0
+
+[node name="Drum" type="StaticBody2D" unique_id=189635286]
+disable_mode = 2
+physics_material_override = SubResource("PhysicsMaterial_uss4t")
+constant_linear_velocity = Vector2(0, 17.095)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1018280569]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(-134, -91, -135.1, -91, -141.2, -62, -142.3, -62, -145.4, -25, -146.5, -25, -146.5, 31.199997, -142.5, 55.299988, -142.5, 60.299988, -132.5, 88.399994, -132.5, 91.5, -121.5, 110.399994, -121.5, 112.70001, -111.5, 124.70001, -111.5, 126.899994, -86.5, 149.9, -86.5, 151.29999, -52.5, 166.20001, -52.5, 167.70001, -17.699997, 174, 3.699997, 174, 26.800003, 170, 31.800003, 170, 49.800003, 164, 53, 164, 82, 150, 84.20001, 150, 99.20001, 139, 101.29999, 139, 124.29999, 116, 125.70001, 116, 146.6, 79, 148, 79, 161, 35, 162.29999, 35, 169.29999, -26, 170.5, -26, 170.5, -61.100006, 166.5, -91.3, 166.5, -94.6)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=284696698]
+script = ExtResource("2_mmwom")
+bounce_multiplier = 1.2
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=806059224]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(-134, -91, -135.1, -91, -141.2, -62, -142.3, -62, -145.4, -25, -146.5, -25, -146.5, 31.199997, -142.5, 55.299988, -142.5, 60.299988, -132.5, 88.399994, -132.5, 91.5, -121.5, 110.399994, -121.5, 112.70001, -111.5, 124.70001, -111.5, 126.899994, -86.5, 149.9, -86.5, 151.29999, -52.5, 166.20001, -52.5, 167.70001, -17.699997, 174, 3.699997, 174, 26.800003, 170, 31.800003, 170, 49.800003, 164, 53, 164, 82, 150, 84.20001, 150, 99.20001, 139, 101.29999, 139, 124.29999, 116, 125.70001, 116, 146.6, 79, 148, 79, 161, 35, 162.29999, 35, 169.29999, -26, 170.5, -26, 170.5, -61.100006, 166.5, -91.3, 166.5, -94.6)
+
+[node name="Level23Drum" type="Sprite2D" parent="." unique_id=412371724]
+position = Vector2(0, 3)
+texture = ExtResource("1_rgvq6")

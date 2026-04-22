@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5mr3famgp5e5"
-path="res://.godot/imported/level-25-land.png-499f58f33a5e0a7ebe17efcffc43db23.ctex"
+uid="uid://odkpoe33np4a"
+path="res://.godot/imported/Level-25-land.png-1a069e431ff080b33fae80220f15476a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/LevelLands/level-25-land.png"
-dest_files=["res://.godot/imported/level-25-land.png-499f58f33a5e0a7ebe17efcffc43db23.ctex"]
+source_file="res://assets/sprites/LevelLands/Level-25-land.png"
+dest_files=["res://.godot/imported/Level-25-land.png-1a069e431ff080b33fae80220f15476a.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

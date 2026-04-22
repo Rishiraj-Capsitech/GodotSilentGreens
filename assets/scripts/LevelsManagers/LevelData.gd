@@ -24,3 +24,4 @@ class_name LevelData
 # Wind
 @export var wind_strength: float = 0.0
 @export var wind_direction: Vector2 = Vector2.ZERO
+@export var ExtraTimeout:int =0

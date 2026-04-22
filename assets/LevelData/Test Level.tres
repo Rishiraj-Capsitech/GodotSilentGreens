@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://brdhbyve35g5m"]
+
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_yqumy"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_t5do2"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="3_d85iv"]
+[ext_resource type="PackedScene" uid="uid://dx187f0ynge54" path="res://assets/scenes/Reuseable/LevelLands/Testing.tscn" id="4_io0f0"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="5_ue7s3"]
+
+[sub_resource type="Resource" id="Resource_kywns"]
+script = ExtResource("2_t5do2")
+scene = ExtResource("3_d85iv")
+position = Vector2(1839, 665)
+scale = Vector2(0.44, 0.44)
+
+[sub_resource type="Resource" id="Resource_76fj1"]
+script = ExtResource("2_t5do2")
+scene = ExtResource("4_io0f0")
+position = Vector2(17, 509)
+
+[resource]
+script = ExtResource("5_ue7s3")
+land = SubResource("Resource_76fj1")
+ball_spawn_position = Vector2(328, 819)
+goal = SubResource("Resource_kywns")
+background = ExtResource("1_yqumy")
+bgscale = Vector2(0.4709994, 0.35566404)
+bgpos = Vector2(853.00006, 360.00003)

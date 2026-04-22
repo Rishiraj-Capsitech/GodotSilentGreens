@@ -4,9 +4,9 @@ extends RigidBody2D
 @export var dot_count := 25
 @export var spacing := 0.2
 @export var power := 8.0
-@export var max_drag := 300.0
+@export var max_drag :=200.0
 @onready var dots_container = $dots
-@onready var trail = $Line2D
+@onready var trail:Line2D = $Line2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var colider: CollisionShape2D = $CollisionShape2D
 @onready var DotNode: Node2D = $dots
@@ -61,7 +61,7 @@ func _process(delta):
 
 
 func _physics_process(_delta):
-	if not freeze:
+	if not freeze and not goal:
 		apply_central_force(wind_force)
 
 
@@ -143,6 +143,7 @@ func shoot():
 	apply_impulse(drag_vector * power)
 	await get_tree().create_timer(1).timeout
 	detect_low_velovity()
+	
 	for i in range(timeout - 1):
 		if can_shoot:
 			return

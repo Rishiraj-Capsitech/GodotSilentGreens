@@ -106,3 +106,4 @@ bgpos = Vector2(853.00006, 360.00003)
 big_obstacles = Array[ExtResource("2_tvx6d")]([SubResource("Resource_1ttql")])
 clouds = Array[ExtResource("2_tvx6d")]([SubResource("Resource_08mtr"), SubResource("Resource_27xex"), SubResource("Resource_7kxjb")])
 decorations = Array[ExtResource("2_tvx6d")]([SubResource("Resource_5sb71"), SubResource("Resource_1aame"), SubResource("Resource_e5lv7"), SubResource("Resource_i1qho"), SubResource("Resource_bpaeu"), SubResource("Resource_x5yxu"), SubResource("Resource_iqabt"), SubResource("Resource_vrub7")])
+ExtraTimeout = 5

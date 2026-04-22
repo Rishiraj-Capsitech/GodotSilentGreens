@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dodwvm3irlb7p"]
+
+[ext_resource type="PackedScene" uid="uid://d2ig5akmjub1l" path="res://assets/scenes/Reuseable/LevelLands/level21.tscn" id="1_rshwe"]
+[ext_resource type="PackedScene" uid="uid://d0vm48yos28fr" path="res://assets/scenes/Reuseable/BigObstacles/level21obs.tscn" id="2_vfq8k"]
+[ext_resource type="PackedScene" uid="uid://bk02hi5vyx42s" path="res://assets/scenes/Reuseable/Core/ball.tscn" id="3_nxs21"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="4_1sm2n"]
+
+[node name="Level21" unique_id=198867441 instance=ExtResource("1_rshwe")]
+
+[node name="CollisionPolygon2D" parent="." index="0" unique_id=1576648581]
+polygon = PackedVector2Array(-400.69934, 943.194, 2416.021, 943.5952, 2423.2344, 948.8297, 2429.2593, 960.3534, 2434.144, 977.2588, 2437.9373, 998.63824, 2443.164, 1110.7455, 2434.8037, 1221.8318, 2426.4976, 1258.8405, 2421.4824, 1269.5348, 2415.9575, 1273.8121, -399.79163, 1273.5095, -405.99304, 1266.151, -411.20374, 1252.9304, -418.79993, 1212.4093, -423.71936, 1099.5906, -416.9021, 991.15247, -409.82678, 956.10706, -405.50122, 946.44574)
+
+[node name="SS2D_Shape_Closed" parent="." index="1" unique_id=1963439207]
+position = Vector2(1009, 1131)
+
+[node name="Level21" parent="." index="2" unique_id=1890976930 instance=ExtResource("2_vfq8k")]
+position = Vector2(1034, 652)
+
+[node name="ball" parent="." index="3" unique_id=1301821953 instance=ExtResource("3_nxs21")]
+position = Vector2(857, 737)
+
+[node name="MainFlag" parent="." index="4" unique_id=493944793 instance=ExtResource("4_1sm2n")]
+position = Vector2(853, 599)
+scale = Vector2(0.32, 0.32)
