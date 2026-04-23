@@ -7,10 +7,6 @@ extends Control
 @onready var portuguese_btn     : TextureButton = $PortugueseButton
 @onready var spanish_btn        : TextureButton = $SpanishButton
 @onready var sensitivity_slider : HSlider       = $Senstivity_Slider
-@onready var english_label      : Label         = $EnglishButton/Label
-@onready var portuguese_label   : Label         = $PortugueseButton/Label
-@onready var spanish_label      : Label         = $SpanishButton/Label
-@onready var sensitivity_label  : Label         = $Senstivity
 
 var _lang_selected : Texture2D
 var _lang_normal   : Texture2D
@@ -70,11 +66,6 @@ func _update_language_ui() -> void:
 	english_btn.texture_normal    = _lang_selected if GameManager.current_language == "en" else _lang_normal
 	portuguese_btn.texture_normal = _lang_selected if GameManager.current_language == "pt" else _lang_normal
 	spanish_btn.texture_normal    = _lang_selected if GameManager.current_language == "es" else _lang_normal
- 
-	english_label.text    = tr("LANG_EN")
-	portuguese_label.text = tr("LANG_PT")
-	spanish_label.text    = tr("LANG_ES")
-	sensitivity_label.text = tr("SETTINGS_SENSITIVITY")
  
 
 func _on_sensitivity_changed(value: float) -> void:
