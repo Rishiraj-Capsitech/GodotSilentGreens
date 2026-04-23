@@ -60,7 +60,6 @@ func _setup_hud():
 	pauseButton.pressed.connect(_on_pause_button_pressed)
 
 
-
 func _setup_pause():
 	if PausePanel == null:
 		print("PausePanel not found!")
@@ -83,7 +82,6 @@ func _setup_pause():
 	else:
 		print("node not found")
 	
-
 
 func _setup_GameOver():
 	if GameOver == null:
@@ -119,13 +117,13 @@ func _setup_settings():
 			SpanishButton and Senstivity):
 			CLoseSetiings.pressed.connect(Close_settings)
 			SoundToggel.pressed.connect(toggel_sound)
-			
-			
-			
+
+
+
+
 func toggel_sound():
 	GameManager.SoundOn = false if GameManager.SoundOn else true
 	SoundIcon.visible = GameManager.SoundOn
-
 
 
 func Close_settings():
@@ -142,14 +140,11 @@ func _on_pause_button_pressed() -> void:
 	SettingPannel.hide()
 	
 
-
 func _on_resume_button_pressed() -> void:
 	PausePanel.hide()
 	GameOver.hide()
 	HudPanel.show()
 	SettingPannel.hide()
-
-
 
 
 func _updateLife(life: int):
@@ -192,10 +187,3 @@ func _on_restart_button_pressed() -> void:
 	SettingPannel.hide()
 	HudPanel.show()
 	GameManager.reset_game() 
-
-
-
-	PausePanel.hide()
-	SettingPannel.show()
-	GameOver.hide()
-	HudPanel.hide() 
