@@ -18,6 +18,10 @@ var pauseButton:TextureButton
 var RestartGameOver:TextureButton
 var HomeGameOver:TextureButton
 var SkipGameOver:TextureButton
+var OopsPannel:CanvasLayer
+var oops_node:Control
+var oops_lable:Label
+var _current_tween: Tween
 
 
 #setiings buttons
@@ -41,6 +45,7 @@ func _ready():
 	HudPanel = get_tree().get_first_node_in_group("hud_ui")
 	GameOver = get_tree().get_first_node_in_group("game_over_ui")
 	SettingPannel = get_tree().get_first_node_in_group("setting_ui")
+	OopsPannel = get_tree().get_first_node_in_group("Oops_ui")
 	_setup_hud()
 	_setup_GameOver()
 	_setup_settings()
@@ -104,6 +109,18 @@ func _setup_GameOver():
 	if  HomeGameOver and RestartGameOver:
 		HomeGameOver.pressed.connect(_home)
 		RestartGameOver.pressed.connect(_on_restart_button_pressed)
+		
+	if OopsPannel == null:
+		print("OopsPannel not found!")
+		return
+	
+	oops_node= OopsPannel.get_node("OopsScene")
+	if oops_node:
+		oops_lable=oops_node.get_node("Label")
+
+
+		
+		
 
 func _setup_settings():
 	if not SettingPannel:
@@ -127,7 +144,29 @@ func _setup_settings():
 			SoundToggel.pressed.connect(toggel_sound)
 
 
-
+func _play_oops():
+	OopsPannel.show()
+	oops_lable.text = "Oops!"
+ 
+	if _current_tween and _current_tween.is_running():
+		_current_tween.kill()
+ 
+	oops_lable.visible = true
+	oops_lable.scale = Vector2.ZERO
+	oops_lable.modulate.a = 1.0
+	oops_lable.pivot_offset = oops_lable.size / 2.0  
+ 
+	_current_tween = create_tween()
+ 
+	_current_tween.parallel().tween_property(oops_lable, "scale", Vector2.ONE, 0.5)
+ 
+	_current_tween.parallel().tween_property(oops_lable, "modulate:a", 0.0, 1.0)
+	 
+	_current_tween.finished.connect(func():
+		oops_lable.visible = false
+	)
+	await get_tree().create_timer(1).timeout
+	OopsPannel.hide()
 
 
 func toggel_sound():
@@ -140,6 +179,7 @@ func Close_settings():
 	HudPanel.hide() 
 
 func _on_pause_button_pressed() -> void:
+	GameManager.state= GameManager.GameState.PAUSED
 	GameOver.hide()
 	PausePanel.show()
 	HudPanel.hide() 
@@ -150,6 +190,7 @@ func _on_resume_button_pressed() -> void:
 	GameOver.hide()
 	HudPanel.show()
 	SettingPannel.hide()
+	GameManager.state= GameManager.GameState.PLAYING
 
 func _updateLife(life: int):
 	for i in range(Lifes.size()):

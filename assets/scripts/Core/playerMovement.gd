@@ -137,6 +137,8 @@ func update_dots():
 #  SHOOT BALL
 func shoot():
 	if not can_shoot: return
+	if GameManager.state != GameManager.GameState.PLAYING:return
+	print(GameManager.state)
 	can_shoot = false
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0
@@ -181,6 +183,7 @@ func hide_dots():
 func losseLife():
 	#get_tree().get_root().get_node("Game/AudioStreamPlayer").play()
 	if not goal:
+		UiManager._play_oops()
 		can_shoot = true
 		freeze = true
 		freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC

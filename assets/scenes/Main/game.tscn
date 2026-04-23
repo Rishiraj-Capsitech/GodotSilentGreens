@@ -34,6 +34,7 @@
 [ext_resource type="Resource" uid="uid://dmb24735knbld" path="res://assets/LevelData/Level26.tres" id="29_ovvts"]
 [ext_resource type="PackedScene" uid="uid://bb3ydebmxjwsu" path="res://assets/scenes/UI/UI_Scenes/Pause_Panel.tscn" id="33_hp838"]
 [ext_resource type="PackedScene" uid="uid://d120dh8bsfkto" path="res://assets/scenes/UI/UI_Scenes/Game_HUD.tscn" id="33_jdh45"]
+[ext_resource type="PackedScene" uid="uid://bwjj46l7rekkg" path="res://assets/scenes/UI/UI_Scenes/Oops Scene.tscn" id="33_kgmh8"]
 [ext_resource type="PackedScene" uid="uid://dlh5jkk1gh5ud" path="res://assets/scenes/UI/UI_Scenes/GameOver.tscn" id="35_g5ui1"]
 [ext_resource type="PackedScene" uid="uid://dgujnooocvwvy" path="res://assets/scenes/UI/UI_Scenes/Settings.tscn" id="36_mtgfi"]
 
@@ -64,6 +65,13 @@ script = ExtResource("10_uhqxe")
 stream = SubResource("AudioStreamMP3_io3sb")
 volume_db = 4.669
 mix_target = 2
+
+[node name="OopsPannel" type="CanvasLayer" parent="." unique_id=1142994849 groups=["Oops_ui"]]
+visible = false
+
+[node name="OopsScene" parent="OopsPannel" unique_id=218439797 instance=ExtResource("33_kgmh8")]
+theme = null
+script = null
 
 [node name="HudCanvas" type="CanvasLayer" parent="." unique_id=1891827282 groups=["hud_ui"]]
 
