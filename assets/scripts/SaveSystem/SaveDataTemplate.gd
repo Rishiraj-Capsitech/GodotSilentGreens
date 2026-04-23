@@ -7,8 +7,9 @@ class_name SaveDataTemplate
 static func create_default_data() -> Dictionary:
 	return {
 		"progression": {
-			"levels_unlocked": [1], # List of level IDs
-			"levels_cleared": []    # List of cleared level IDs
+			"levels_unlocked": [1],
+			"levels_cleared": [],
+			"test_value": 0    # Added for visual testing
 		},
 		"settings": {
 			"language": "en",

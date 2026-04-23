@@ -11,20 +11,22 @@ func _ready():
 	# Ensure the save directory exists when the manager starts
 	verify_save_directory()
 
+
 ## Verifies if the save directory exists, creates it if not.
 func verify_save_directory():
 	if not DirAccess.dir_exists_absolute(SAVE_DIR):
 		DirAccess.make_dir_recursive_absolute(SAVE_DIR)
 
+
 ## Returns the full path for a given slot index.
 func get_save_path(slot: int) -> String:
 	return SAVE_DIR + "slot_" + str(slot) + SAVE_FILE_EXTENSION
+
 
 ## Saves the provided data dictionary into a specific slot.
 func save_game(slot: int, data: Dictionary) -> bool:
 	verify_save_directory()
 	var path = get_save_path(slot)
-	
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	if file == null:
 		push_error("SaveSystem: Could not open file for writing at %s. Error: %s" % [path, FileAccess.get_open_error()])
@@ -36,6 +38,7 @@ func save_game(slot: int, data: Dictionary) -> bool:
 	
 	print("SaveSystem: Game saved to slot %d" % slot)
 	return true
+
 
 ## Loads and returns data from a specific slot. Returns an empty dictionary if loading fails or file doesn't exist.
 func load_game(slot: int) -> Dictionary:
@@ -61,6 +64,7 @@ func load_game(slot: int) -> Dictionary:
 		
 	return json.data
 
+
 ## Deletes the save file for a specific slot.
 func delete_save(slot: int) -> bool:
 	var path = get_save_path(slot)
@@ -74,9 +78,11 @@ func delete_save(slot: int) -> bool:
 			return false
 	return false
 
+
 ## Checks if a save exists in the specified slot.
 func has_save(slot: int) -> bool:
 	return FileAccess.file_exists(get_save_path(slot))
+
 
 ## Returns a list of all available save slot indices.
 func get_available_slots() -> Array:
@@ -94,3 +100,25 @@ func get_available_slots() -> Array:
 			file_name = dir.get_next()
 	slots.sort()
 	return slots
+
+
+## Deletes the entire saves directory and all save files inside.
+## Equivalent to "Clear PlayerPrefs" in Unity.
+func clear_all_data() -> void:
+	if DirAccess.dir_exists_absolute(SAVE_DIR):
+		var dir = DirAccess.open(SAVE_DIR)
+		if dir:
+			dir.list_dir_begin()
+			var file_name = dir.get_next()
+			while file_name != "":
+				if not dir.current_is_dir():
+					dir.remove(file_name)
+				file_name = dir.get_next()
+			
+			# Finally remove the directory itself
+			DirAccess.remove_absolute(SAVE_DIR)
+			print("SaveSystem: All save data cleared.")
+		else:
+			push_error("SaveSystem: Could not open directory to clear data.")
+	else:
+		print("SaveSystem: No save data to clear.")
