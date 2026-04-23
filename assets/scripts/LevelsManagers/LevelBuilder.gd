@@ -6,7 +6,6 @@ extends Node2D
 @export var ball_scene: PackedScene
 @export var wind_particle_scene: PackedScene
 
-
 var ball: Node2D
 var current_level: int = 0
 var last_level_data
@@ -14,8 +13,22 @@ var last_level_data
 
 func _ready():
 	add_to_group("LevelLoader")
+	# Read starting level from GameManager (1-based → 0-indexed)
+	current_level = GameManager.current_level - 1
+	GameManager.level_completed.connect(_on_level_completed)
+	_setup_hud()
 	build_level()
+ 
 
+func _setup_hud() -> void:
+	var canvas := CanvasLayer.new()
+	canvas.name = "HUDLayer"
+	canvas.layer = 10
+	# Add to the root of the scene tree so it's not affected by Camera2D
+	get_tree().root.call_deferred("add_child", canvas)
+	var hud = preload("res://assets/UI_Scenes/Game_HUD.tscn").instantiate()
+	canvas.call_deferred("add_child", hud)
+ 
 
 func spawn(data: SpawnData):
 	if data == null or data.scene == null:
@@ -31,14 +44,15 @@ func spawn(data: SpawnData):
 
 
 func build_level():
-
-		
 	if levels.is_empty():
+		return
+ 
+	if current_level < 0 or current_level >= levels.size():
+		push_warning("LevelBuilder: level index %d out of range (0–%d)" % [current_level, levels.size() - 1])
 		return
 
 	var level_data: LevelData = levels[current_level]
-
-	# Clear old level
+ 
 	for child in get_children():
 		if is_instance_valid(ball):
 			ball.queue_free()
@@ -47,7 +61,6 @@ func build_level():
 			child.call_deferred("queue_free")
 			
 		
-
 
 	if level_data.background != null:
 		background.texture = level_data.background
@@ -101,13 +114,20 @@ func build_level():
 func next_level():
 	if is_instance_valid(ball):
 		ball.queue_free()
+ 
+	current_level = GameManager.current_level - 1
 
-	current_level += 1
 	if current_level >= levels.size():
-		current_level = 0
+ 
+		return
 
 	build_level()
 
 
 func restart_level():
 	build_level()
+
+
+func _exit_tree() -> void:
+	if GameManager.level_completed.is_connected(_on_level_completed):
+		GameManager.level_completed.disconnect(_on_level_completed)

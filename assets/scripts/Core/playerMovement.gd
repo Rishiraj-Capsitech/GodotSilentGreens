@@ -46,8 +46,8 @@ func _input(event):
 		else:
 			if dragging:
 				var drag_distance = (drag_start - get_global_mouse_position()).length()
-				
-				if drag_distance > min_drag:
+				var effective_min_drag = min_drag / GameManager.sensitivity
+				if drag_distance > effective_min_drag:
 					shoot()
 				
 			dragging = false
@@ -125,9 +125,7 @@ func update_dots():
 		else:
 			dots[i].global_position = simulated_pos
 			dots[i].visible = true
-
-
-#  SHOOT BALL
+ 
 func shoot():
 	if not can_shoot: return
 	can_shoot = false
@@ -172,12 +170,18 @@ func hide_dots():
 
 
 func losseLife():
-	#get_tree().get_root().get_node("Game/AudioStreamPlayer").play()
 	if not goal:
-		can_shoot = true
-		freeze = true
-		freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
-		trail.clear_points()
-		position = spawn_position
-		get_tree().get_root().get_node("Game/LevelLoader").build_level()
-		
+		GameManager.lose_life()
+		if GameManager.lives > 0:
+ 
+			can_shoot = true
+			freeze = true
+			freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
+			trail.clear_points()
+			position = spawn_position
+			get_tree().get_root().get_node("Game/LevelLoader").build_level()
+		else:
+ 
+			can_shoot = false
+			freeze = true
+			freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
