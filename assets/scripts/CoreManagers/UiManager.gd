@@ -1,16 +1,23 @@
 extends Node
 
+#panels
 var PausePanel:CanvasLayer
 var HudPanel:CanvasLayer
 var GameOver:CanvasLayer
 var SettingPannel:CanvasLayer
+
+
+#hud 
 var Lifes: Array = []
 var LevelNumber:Label
 var CoinCount:Label
+var pauseButton:TextureButton
+
+
+#Gameover buttons
 var RestartGameOver:TextureButton
 var HomeGameOver:TextureButton
 var SkipGameOver:TextureButton
-var pauseButton:TextureButton
 
 
 #setiings buttons
@@ -39,6 +46,9 @@ func _ready():
 	_setup_settings()
 	_setup_pause()
 
+
+#setup methods
+
 func _setup_hud():
 	if HudPanel == null:
 		print("HUD not found!")
@@ -58,7 +68,6 @@ func _setup_hud():
 	]
 	
 	pauseButton.pressed.connect(_on_pause_button_pressed)
-
 
 func _setup_pause():
 	if PausePanel == null:
@@ -82,7 +91,6 @@ func _setup_pause():
 	else:
 		print("node not found")
 	
-
 func _setup_GameOver():
 	if GameOver == null:
 		print("Gameover not found!")
@@ -121,24 +129,21 @@ func _setup_settings():
 
 
 
+
 func toggel_sound():
 	GameManager.SoundOn = false if GameManager.SoundOn else true
 	SoundIcon.visible = GameManager.SoundOn
-
 
 func Close_settings():
 	SettingPannel.hide()
 	GameOver.hide()
 	HudPanel.hide() 
 
-
-
 func _on_pause_button_pressed() -> void:
 	GameOver.hide()
 	PausePanel.show()
 	HudPanel.hide() 
 	SettingPannel.hide()
-	
 
 func _on_resume_button_pressed() -> void:
 	PausePanel.hide()
@@ -146,18 +151,15 @@ func _on_resume_button_pressed() -> void:
 	HudPanel.show()
 	SettingPannel.hide()
 
-
 func _updateLife(life: int):
 	for i in range(Lifes.size()):
 		Lifes[i].visible = i < life
-		
 
 func _gameOver():
 	GameOver.show()
 	PausePanel.hide()
 	HudPanel.hide()
 	SettingPannel.hide()
-
 
 func add_coin(coin: int):
 	var current = int(CoinCount.text)
@@ -170,7 +172,6 @@ func set_level(level:int):
 	else:
 		print(" Not Found")
 
-
 func _home():
 	print("pressed")
 
@@ -179,7 +180,6 @@ func _open_setting():
 	if GameOver and HudPanel:
 		GameOver.hide()
 		HudPanel.hide() 
-
 
 func _on_restart_button_pressed() -> void:	
 	PausePanel.hide()
