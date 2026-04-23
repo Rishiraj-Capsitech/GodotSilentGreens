@@ -1,8 +1,3 @@
-# ============================================================================
-# GameOverScreen.gd  —  Attach to root "GameOver" in GameOver.tscn
-# Provides Home and Restart buttons on game over.
-# The SkipButton (ad-related) is hidden since ads are removed.
-# ============================================================================
 extends Control
 
 const MAIN_MENU_PATH    := "res://assets/UI_Scenes/main_menu.tscn"
@@ -16,20 +11,16 @@ const HOME_CONFIRM_PATH := "res://assets/UI_Scenes/Home_Confirmation.tscn"
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-
-	# Disable the ad-skip button for now (enable when ads are integrated)
+ 
 	skip_btn.disabled = true
-
-	# Ensure the decorative back panel doesn't block button clicks
+ 
 	back_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	home_btn.pressed.connect(_on_home)
 	restart_btn.pressed.connect(_on_restart)
 
 	_animate_in()
-
-
-# ── Actions ──────────────────────────────────────────────────────────────────
+ 
 
 func _on_home() -> void:
 	_cleanup_hud()
@@ -42,16 +33,12 @@ func _on_restart() -> void:
 	get_tree().paused = false
 	GameManager.reset_run()
 	get_tree().reload_current_scene()
-
-
-## Removes the persistent HUDLayer from the scene root before navigating away.
+ 
 func _cleanup_hud() -> void:
 	var hud_layer = get_tree().root.get_node_or_null("HUDLayer")
 	if hud_layer:
 		hud_layer.queue_free()
-
-
-# ── Entrance animation ──────────────────────────────────────────────────────
+ 
 
 func _animate_in() -> void:
 	modulate.a = 0.0

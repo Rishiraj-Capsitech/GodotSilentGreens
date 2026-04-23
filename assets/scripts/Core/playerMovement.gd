@@ -125,9 +125,7 @@ func update_dots():
 		else:
 			dots[i].global_position = simulated_pos
 			dots[i].visible = true
-
-
-#  SHOOT BALL
+ 
 func shoot():
 	if not can_shoot: return
 	can_shoot = false
@@ -174,7 +172,7 @@ func losseLife():
 	if not goal:
 		GameManager.lose_life()
 		if GameManager.lives > 0:
-			# Still have lives — reset ball for another try
+ 
 			can_shoot = true
 			freeze = true
 			freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
@@ -182,7 +180,7 @@ func losseLife():
 			position = spawn_position
 			get_tree().get_root().get_node("Game/LevelLoader").build_level()
 		else:
-			# Game over — stop the ball, GameHUD handles the overlay
+ 
 			can_shoot = false
 			freeze = true
 			freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC

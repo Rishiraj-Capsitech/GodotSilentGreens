@@ -1,23 +1,17 @@
-# ============================================================================
-# MainMenu.gd  —  Attach to root "MainMenu" in main_menu.tscn
-# Level carousel with smooth mouse/touch drag and inertia.
-# The centred level button scales up; all others stay small.
-# Handles arrow navigation, drag scroll, and settings overlay.
-# ============================================================================
+ 
 extends Control
 
 const LEVEL_ITEM_PATH := "res://assets/UI_Scenes/LevelItem.tscn"
 const SETTINGS_PATH   := "res://assets/UI_Scenes/Settings.tscn"
 const GAME_PATH       := "res://assets/scenes/Main/game.tscn"
-
-# ── Carousel tunables ────────────────────────────────────────────────────────
-const ITEM_SIZE       := 75.0       # base square size of each level button
-const ITEM_SPACING    := 30.0       # gap between items
-const HIGHLIGHT_SCALE := 1.15       # scale multiplier for the centred item
-const SCALE_LERP      := 12.0       # how fast scale animates (per second)
-const SCROLL_DURATION := 0.3        # arrow / click scroll animation time
-const INERTIA_DECAY   := 5.0        # how fast drag inertia fades (per sec)
-const DRAG_THRESHOLD  := 6.0        # px movement before drag overrides click
+ 
+const ITEM_SIZE       := 75.0        
+const ITEM_SPACING    := 30.0      
+const HIGHLIGHT_SCALE := 1.15        
+const SCALE_LERP      := 12.0        
+const SCROLL_DURATION := 0.3       
+const INERTIA_DECAY   := 5.0        
+const DRAG_THRESHOLD  := 6.0       
 
 @onready var settings_btn : TextureButton   = $SettingsButton
 @onready var arrow_left   : TextureButton   = $Arrowleft
@@ -31,16 +25,15 @@ var _scroll_tween     : Tween
 
 # Drag state
 var _dragging         := false
-var _drag_started     := false    # true once mouse moved past threshold
-var _drag_origin_x    := 0.0      # mouse x at press start
+var _drag_started     := false   
+var _drag_origin_x    := 0.0       
 var _drag_velocity    := 0.0
 var _last_delta_time  := 0.016
 
 
 func _ready() -> void:
 	_level_item_scene = load(LEVEL_ITEM_PATH)
-
-	# Hide the built-in scrollbar visually (scroll still works)
+ 
 	for style_name in ["scroll", "grabber", "grabber_highlight", "grabber_pressed"]:
 		scroll_cont.get_h_scroll_bar().add_theme_stylebox_override(
 			style_name, StyleBoxEmpty.new()
@@ -53,8 +46,7 @@ func _ready() -> void:
 	settings_btn.pressed.connect(_on_settings)
 	arrow_left.pressed.connect(_on_arrow_left)
 	arrow_right.pressed.connect(_on_arrow_right)
-
-	# Scroll to the player's current level after layout settles
+ 
 	await get_tree().process_frame
 	await get_tree().process_frame
 	var idx = clampi(GameManager.max_unlocked_level - 1, 0, _items.size() - 1)
@@ -64,20 +56,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_last_delta_time = delta
 	_update_carousel_scales(delta)
-
-	# Apply inertia when not actively dragging and no tween running
+ 
 	if not _dragging and (_scroll_tween == null or not _scroll_tween.is_valid()):
 		if absf(_drag_velocity) > 1.0:
 			scroll_cont.scroll_horizontal += int(_drag_velocity * delta)
 			_drag_velocity = lerpf(_drag_velocity, 0.0, INERTIA_DECAY * delta)
 		else:
 			_drag_velocity = 0.0
-
-
-# ── Drag / Touch Input ──────────────────────────────────────────────────────
+ 
 
 func _input(event: InputEvent) -> void:
-	# Only handle input inside the scroll area
+ 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		var scroll_rect = scroll_cont.get_global_rect()
 		if event.pressed:
@@ -86,7 +75,7 @@ func _input(event: InputEvent) -> void:
 				_drag_started = false
 				_drag_origin_x = event.global_position.x
 				_drag_velocity = 0.0
-				# Kill any running scroll tween
+ 
 				if _scroll_tween and _scroll_tween.is_valid():
 					_scroll_tween.kill()
 		else:
@@ -102,9 +91,7 @@ func _input(event: InputEvent) -> void:
 			scroll_cont.scroll_horizontal -= int(event.relative.x)
 			if _last_delta_time > 0.001:
 				_drag_velocity = -event.relative.x / _last_delta_time
-
-
-# ── Level Grid ───────────────────────────────────────────────────────────────
+ 
 
 func _spawn_levels() -> void:
 	for child in level_row.get_children():
@@ -127,7 +114,7 @@ func _spawn_levels() -> void:
 
 
 func _on_level_selected(level_number: int) -> void:
-	# If the user was dragging, ignore the click
+ 
 	if _drag_started:
 		return
 
@@ -140,9 +127,7 @@ func _on_level_selected(level_number: int) -> void:
 	GameManager.current_level = level_number
 	GameManager.reset_run()
 	get_tree().change_scene_to_file(GAME_PATH)
-
-
-# ── Carousel scale effect ────────────────────────────────────────────────────
+ 
 
 func _update_carousel_scales(delta: float) -> void:
 	if _items.is_empty():
@@ -151,33 +136,26 @@ func _update_carousel_scales(delta: float) -> void:
 	var scroll_center = scroll_cont.scroll_horizontal + scroll_cont.size.x / 2.0
 
 	for item in _items:
-		# Item centre position inside the level_row
+ 
 		var item_center_x = item.position.x + item.size.x / 2.0
 		var dist = absf(item_center_x - scroll_center)
-
-		# Target scale: 1.0 far away, HIGHLIGHT_SCALE when centred
+ 
 		var half_zone = ITEM_SIZE + ITEM_SPACING
 		var t = clampf(1.0 - dist / half_zone, 0.0, 1.0)
 		var target_scale = lerpf(1.0, HIGHLIGHT_SCALE, t)
-
-		# Smooth lerp towards target scale
+ 
 		var current_scale = item.scale.x
 		var new_scale = lerpf(current_scale, target_scale, SCALE_LERP * delta)
 		item.pivot_offset = item.size / 2.0
 		item.scale = Vector2(new_scale, new_scale)
-
-		# Fade effect towards edges 
+ 
 		var max_dist = scroll_cont.size.x / 2.0
 		var fade_t = clampf(1.0 - (dist / max_dist), 0.0, 1.0)
-		# Multiply by 1.5 to keep the middle items fully opaque, clamping down to 0.2
+ 
 		var target_alpha = clampf(fade_t * 1.5, 0.2, 1.0)
-		
-		# Only apply alpha if it's rendered, to optimise
+ 
 		item.modulate.a = lerpf(item.modulate.a, target_alpha, SCALE_LERP * delta)
-
-
-# ── Scrolling helpers ────────────────────────────────────────────────────────
-
+ 
 func _item_center_x(index: int) -> float:
 	var item = _items[index]
 	return item.position.x + item.size.x / 2.0
@@ -223,9 +201,7 @@ func _on_arrow_right() -> void:
 		if _item_center_x(i) > center + 10:
 			best_idx = i
 	_smooth_scroll_to(best_idx)
-
-
-# ── Settings Overlay ─────────────────────────────────────────────────────────
+ 
 
 func _on_settings() -> void:
 	if not has_node("Settings"):

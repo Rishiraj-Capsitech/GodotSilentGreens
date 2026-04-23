@@ -1,9 +1,3 @@
-# ============================================================================
-# CompletionMessage.gd  —  Attach to root "CompletionMessage"
-#                           in Completion_Message.tscn
-# Shown after the player completes all 30 levels.
-# Contains a single Home button that returns to the main menu.
-# ============================================================================
 extends Control
 
 const MAIN_MENU_PATH := "res://assets/UI_Scenes/main_menu.tscn"
@@ -21,8 +15,7 @@ func _on_home() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file(MAIN_MENU_PATH)
 
-
-# ── Entrance animation ──────────────────────────────────────────────────────
+ 
 
 func _animate_in() -> void:
 	modulate.a = 0.0

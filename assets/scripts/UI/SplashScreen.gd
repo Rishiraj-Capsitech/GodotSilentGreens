@@ -1,8 +1,4 @@
-# ============================================================================
-# SplashScreen.gd  —  Attach to root "SplashScreen" in Splash_Screen.tscn
-# Shows the splash logo for 3 seconds (smooth fade-in → hold → fade-out),
-# then transitions to the main menu.
-# ============================================================================
+ 
 extends Control
 
 const MAIN_MENU_PATH := "res://assets/UI_Scenes/main_menu.tscn"
@@ -15,8 +11,7 @@ const FADE_OUT := 1.0
 
 func _ready() -> void:
 	logo.modulate.a = 0.0
-
-	# Wait one frame so layout is settled
+ 
 	await get_tree().process_frame
 
 	var tw := create_tween()

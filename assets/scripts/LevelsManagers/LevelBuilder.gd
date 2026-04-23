@@ -1,11 +1,5 @@
 extends Node2D
 
-# ============================================================================
-# LevelBuilder.gd  —  Builds levels from LevelData resources.
-# Now reads current_level from GameManager (1-based → 0-indexed internally).
-# Creates the Game HUD on a CanvasLayer at startup.
-# Listens to GameManager.level_completed to advance levels automatically.
-# ============================================================================
 
 @export var levels: Array[LevelData] = []
 @onready var background = $"../Background"
@@ -24,9 +18,7 @@ func _ready():
 	GameManager.level_completed.connect(_on_level_completed)
 	_setup_hud()
 	build_level()
-
-
-# ── HUD Setup ────────────────────────────────────────────────────────────────
+ 
 
 func _setup_hud() -> void:
 	var canvas := CanvasLayer.new()
@@ -36,9 +28,7 @@ func _setup_hud() -> void:
 	get_tree().root.call_deferred("add_child", canvas)
 	var hud = preload("res://assets/UI_Scenes/Game_HUD.tscn").instantiate()
 	canvas.call_deferred("add_child", hud)
-
-
-# ── Level Building ───────────────────────────────────────────────────────────
+ 
 
 func spawn(data: SpawnData):
 	if data == null or data.scene == null:
@@ -55,15 +45,13 @@ func spawn(data: SpawnData):
 func build_level():
 	if levels.is_empty():
 		return
-
-	# Guard against out-of-bounds (more levels in UI than data files)
+ 
 	if current_level < 0 or current_level >= levels.size():
 		push_warning("LevelBuilder: level index %d out of range (0–%d)" % [current_level, levels.size() - 1])
 		return
 
 	var level_data: LevelData = levels[current_level]
-
-	# Clear old level
+ 
 	for child in get_children():
 		if is_instance_valid(ball):
 			ball.queue_free()
@@ -121,8 +109,6 @@ func build_level():
 	ball.adjustball(level_data)
 
 
-# ── Level Advancement ────────────────────────────────────────────────────────
-
 func _on_level_completed(_completed: int) -> void:
 	next_level()
 
@@ -130,13 +116,11 @@ func _on_level_completed(_completed: int) -> void:
 func next_level():
 	if is_instance_valid(ball):
 		ball.queue_free()
-
-	# Sync with GameManager (which already incremented current_level)
+ 
 	current_level = GameManager.current_level - 1
 
 	if current_level >= levels.size():
-		# No more level data available — all_levels_completed is
-		# handled by GameHUD listening to GameManager's signal.
+ 
 		return
 
 	build_level()
