@@ -74,3 +74,6 @@ func load_progress() -> void:
 		sensitivity        = config.get_value("settings", "sensitivity", 1.0)
  
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not sound_on)
+	
+	if has_node("/root/LocalizationManager"):
+		LocalizationManager.set_locale(current_language)

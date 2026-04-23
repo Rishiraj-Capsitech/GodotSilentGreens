@@ -7,6 +7,10 @@ extends Control
 @onready var portuguese_btn     : TextureButton = $PortugueseButton
 @onready var spanish_btn        : TextureButton = $SpanishButton
 @onready var sensitivity_slider : HSlider       = $Senstivity_Slider
+@onready var english_label      : Label         = $EnglishButton/Label
+@onready var portuguese_label   : Label         = $PortugueseButton/Label
+@onready var spanish_label      : Label         = $SpanishButton/Label
+@onready var sensitivity_label  : Label         = $Senstivity
 
 var _lang_selected : Texture2D
 var _lang_normal   : Texture2D
@@ -16,8 +20,8 @@ func _ready() -> void:
  
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-	_lang_selected = preload("res://assets/UI_art/language selected.png")
-	_lang_normal   = preload("res://assets/UI_art/language not selected.png")
+	_lang_selected = preload("res://assets/sprites/UI_art/language selected.png")
+	_lang_normal   = preload("res://assets/sprites/UI_art/language not selected.png")
  
 	_update_sound_ui()
 	_update_language_ui()
@@ -33,6 +37,9 @@ func _ready() -> void:
 	portuguese_btn.pressed.connect(func(): _set_language("pt"))
 	spanish_btn.pressed.connect(func(): _set_language("es"))
 	sensitivity_slider.value_changed.connect(_on_sensitivity_changed)
+
+	if has_node("/root/LocalizationManager"):
+		LocalizationManager.locale_changed.connect(func(_l): _update_language_ui())
 
 	_animate_in()
  
@@ -53,7 +60,8 @@ func _update_sound_ui() -> void:
 
 func _set_language(lang: String) -> void:
 	GameManager.current_language = lang
-	_update_language_ui()
+	LocalizationManager.set_locale(lang)
+	# _update_language_ui is called via signal connection
  
 	GameManager.save_progress()
 
@@ -62,6 +70,11 @@ func _update_language_ui() -> void:
 	english_btn.texture_normal    = _lang_selected if GameManager.current_language == "en" else _lang_normal
 	portuguese_btn.texture_normal = _lang_selected if GameManager.current_language == "pt" else _lang_normal
 	spanish_btn.texture_normal    = _lang_selected if GameManager.current_language == "es" else _lang_normal
+ 
+	english_label.text    = tr("LANG_EN")
+	portuguese_label.text = tr("LANG_PT")
+	spanish_label.text    = tr("LANG_ES")
+	sensitivity_label.text = tr("SETTINGS_SENSITIVITY")
  
 
 func _on_sensitivity_changed(value: float) -> void:
