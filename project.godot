@@ -15,13 +15,14 @@ ss2d/version="3.3.1"
 [application]
 
 config/name="silent Greens"
-run/main_scene="res://assets/UI_Scenes/Splash_Screen.tscn"
+run/main_scene="res://assets/scenes/UI_Scenes/Splash_Screen.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://assets/scripts/UI/GameManager.gd"
+SaveManager="*uid://b617p06w8kg4"
 
 [display]
 
@@ -36,7 +37,7 @@ movie_writer/fps=120
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/save_system_tools/plugin.cfg")
 
 [global_group]
 

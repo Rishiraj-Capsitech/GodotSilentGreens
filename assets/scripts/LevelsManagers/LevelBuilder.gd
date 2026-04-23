@@ -25,9 +25,11 @@ func _setup_hud() -> void:
 	canvas.name = "HUDLayer"
 	canvas.layer = 10
 	# Add to the root of the scene tree so it's not affected by Camera2D
-	get_tree().root.call_deferred("add_child", canvas)
+	#get_tree().root.call_deferred("add_child", canvas)
+	print(get_tree().root)
+	add_child(canvas)
 	var hud = preload("res://assets/UI_Scenes/Game_HUD.tscn").instantiate()
-	canvas.call_deferred("add_child", hud)
+	canvas.add_child(hud)
  
 
 func spawn(data: SpawnData):
