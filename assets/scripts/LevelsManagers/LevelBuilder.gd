@@ -109,7 +109,11 @@ func build_level():
 	ball.name = "ball"
 	ball.adjustball(level_data)
 	ball.timeout =7+level_data.ExtraTimeout
-	
+
+
+func _on_level_completed(_completed: int) -> void:
+	next_level()
+
 
 func next_level():
 	if is_instance_valid(ball):
