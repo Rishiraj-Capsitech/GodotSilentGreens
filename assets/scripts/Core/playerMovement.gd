@@ -66,25 +66,32 @@ func _physics_process(_delta):
 
 
 func check_out_of_bounds(delta):
-	var camera = get_viewport().get_camera_2d()
+	var viewport = get_viewport()
+	var camera = viewport.get_camera_2d()
 	if camera == null:
 		return
 
-	var screen_size = get_viewport_rect().size
-	var cam_pos = camera.global_position
-	var rect = Rect2(
-		cam_pos - screen_size * 0.5,
-		screen_size
-	)
+	var canvas_transform = viewport.get_canvas_transform()
+	var inv = canvas_transform.affine_inverse()
+
+	# Convert screen corners → world
+	var top_left = inv * Vector2.ZERO
+	var bottom_right = inv * viewport.get_visible_rect().size
+
+	var rect = Rect2(top_left, bottom_right - top_left)
+
 	if rect.has_point(global_position):
 		out_of_screen_time = 0.0
 	else:
 		out_of_screen_time += delta
 		if out_of_screen_time >= max_out_time:
+			print("out of screen")
 			losseLife()
 			out_of_screen_time = 0.0
-
-
+			
+			
+			
+			
 func update_dots():
 	var mouse_pos = get_global_mouse_position()
 	var drag_vector = drag_start - mouse_pos
@@ -148,7 +155,7 @@ func shoot():
 		if can_shoot:
 			return
 		await get_tree().create_timer(1).timeout
-
+	print("time out")
 	losseLife()
 	
 	
@@ -179,5 +186,6 @@ func losseLife():
 		freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
 		trail.clear_points()
 		position = spawn_position
+		GameManager.lose_life()
 		get_tree().get_root().get_node("Game/LevelLoader").build_level()
 		

@@ -8,13 +8,13 @@ extends Node2D
 
 
 var ball: Node2D
-var current_level: int = 0
 var last_level_data
 
 
 func _ready():
 	add_to_group("LevelLoader")
 	build_level()
+	GameManager.level_restarted.connect(_on_level_restarted)
 
 
 func spawn(data: SpawnData):
@@ -31,12 +31,10 @@ func spawn(data: SpawnData):
 
 
 func build_level():
-
-		
 	if levels.is_empty():
 		return
-
-	var level_data: LevelData = levels[current_level]
+	UiManager.set_level(GameManager.current_level+1)
+	var level_data: LevelData = levels[GameManager.current_level]
 
 	# Clear old level
 	for child in get_children():
@@ -97,14 +95,17 @@ func build_level():
 	ball.adjustball(level_data)
 	ball.timeout =7+level_data.ExtraTimeout
 	
+func _on_level_restarted():
+	build_level()
+
 
 func next_level():
 	if is_instance_valid(ball):
 		ball.queue_free()
 
-	current_level += 1
-	if current_level >= levels.size():
-		current_level = 0
+	GameManager.current_level += 1
+	if GameManager.current_level >= levels.size():
+		GameManager.current_level = 0
 
 	build_level()
 

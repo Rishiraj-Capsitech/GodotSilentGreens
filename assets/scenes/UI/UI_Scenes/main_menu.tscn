@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dnih6bnkgp5cy"]
+
+[ext_resource type="Texture2D" uid="uid://dbqk2i4fdbvak" path="res://assets/scenes/UI/UI_art/logo (1).png" id="1_fu7sn"]
+[ext_resource type="Theme" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_ise5x"]
+[ext_resource type="Texture2D" uid="uid://d3cgmgns026ig" path="res://assets/scenes/UI/UI_art/bg.png" id="1_ytsr5"]
+[ext_resource type="Texture2D" uid="uid://d1605an2m3sl2" path="res://assets/scenes/UI/UI_art/settings icon (1).png" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://bdopk3b3kdmc0" path="res://assets/scenes/UI/UI_art/Arrow_left.png" id="5_lqgru"]
+[ext_resource type="Texture2D" uid="uid://37cm7c8cknor" path="res://assets/scenes/UI/UI_art/Arrow_right.png" id="6_tnld6"]
+[ext_resource type="Script" uid="uid://lh6p80an437t" path="res://assets/scenes/UI/UI/MainMenu.gd" id="7_scrpt"]
+
+[node name="MainMenu" type="Control" unique_id=701134992]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ise5x")
+script = ExtResource("7_scrpt")
+
+[node name="Game_Background" type="TextureRect" parent="." unique_id=712124677]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ytsr5")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="TextureRect" parent="." unique_id=743505459]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -178.0
+offset_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fu7sn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SettingsButton" type="TextureButton" parent="." unique_id=938155497]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -190.0
+offset_top = 53.0
+offset_right = -50.0
+offset_bottom = 193.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_fu7sn")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=854511059]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = 234.0
+offset_right = 239.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 0
+
+[node name="LevelRow" type="HBoxContainer" parent="ScrollContainer" unique_id=1480854510]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Arrowleft" type="TextureButton" parent="." unique_id=1166174815]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 309.0
+offset_top = -120.0
+offset_right = 394.0
+offset_bottom = -60.0
+grow_vertical = 0
+texture_normal = ExtResource("5_lqgru")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Arrowright" type="TextureButton" parent="." unique_id=1585864589]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -412.0
+offset_top = -120.0
+offset_right = -327.0
+offset_bottom = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_tnld6")
+ignore_texture_size = true
+stretch_mode = 5

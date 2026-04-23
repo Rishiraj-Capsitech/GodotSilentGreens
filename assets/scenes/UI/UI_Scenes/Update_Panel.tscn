@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cg6ngoo3gdvn6"]
+
+[ext_resource type="Texture2D" uid="uid://b218kd8trd6uq" path="res://assets/UI_art/Update Screen.png" id="1_gwxmv"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/Text_Font/NotoSans.tres" id="1_myryc"]
+[ext_resource type="Texture2D" uid="uid://dcsf556csf7bf" path="res://assets/UI_art/Update.png" id="2_24avn"]
+
+[node name="UpdatePanel" type="Control" unique_id=1434902333]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_myryc")
+
+[node name="Update_Background" type="TextureRect" parent="." unique_id=2101488435]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gwxmv")
+expand_mode = 1
+
+[node name="Message1" type="Label" parent="." unique_id=1376312503]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -316.0
+offset_top = 174.0
+offset_right = 327.0
+offset_bottom = 322.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_font_sizes/font_size = 108
+text = "What’s New!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message2" type="Label" parent="." unique_id=519701477]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -207.0
+offset_right = 360.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_font_sizes/font_size = 64
+text = "New Update Available!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message3" type="Label" parent="." unique_id=856581299]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -597.5
+offset_top = -74.0
+offset_right = 597.5
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_font_sizes/font_size = 50
+text = "Update now to enjoy the latest version"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpdateButton" type="TextureButton" parent="." unique_id=874589017]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 151.0
+offset_right = 168.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_24avn")
+ignore_texture_size = true
+stretch_mode = 6

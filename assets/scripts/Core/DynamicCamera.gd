@@ -3,6 +3,7 @@ extends Camera2D
 @export var target_width := 1920.0
 @export var target_height := 1080.0
 @export var min_height := 900.0  # minimum safe visible height
+@onready var hud =$"../HudCanvas/GameHUD"
 
 func _ready():
 	update_camera()
@@ -22,6 +23,8 @@ func update_camera():
 		visible_height = min_height
 
 	zoom = Vector2(zoom_value, zoom_value)
+	#for child in hud.get_children():
+		#child.scale =Vector2(zoom_value, zoom_value)
 
 
 	var extra_height = visible_height - target_height
