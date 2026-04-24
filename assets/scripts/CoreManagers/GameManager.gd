@@ -1,5 +1,6 @@
 extends Node
 
+
 enum GameState {
 	PLAYING,
 	PAUSED,
@@ -14,6 +15,8 @@ var builder
 var lives: int
 var current_level: int = 0
 var SoundOn = true
+var TOTAL_LEVELS=30
+var max_unlocked_level=2
 
 signal level_restarted(level)
 

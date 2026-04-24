@@ -1,9 +1,9 @@
  
 extends Control
 
-const LEVEL_ITEM_PATH := "res://assets/UI_Scenes/LevelItem.tscn"
-const SETTINGS_PATH   := "res://assets/UI_Scenes/Settings.tscn"
-const GAME_PATH       := "res://assets/scenes/Main/game.tscn"
+const LEVEL_ITEM_PATH := "res://assets/scenes/UI/UI_Scenes/LevelItem.tscn"
+#const SETTINGS_PATH   := "res://assets/UI_Scenes/Settings.tscn"
+#const GAME_PATH       := "res://assets/scenes/Main/game.tscn"
  
 const ITEM_SIZE       := 75.0        
 const ITEM_SPACING    := 30.0      
@@ -14,10 +14,10 @@ const INERTIA_DECAY   := 5.0
 const DRAG_THRESHOLD  := 6.0       
 
 @onready var settings_btn : TextureButton   = $SettingsButton
-@onready var arrow_left   : TextureButton   = $Arrowleft
-@onready var arrow_right  : TextureButton   = $Arrowright
-@onready var scroll_cont  : ScrollContainer = $ScrollContainer
-@onready var level_row    : HBoxContainer   = $ScrollContainer/LevelRow
+@onready var arrow_left   : TextureButton   = $HBoxContainer/Arrowleft
+@onready var arrow_right  : TextureButton   = $HBoxContainer/Arrowright
+@onready var scroll_cont  : ScrollContainer = $HBoxContainer/ScrollContainer
+@onready var level_row    : HBoxContainer   = $HBoxContainer/ScrollContainer/LevelRow
 
 var _level_item_scene : PackedScene
 var _items            : Array[Control] = []
@@ -126,7 +126,7 @@ func _on_level_selected(level_number: int) -> void:
 
 	GameManager.current_level = level_number
 	GameManager.reset_run()
-	get_tree().change_scene_to_file(GAME_PATH)
+	#get_tree().change_scene_to_file(GAME_PATH)
  
 
 func _update_carousel_scales(delta: float) -> void:
@@ -205,5 +205,6 @@ func _on_arrow_right() -> void:
 
 func _on_settings() -> void:
 	if not has_node("Settings"):
-		var settings = load(SETTINGS_PATH).instantiate()
-		add_child(settings)
+		pass
+		#var settings = load(SETTINGS_PATH).instantiate()
+		#add_child(settings)
