@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dhssboh3rrfa6"]
+
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_eg4rm"]
+[ext_resource type="Texture2D" uid="uid://dfckwyvvpqvdd" path="res://assets/sprites/UI_art/wind_warning_bg.png" id="2_5ufre"]
+[ext_resource type="Script" uid="uid://bmspeiqey6rn5" path="res://assets/scripts/Reuseables/LocalizedLabel.gd" id="3_5ufre"]
+
+[node name="WindWarning" type="Control" unique_id=1948469050]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_eg4rm")
+
+[node name="Background" type="TextureRect" parent="." unique_id=460585474]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 555.0
+grow_horizontal = 2
+texture = ExtResource("2_5ufre")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Warning1" type="Label" parent="Background" unique_id=910558088]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = -118.0
+offset_right = 300.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 89
+text = "WATCH OUT!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_5ufre")
+translation_key = "WATCH_OUT"
+
+[node name="Warning2" type="Label" parent="Background" unique_id=2110403243]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = 14.0
+offset_right = 420.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 56
+text = "Wind blowing, aim may drift."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_5ufre")
+translation_key = "WIND_WARNING"
