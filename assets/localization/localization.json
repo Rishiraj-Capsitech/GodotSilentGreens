@@ -1,67 +1,82 @@
 {
-  "ALL_LEVELS_COMPLETE": {
-	"en": "You have completed all levels!",
-	"pt-BR": "Você completou todos os níveis!",
-	"id": "Kamu telah menyelesaikan semua level!"
-  },
-  "HURRAY": {
-	"en": "Hurray!",
-	"pt-BR": "Viva!",
-	"id": "Hore!"
-  },
-  "CANCEL_SHOT": {
-	"en": "Cancel Shot",
-	"pt-BR": "Cancelar Jogada",
-	"id": "Batalkan Tembakan"
-  },
-  "COMBO": {
-	"en": "Combo",
-	"pt-BR": "Combo",
-	"id": "Kombo"
-  },
-  "OOPS": {
-	"en": "Oops!",
-	"pt-BR": "Ops!",
-	"id": "Ups!"
-  },
-  "GAME_OVER": {
-	"en": "Game Over",
-	"pt-BR": "Fim do Jogo",
-	"id": "Permainan Berakhir"
-  },
-  "WATCH_OUT": {
-	"en": "WATCH OUT!!",
-	"pt-BR": "CUIDADO!!",
-	"id": "HATI-HATI!!"
-  },
-  "WIND_WARNING": {
-	"en": "Wind blowing, aim may drift.",
-	"pt-BR": "O vento está soprando, sua mira pode desviar.",
-	"id": "Angin bertiup, arah bidikan bisa melenceng."
-  },
-  "SENSITIVITY": {
-	"en": "Sensitivity",
-	"pt-BR": "Sensibilidade",
-	"id": "Sensitivitas"
-  },
-  "LANG_EN": {
-	"en": "English",
-	"pt-BR": "Inglês",
-	"id": "Inggris"
-  },
-  "LANG_PT": {
-	"en": "Portuguese",
-	"pt-BR": "Português",
-	"id": "Portugis"
-  },
-  "LANG_ES": {
-	"en": "Spanish",
-	"pt-BR": "Espanhol",
-	"id": "Spanyol"
-  },
-  "SETTINGS_SENSITIVITY": {
-	"en": "Sensitivity",
-	"pt-BR": "Sensibilidade",
-	"id": "Sensitivitas"
-  }
+	"ALL_LEVELS_COMPLETE": {
+		"en": "You have completed all levels!",
+		"pt-BR": "Você completou todos os níveis!",
+		"id": "Kamu telah menyelesaikan semua level!"
+	},
+	"HURRAY": {
+		"en": "Hurray!",
+		"pt-BR": "Viva!",
+		"id": "Hore!"
+	},
+	"CANCEL_SHOT": {
+		"en": "Cancel Shot",
+		"pt-BR": "Cancelar Jogada",
+		"id": "Batalkan Tembakan"
+	},
+	"COMBO": {
+		"en": "Combo",
+		"pt-BR": "Combo",
+		"id": "Kombo"
+	},
+	"OOPS": {
+		"en": "Oops!",
+		"pt-BR": "Ops!",
+		"id": "Ups!"
+	},
+	"GAME_OVER": {
+		"en": "Game Over",
+		"pt-BR": "Fim do Jogo",
+		"id": "Permainan Berakhir"
+	},
+	"WATCH_OUT": {
+		"en": "WATCH OUT!!",
+		"pt-BR": "CUIDADO!!",
+		"id": "HATI-HATI!!"
+	},
+	"WIND_WARNING": {
+		"en": "Wind blowing, aim may drift.",
+		"pt-BR": "O vento está soprando, sua mira pode desviar.",
+		"id": "Angin bertiup, arah bidikan bisa melenceng."
+	},
+	"SENSITIVITY": {
+		"en": "Sensitivity",
+		"pt-BR": "Sensibilidade",
+		"id": "Sensitivitas"
+	},
+	"LANG_EN": {
+		"en": "English",
+		"pt-BR": "Inglês",
+		"id": "Inggris"
+	},
+	"LANG_PT": {
+		"en": "Portuguese",
+		"pt-BR": "Português",
+		"id": "Portugis"
+	},
+	"LANG_ES": {
+		"en": "Spanish",
+		"pt-BR": "Espanhol",
+		"id": "Spanyol"
+	},
+	"WHATS_NEW": {
+		"en": "What’s New!",
+		"pt-BR": "O que há de novo!",
+		"id": "Apa yang baru!"
+	},
+	"NEW_UPDATE_AVAILABLE": {
+		"en": "New Update Available!",
+		"pt-BR": "Nova atualização disponível!",
+		"id": "Pembaruan baru tersedia!"
+	},
+	"UPDATE_NOW_MESSAGE": {
+		"en": "Update now to enjoy the latest version",
+		"pt-BR": "Atualize agora para aproveitar a versão mais recente",
+		"id": "Perbarui sekarang untuk menikmati versi terbaru"
+	},
+	"UPDATE": {
+		"en": "Update",
+		"pt-BR": "Atualizar",
+		"id": "Perbarui"
+	}
 }

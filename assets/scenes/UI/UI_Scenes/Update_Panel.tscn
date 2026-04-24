@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b218kd8trd6uq" path="res://assets/sprites/UI_art/Update Screen.png" id="1_gwxmv"]
 [ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_myryc"]
 [ext_resource type="Texture2D" uid="uid://dcsf556csf7bf" path="res://assets/sprites/UI_art/Update.png" id="2_24avn"]
+[ext_resource type="Script" uid="uid://bmspeiqey6rn5" path="res://assets/scripts/Reuseables/LocalizedLabel.gd" id="3_eg2kp"]
 
 [node name="UpdatePanel" type="Control" unique_id=1434902333]
 layout_mode = 3
@@ -38,6 +39,8 @@ theme_override_font_sizes/font_size = 108
 text = "What’s New!"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_eg2kp")
+translation_key = "WHATS_NEW"
 
 [node name="Message2" type="Label" parent="." unique_id=519701477]
 layout_mode = 1
@@ -57,6 +60,8 @@ theme_override_font_sizes/font_size = 64
 text = "New Update Available!"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_eg2kp")
+translation_key = "NEW_UPDATE_AVAILABLE"
 
 [node name="Message3" type="Label" parent="." unique_id=856581299]
 layout_mode = 1
@@ -76,6 +81,8 @@ theme_override_font_sizes/font_size = 50
 text = "Update now to enjoy the latest version"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_eg2kp")
+translation_key = "UPDATE_NOW_MESSAGE"
 
 [node name="UpdateButton" type="TextureButton" parent="." unique_id=874589017]
 layout_mode = 1
@@ -93,3 +100,24 @@ grow_vertical = 2
 texture_normal = ExtResource("2_24avn")
 ignore_texture_size = true
 stretch_mode = 6
+
+[node name="Label" type="Label" parent="UpdateButton" unique_id=1812779253]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -17.0
+offset_right = 20.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_font_sizes/font_size = 52
+text = "Update"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_eg2kp")
+translation_key = "UPDATE."
