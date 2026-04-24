@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dnih6bnkgp5cy"]
 
-[ext_resource type="Texture2D" uid="uid://dbqk2i4fdbvak" path="res://assets/scenes/UI/UI_art/logo (1).png" id="1_fu7sn"]
-[ext_resource type="Theme" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_ise5x"]
-[ext_resource type="Texture2D" uid="uid://d3cgmgns026ig" path="res://assets/scenes/UI/UI_art/bg.png" id="1_ytsr5"]
-[ext_resource type="Texture2D" uid="uid://d1605an2m3sl2" path="res://assets/scenes/UI/UI_art/settings icon (1).png" id="3_fu7sn"]
-[ext_resource type="Texture2D" uid="uid://bdopk3b3kdmc0" path="res://assets/scenes/UI/UI_art/Arrow_left.png" id="5_lqgru"]
-[ext_resource type="Texture2D" uid="uid://37cm7c8cknor" path="res://assets/scenes/UI/UI_art/Arrow_right.png" id="6_tnld6"]
-[ext_resource type="Script" uid="uid://lh6p80an437t" path="res://assets/scenes/UI/UI/MainMenu.gd" id="7_scrpt"]
+[ext_resource type="Texture2D" uid="uid://dbqk2i4fdbvak" path="res://assets/sprites/UI_art/logo (1).png" id="1_fu7sn"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_ise5x"]
+[ext_resource type="Texture2D" uid="uid://d3cgmgns026ig" path="res://assets/sprites/UI_art/bg.png" id="1_ytsr5"]
+[ext_resource type="Texture2D" uid="uid://d1605an2m3sl2" path="res://assets/sprites/UI_art/settings icon (1).png" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://bdopk3b3kdmc0" path="res://assets/sprites/UI_art/Arrow_left.png" id="5_lqgru"]
+[ext_resource type="Texture2D" uid="uid://37cm7c8cknor" path="res://assets/sprites/UI_art/Arrow_right.png" id="6_tnld6"]
+[ext_resource type="Script" uid="uid://lh6p80an437t" path="res://assets/scripts/UI/MainMenu.gd" id="7_scrpt"]
 
 [node name="MainMenu" type="Control" unique_id=701134992]
 layout_mode = 3

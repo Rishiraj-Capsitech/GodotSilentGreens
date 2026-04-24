@@ -17,6 +17,8 @@ ss2d/version="3.3.1"
 config/name="silent Greens"
 run/main_scene="uid://d3dxlbr0d3n22"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.07058824, 0.07058824, 0.07058824, 1)
+boot_splash/image="uid://c3k4v6bq3srqw"
 config/icon="res://icon.svg"
 
 [autoload]

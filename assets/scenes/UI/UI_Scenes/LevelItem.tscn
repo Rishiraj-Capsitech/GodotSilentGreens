@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://d08gmhvokb7fi"]
 
-[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/Text_Font/NotoSans.tres" id="1_b1n8u"]
-[ext_resource type="Texture2D" uid="uid://cf5egd6s5scx7" path="res://assets/UI_art/Not selected level.png" id="2_hka5j"]
-[ext_resource type="Texture2D" uid="uid://bepjg5ex6mlg6" path="res://assets/UI_art/main level button.png" id="3_t34im"]
-[ext_resource type="Texture2D" uid="uid://cwfu1fxkenmh0" path="res://assets/UI_art/disabled button.png" id="4_ts7an"]
-[ext_resource type="Texture2D" uid="uid://1humfjltaofb" path="res://assets/UI_art/lock-password 2.png" id="6_hka5j"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_b1n8u"]
+[ext_resource type="Texture2D" path="res://assets/UI_art/Not selected level.png" id="2_hka5j"]
+[ext_resource type="Texture2D" path="res://assets/UI_art/main level button.png" id="3_t34im"]
+[ext_resource type="Texture2D" path="res://assets/UI_art/disabled button.png" id="4_ts7an"]
+[ext_resource type="Texture2D" path="res://assets/UI_art/lock-password 2.png" id="6_hka5j"]
 [ext_resource type="Script" uid="uid://dp50o78sval5t" path="res://assets/scripts/UI/LevelItem.gd" id="6_scrpt"]
 
 [node name="LevelItem" type="Control" unique_id=1715721619]

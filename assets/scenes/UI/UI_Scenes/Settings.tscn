@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dgujnooocvwvy"]
 
 [ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_j7x76"]
-[ext_resource type="Texture2D" uid="uid://dud7r5jsj2dg0" path="res://assets/scenes/UI/UI_art/Settings.png" id="1_sfvul"]
-[ext_resource type="Texture2D" uid="uid://dmplicticrpd2" path="res://assets/scenes/UI/UI_art/No (2).png" id="3_71mvm"]
-[ext_resource type="Texture2D" uid="uid://bqioeaewfv552" path="res://assets/scenes/UI/UI_art/sound (1).png" id="4_8uskx"]
-[ext_resource type="Texture2D" uid="uid://wbb1sdxmerys" path="res://assets/scenes/UI/UI_art/language not selected.png" id="4_71mvm"]
-[ext_resource type="Texture2D" uid="uid://evyhvkpe3sgc" path="res://assets/scenes/UI/UI_art/Sound_Off.png" id="4_blqn1"]
-[ext_resource type="Texture2D" uid="uid://jx4yuxxcvng1" path="res://assets/scenes/UI/UI_art/language selected.png" id="5_8uskx"]
-[ext_resource type="Texture2D" uid="uid://deu1goxcov2l8" path="res://assets/scenes/UI/UI_art/button (1).png" id="8_71mvm"]
+[ext_resource type="Texture2D" uid="uid://dud7r5jsj2dg0" path="res://assets/sprites/UI_art/Settings.png" id="1_sfvul"]
+[ext_resource type="Texture2D" uid="uid://dmplicticrpd2" path="res://assets/sprites/UI_art/No (2).png" id="3_71mvm"]
+[ext_resource type="Texture2D" uid="uid://bqioeaewfv552" path="res://assets/sprites/UI_art/sound (1).png" id="4_8uskx"]
+[ext_resource type="Texture2D" uid="uid://wbb1sdxmerys" path="res://assets/sprites/UI_art/language not selected.png" id="4_71mvm"]
+[ext_resource type="Texture2D" uid="uid://evyhvkpe3sgc" path="res://assets/sprites/UI_art/Sound_Off.png" id="4_blqn1"]
+[ext_resource type="Texture2D" uid="uid://jx4yuxxcvng1" path="res://assets/sprites/UI_art/language selected.png" id="5_8uskx"]
+[ext_resource type="Texture2D" uid="uid://deu1goxcov2l8" path="res://assets/sprites/UI_art/button (1).png" id="8_71mvm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uskx"]
 bg_color = Color(0.7607843, 0.85490197, 0.6901961, 1)

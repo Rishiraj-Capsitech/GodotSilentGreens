@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://d120dh8bsfkto"]
 
-[ext_resource type="Texture2D" uid="uid://bolf7t0by4lsy" path="res://assets/scenes/UI/UI_art/coin.png" id="1_yhw7s"]
-[ext_resource type="Texture2D" uid="uid://dxpcm6vb8gnxf" path="res://assets/scenes/UI/UI_art/Pause Icon (3).png" id="2_xfmwv"]
-[ext_resource type="Texture2D" uid="uid://y517n20wcw83" path="res://assets/scenes/UI/UI_art/life used.png" id="3_ukaka"]
-[ext_resource type="Texture2D" uid="uid://cekyg1ivfggfj" path="res://assets/scenes/UI/UI_art/Ellipse 7.png" id="5_4mt2i"]
-[ext_resource type="Texture2D" uid="uid://br4eyxqe7nr45" path="res://assets/scenes/UI/UI_art/chossing options (2).png" id="5_7270q"]
+[ext_resource type="Texture2D" uid="uid://bolf7t0by4lsy" path="res://assets/sprites/UI_art/coin.png" id="1_yhw7s"]
+[ext_resource type="Texture2D" uid="uid://dxpcm6vb8gnxf" path="res://assets/sprites/UI_art/Pause Icon (3).png" id="2_xfmwv"]
+[ext_resource type="Texture2D" uid="uid://y517n20wcw83" path="res://assets/sprites/UI_art/life used.png" id="3_ukaka"]
+[ext_resource type="Texture2D" uid="uid://cekyg1ivfggfj" path="res://assets/sprites/UI_art/Ellipse 7.png" id="5_4mt2i"]
+[ext_resource type="Texture2D" uid="uid://br4eyxqe7nr45" path="res://assets/sprites/UI_art/chossing options (2).png" id="5_7270q"]
 
 [node name="GameHUD" type="Control" unique_id=1391440258]
 layout_mode = 3

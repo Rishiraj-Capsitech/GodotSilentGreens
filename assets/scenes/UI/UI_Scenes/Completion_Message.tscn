@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ds07pghoaclf"]
 
-[ext_resource type="Texture2D" uid="uid://cvfxc4kys2jhx" path="res://assets/UI_art/Completed.png" id="1_mpapy"]
-[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/Text_Font/NotoSans.tres" id="1_x6drc"]
-[ext_resource type="Texture2D" uid="uid://hl72rckp3d1l" path="res://assets/UI_art/options (2).png" id="3_l646w"]
-[ext_resource type="Texture2D" uid="uid://k1jwrf7sgmhx" path="res://assets/UI_art/Home (4).png" id="3_oyd6e"]
+[ext_resource type="Texture2D" path="res://assets/UI_art/Completed.png" id="1_mpapy"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_x6drc"]
+[ext_resource type="Texture2D" path="res://assets/UI_art/options (2).png" id="3_l646w"]
+[ext_resource type="Texture2D" path="res://assets/UI_art/Home (4).png" id="3_oyd6e"]
 [ext_resource type="Script" path="res://assets/scripts/UI/CompletionMessage.gd" id="5_scrpt"]
 
 [node name="CompletionMessage" type="Control" unique_id=1793439769]

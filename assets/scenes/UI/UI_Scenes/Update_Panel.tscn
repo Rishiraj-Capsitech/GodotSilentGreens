@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cg6ngoo3gdvn6"]
 
-[ext_resource type="Texture2D" uid="uid://b218kd8trd6uq" path="res://assets/UI_art/Update Screen.png" id="1_gwxmv"]
-[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/Text_Font/NotoSans.tres" id="1_myryc"]
-[ext_resource type="Texture2D" uid="uid://dcsf556csf7bf" path="res://assets/UI_art/Update.png" id="2_24avn"]
+[ext_resource type="Texture2D" path="res://assets/UI_art/Update Screen.png" id="1_gwxmv"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_myryc"]
+[ext_resource type="Texture2D" path="res://assets/UI_art/Update.png" id="2_24avn"]
 
 [node name="UpdatePanel" type="Control" unique_id=1434902333]
 layout_mode = 3

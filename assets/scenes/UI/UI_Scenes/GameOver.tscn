@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dlh5jkk1gh5ud"]
 
-[ext_resource type="Texture2D" uid="uid://bhc0a2gdnb3vh" path="res://assets/scenes/UI/UI_art/Game over screen.png" id="1_40baj"]
-[ext_resource type="Theme" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_vj25f"]
-[ext_resource type="Texture2D" uid="uid://k1jwrf7sgmhx" path="res://assets/scenes/UI/UI_art/Home (4).png" id="2_jywu3"]
-[ext_resource type="Texture2D" uid="uid://c1jsn60uqgrka" path="res://assets/scenes/UI/UI_art/restart (6).png" id="3_3y56u"]
-[ext_resource type="Texture2D" uid="uid://d2bx6mtbvbsvp" path="res://assets/scenes/UI/UI_art/skip_ad.png" id="4_ua7od"]
-[ext_resource type="Texture2D" uid="uid://cr62oeohef2p5" path="res://assets/scenes/UI/UI_art/options.png" id="5_3fonj"]
+[ext_resource type="Texture2D" uid="uid://bhc0a2gdnb3vh" path="res://assets/sprites/UI_art/Game over screen.png" id="1_40baj"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_vj25f"]
+[ext_resource type="Texture2D" uid="uid://k1jwrf7sgmhx" path="res://assets/sprites/UI_art/Home (4).png" id="2_jywu3"]
+[ext_resource type="Texture2D" uid="uid://c1jsn60uqgrka" path="res://assets/sprites/UI_art/restart (6).png" id="3_3y56u"]
+[ext_resource type="Texture2D" uid="uid://d2bx6mtbvbsvp" path="res://assets/sprites/UI_art/skip_ad.png" id="4_ua7od"]
+[ext_resource type="Texture2D" uid="uid://cr62oeohef2p5" path="res://assets/sprites/UI_art/options.png" id="5_3fonj"]
 
 [node name="GameOver" type="Control" unique_id=835076097]
 layout_mode = 3
