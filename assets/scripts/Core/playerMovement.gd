@@ -121,18 +121,22 @@ func update_dots():
 		var query = PhysicsRayQueryParameters2D.create(prev_pos, simulated_pos)
 		var result = space_state.intersect_ray(query)
 
+		# 👇 scale factor (adjust 0.5 to control how small the last dot is)
+		var t = float(i) / dot_count
+		var scale_factor = lerp(1.0, 0.5, t)
+
 		if result:
 			dots[i].global_position = result.position
 			dots[i].visible = true
+			dots[i].scale = Vector2(scale_factor, scale_factor)
 
 			for j in range(i + 1, dot_count):
 				dots[j].visible = false
-			
 			break
 		else:
 			dots[i].global_position = simulated_pos
 			dots[i].visible = true
-
+			dots[i].scale = Vector2(scale_factor, scale_factor)
 
 #  SHOOT BALL
 func shoot():

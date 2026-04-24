@@ -135,8 +135,7 @@ func _on_level_selected(level_number: int) -> void:
 	await get_tree().create_timer(SCROLL_DURATION + 0.1).timeout
 
 	GameManager.current_level = level_number-1
-	get_tree().change_scene_to_file(GAME_PATH)
- 
+	GameManager._start(GAME_PATH)
 
 func _update_carousel_scales(delta: float) -> void:
 	if _items.is_empty():

@@ -33,7 +33,11 @@ func reset_game():
 	get_tree().paused = false
 	
 	
+func _start(GAME_PATH):
+	get_tree().change_scene_to_file(GAME_PATH)
 
+
+	
 
 
 func lose_life(amount := 1):

@@ -14,6 +14,7 @@ var last_level_data
 func _ready():
 	add_to_group("LevelLoader")
 	build_level()
+	UiManager._setup_ui()
 	GameManager.level_restarted.connect(_on_level_restarted)
 
 

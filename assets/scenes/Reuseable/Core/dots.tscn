@@ -5,7 +5,6 @@
 [node name="dots" type="Node2D" unique_id=613193221]
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=300458624]
-modulate = Color(0.5412273, 1.0138265, 1.085001, 1)
-position = Vector2(4.7683716e-07, -5.9604645e-08)
+modulate = Color(0.27450982, 0.8745098, 1, 1)
 scale = Vector2(0.032, 0.032)
 texture = ExtResource("1_h8qyl")
