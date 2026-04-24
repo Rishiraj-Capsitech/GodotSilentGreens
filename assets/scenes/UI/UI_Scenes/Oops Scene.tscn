@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwjj46l7rekkg"]
 
 [ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_jv10r"]
-[ext_resource type="Script" uid="uid://dalgw73o7xjqd" path="res://assets/scripts/Reuseables/Pop_animation.gd" id="2_kk2uk"]
+[ext_resource type="Script" uid="uid://bmspeiqey6rn5" path="res://assets/scripts/Reuseables/LocalizedLabel.gd" id="3_h2vy6"]
 
 [node name="OopsScene" type="Control" unique_id=218439797]
 clip_contents = true
@@ -12,7 +12,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_jv10r")
-script = ExtResource("2_kk2uk")
 
 [node name="Label" type="Label" parent="." unique_id=87580318]
 layout_mode = 1
@@ -31,3 +30,5 @@ scale = Vector2(1.36, 1.36)
 theme_override_colors/font_color = Color(0.39607844, 0.7529412, 0.8509804, 0.6039216)
 theme_override_font_sizes/font_size = 180
 text = "Oops!"
+script = ExtResource("3_h2vy6")
+translation_key = "OOPS"

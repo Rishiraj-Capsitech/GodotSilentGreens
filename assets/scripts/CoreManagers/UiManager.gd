@@ -147,7 +147,7 @@ func _setup_settings():
 func _play_oops():
 	OopsPannel.show()
 	oops_lable.text = "Oops!"
- 
+	print(oops_lable.get_script())
 	if _current_tween and _current_tween.is_running():
 		_current_tween.kill()
  

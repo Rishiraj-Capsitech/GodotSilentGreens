@@ -71,7 +71,6 @@ visible = false
 
 [node name="OopsScene" parent="OopsPannel" unique_id=218439797 instance=ExtResource("33_kgmh8")]
 theme = null
-script = null
 
 [node name="HudCanvas" type="CanvasLayer" parent="." unique_id=1891827282 groups=["hud_ui"]]
 

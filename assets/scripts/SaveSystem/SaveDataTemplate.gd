@@ -12,7 +12,7 @@ static func create_default_data() -> Dictionary:
 			"test_value": 0    # Added for visual testing
 		},
 		"settings": {
-			"language": "en",
+			"language": "pt-BR",
 			"music_enabled": true,
 			"sfx_enabled": true
 		},
