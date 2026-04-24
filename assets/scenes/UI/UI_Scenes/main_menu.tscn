@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bdopk3b3kdmc0" path="res://assets/sprites/UI_art/Arrow_left.png" id="5_lqgru"]
 [ext_resource type="Texture2D" uid="uid://37cm7c8cknor" path="res://assets/sprites/UI_art/Arrow_right.png" id="6_tnld6"]
 [ext_resource type="Script" uid="uid://lh6p80an437t" path="res://assets/scripts/UI/MainMenu.gd" id="7_scrpt"]
+[ext_resource type="PackedScene" uid="uid://dgujnooocvwvy" path="res://assets/scenes/UI/UI_Scenes/Settings.tscn" id="8_3hdhh"]
 
 [node name="MainMenu" type="Control" unique_id=701134992]
 layout_mode = 3
@@ -99,3 +100,8 @@ size_flags_horizontal = 3
 texture_normal = ExtResource("6_tnld6")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Settings" type="CanvasLayer" parent="." unique_id=673726962 groups=["setting_ui"]]
+visible = false
+
+[node name="Settings" parent="Settings" unique_id=329886370 instance=ExtResource("8_3hdhh")]

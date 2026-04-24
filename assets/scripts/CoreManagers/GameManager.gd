@@ -16,7 +16,7 @@ var lives: int
 var current_level: int = 0
 var SoundOn = true
 var TOTAL_LEVELS=30
-var max_unlocked_level=2
+var max_unlocked_level=30
 
 
 signal level_restarted(level)

@@ -175,8 +175,9 @@ func toggel_sound():
 
 func Close_settings():
 	SettingPannel.hide()
-	GameOver.hide()
-	HudPanel.hide() 
+	if GameOver and HudPanel:
+		GameOver.hide()
+		HudPanel.hide() 
 
 func _on_pause_button_pressed() -> void:
 	GameManager.state= GameManager.GameState.PAUSED
