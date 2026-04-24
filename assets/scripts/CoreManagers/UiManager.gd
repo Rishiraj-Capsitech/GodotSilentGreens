@@ -83,9 +83,9 @@ func _setup_pause():
 	
 	if Pause_node:
 		print("pause node found")
-		HomeButtonPause = Pause_node.get_node("options/HomeButton")
-		RestartButtonPause = Pause_node.get_node("options/RestartButton")
-		ResumeButtonPause = Pause_node.get_node("options/ResumeButton")
+		HomeButtonPause = Pause_node.get_node("options/HBoxContainer/HomeButton")
+		RestartButtonPause = Pause_node.get_node("options/HBoxContainer/RestartButton")
+		ResumeButtonPause = Pause_node.get_node("options/HBoxContainer/ResumeButton")
 		SettingsButtonPause = Pause_node.get_node("SettingsButton")
 		if (HomeButtonPause and SettingsButtonPause and ResumeButtonPause and RestartButtonPause):
 			print("Found all buttons")
