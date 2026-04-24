@@ -39,9 +39,10 @@ var HomeButtonPause:TextureButton
 var RestartButtonPause:TextureButton
 var ResumeButtonPause:TextureButton
 var SettingsButtonPause:TextureButton
+var HomeCnf:CanvasLayer
+var cnfButton:TextureButton
+var cancelButton:TextureButton
 
-func _ready():
-	_setup_ui()
 	
 func _setup_ui():
 	print("setting up")
@@ -50,10 +51,12 @@ func _setup_ui():
 	GameOver = get_tree().get_first_node_in_group("game_over_ui")
 	SettingPannel = get_tree().get_first_node_in_group("setting_ui")
 	OopsPannel = get_tree().get_first_node_in_group("Oops_ui")
+	HomeCnf = get_tree().get_first_node_in_group("home_confirmation")
 	_setup_hud()
 	_setup_GameOver()
 	_setup_settings()
 	_setup_pause()
+	_setup_confirmation_home()
 
 
 #setup methods
@@ -99,7 +102,7 @@ func _setup_pause():
 			SettingsButtonPause.pressed.connect(_open_setting)
 	else:
 		print("node not found")
-	
+
 func _setup_GameOver():
 	if GameOver == null:
 		print("Gameover not found!")
@@ -121,7 +124,6 @@ func _setup_GameOver():
 	oops_node= OopsPannel.get_node("OopsScene")
 	if oops_node:
 		oops_lable=oops_node.get_node("Label")
-
 
 func _setup_settings():
 	if not SettingPannel:
@@ -152,6 +154,46 @@ func _setup_settings():
 				SoundToggel.pressed.disconnect(toggel_sound)
 			SoundToggel.pressed.connect(toggel_sound)
 
+			# Language selection
+			EnglishButton.pressed.connect(_on_english_pressed)
+			PortugueseButton.pressed.connect(_on_portuguese_pressed)
+			SpanishButton.pressed.connect(_on_spanish_pressed)
+
+func _on_english_pressed():
+	LocalizationManager.set_locale("en")
+	GameManager.current_language = "en"
+
+func _on_portuguese_pressed():
+	LocalizationManager.set_locale("pt-BR")
+	GameManager.current_language = "pt-BR"
+
+func _on_spanish_pressed():
+	LocalizationManager.set_locale("es")
+	GameManager.current_language = "es"
+
+func _setup_confirmation_home():
+	if not HomeCnf:
+		print("Home cnf Not found")
+		return
+		
+	var HomeCnf_node = HomeCnf.get_node("HomeConfirmation2")
+	if HomeCnf_node:
+		cnfButton = HomeCnf_node.get_node("Confirmation_options/ConfirmButton")
+		cancelButton = HomeCnf_node.get_node("Confirmation_options/CancelButton")
+		
+
+		if (cnfButton and cancelButton):
+			cnfButton.pressed.connect(_open_home)
+			cancelButton.pressed.connect(_cancel_home)
+		
+
+func _open_home():
+	get_tree().change_scene_to_file("res://assets/scenes/UI/UI_Scenes/main_menu.tscn")
+
+	
+	
+func _cancel_home():
+	HomeCnf.hide()
 
 func _play_oops():
 	OopsPannel.show()
@@ -176,7 +218,6 @@ func _play_oops():
 	)
 	await get_tree().create_timer(1).timeout
 	OopsPannel.hide()
-
 
 func toggel_sound():
 	GameManager.SoundOn = false if GameManager.SoundOn else true
@@ -224,7 +265,7 @@ func set_level(level:int):
 		print(" Not Found")
 
 func _home():
-	print("pressed")
+	HomeCnf.show()
 
 func _open_setting():
 	SettingPannel.show()

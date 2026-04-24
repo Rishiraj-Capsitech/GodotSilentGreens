@@ -15,6 +15,7 @@ func _ready():
 	add_to_group("LevelLoader")
 	build_level()
 	UiManager._setup_ui()
+	GameManager.state=GameManager.GameState.PLAYING
 	GameManager.level_restarted.connect(_on_level_restarted)
 
 

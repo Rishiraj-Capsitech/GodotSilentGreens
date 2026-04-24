@@ -32,6 +32,8 @@ var _last_delta_time  := 0.016
 
 
 func _ready() -> void:
+	GameManager.state=GameManager.GameState.HOME
+	UiManager._setup_ui()
 	_level_item_scene = load(LEVEL_ITEM_PATH)
  
 	for style_name in ["scroll", "grabber", "grabber_highlight", "grabber_pressed"]:
