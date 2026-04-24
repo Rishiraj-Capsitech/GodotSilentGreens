@@ -175,6 +175,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SpanishButton" type="TextureButton" parent="VBoxContainer" unique_id=2002887637]
+visible = false
 custom_minimum_size = Vector2(320, 120)
 layout_mode = 2
 size_flags_horizontal = 8

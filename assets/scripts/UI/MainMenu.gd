@@ -41,14 +41,13 @@ func _ready() -> void:
 		
 	level_row.add_theme_constant_override("separation", int(ITEM_SPACING))
 
-	_spawn_levels()
-
 	settings_btn.pressed.connect(_on_settings)
 	arrow_left.pressed.connect(_on_arrow_left)
 	arrow_right.pressed.connect(_on_arrow_right)
- 
-	await get_tree().process_frame
-	await get_tree().process_frame
+	
+	await _spawn_levels()
+	await get_tree().process_frame 
+
 	var idx = clampi(GameManager.max_unlocked_level - 1, 0, _items.size() - 1)
 	_snap_scroll_to(idx)
 
@@ -97,6 +96,13 @@ func _spawn_levels() -> void:
 	for child in level_row.get_children():
 		child.queue_free()
 	_items.clear()
+	
+	await get_tree().process_frame
+	var half_w:=scroll_cont.size.x/2.0
+	
+	var left_pad := Control.new()
+	left_pad.custom_minimum_size = Vector2(half_w, ITEM_SIZE)
+	level_row.add_child(left_pad)
 
 	for i in range(1, GameManager.TOTAL_LEVELS + 1):
 		var item: Control = _level_item_scene.instantiate()
@@ -111,6 +117,10 @@ func _spawn_levels() -> void:
 		item.setup(i, is_unlocked, is_current)
 		item.level_selected.connect(_on_level_selected)
 		_items.append(item)
+		
+	var right_pad := Control.new()
+	right_pad.custom_minimum_size = Vector2(half_w, ITEM_SIZE)
+	level_row.add_child(right_pad)
 
 
 func _on_level_selected(level_number: int) -> void:

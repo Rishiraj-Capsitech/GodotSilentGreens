@@ -18,6 +18,7 @@ var SoundOn = true
 var TOTAL_LEVELS=30
 var max_unlocked_level=2
 
+
 signal level_restarted(level)
 
 func _ready():

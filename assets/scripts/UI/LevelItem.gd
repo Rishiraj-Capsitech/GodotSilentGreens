@@ -11,7 +11,7 @@ var _selected_tex  : Texture2D
 
 
 func _ready() -> void:
-	_selected_tex = preload("res://assets/sprites/UI_art/main level button.png")
+	_selected_tex = preload("res://assets/sprites/UI_art/main_button.png")
  
 	level_button.clip_contents = true
  
