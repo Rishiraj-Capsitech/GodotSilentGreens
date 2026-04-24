@@ -9,51 +9,56 @@
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="7_4v3dn"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="8_4gqsb"]
 
-[sub_resource type="Resource" id="Resource_1rmhn"]
+[sub_resource type="Resource" id="Resource_ttiap"]
 script = ExtResource("2_aeemu")
 scene = ExtResource("3_ttiap")
 position = Vector2(362, 181)
 
-[sub_resource type="Resource" id="Resource_5n8wb"]
+[sub_resource type="Resource" id="Resource_aeemu"]
 script = ExtResource("2_aeemu")
 scene = ExtResource("3_ttiap")
 position = Vector2(681, 318)
 
-[sub_resource type="Resource" id="Resource_q10b3"]
+[sub_resource type="Resource" id="Resource_y1vi4"]
 script = ExtResource("2_aeemu")
 scene = ExtResource("3_ttiap")
 position = Vector2(1277, 159)
 
-[sub_resource type="Resource" id="Resource_tmgrn"]
+[sub_resource type="Resource" id="Resource_w3cv8"]
 script = ExtResource("2_aeemu")
 scene = ExtResource("3_ttiap")
 position = Vector2(1391, 337)
 
-[sub_resource type="Resource" id="Resource_p8k3d"]
+[sub_resource type="Resource" id="Resource_na50b"]
 script = ExtResource("2_aeemu")
 scene = ExtResource("4_w3cv8")
-position = Vector2(690, 870)
+position = Vector2(875, 863)
 
-[sub_resource type="Resource" id="Resource_keujw"]
+[sub_resource type="Resource" id="Resource_f5p6r"]
+script = ExtResource("2_aeemu")
+scene = ExtResource("4_w3cv8")
+position = Vector2(1230, 861)
+
+[sub_resource type="Resource" id="Resource_4v3dn"]
 script = ExtResource("2_aeemu")
 scene = ExtResource("5_na50b")
 position = Vector2(1218, 746.00006)
 scale = Vector2(0.40000123, 0.40000123)
 zIndex = 20
 
-[sub_resource type="Resource" id="Resource_trotk"]
+[sub_resource type="Resource" id="Resource_4gqsb"]
 script = ExtResource("2_aeemu")
 scene = ExtResource("6_f5p6r")
 position = Vector2(258, 239)
 zIndex = 10
 
-[sub_resource type="Resource" id="Resource_slhfk"]
+[sub_resource type="Resource" id="Resource_1rmhn"]
 script = ExtResource("2_aeemu")
 scene = ExtResource("8_4gqsb")
 position = Vector2(1551, 715.00006)
 scale = Vector2(0.27999997, 0.27999997)
 
-[sub_resource type="Resource" id="Resource_uqvvn"]
+[sub_resource type="Resource" id="Resource_5n8wb"]
 script = ExtResource("2_aeemu")
 scene = ExtResource("8_4gqsb")
 position = Vector2(750, 745)
@@ -61,14 +66,12 @@ scale = Vector2(0.39999938, 0.39999938)
 
 [resource]
 script = ExtResource("7_4v3dn")
-land = SubResource("Resource_trotk")
+land = SubResource("Resource_4gqsb")
 ball_spawn_position = Vector2(443, 826)
-goal = SubResource("Resource_keujw")
+goal = SubResource("Resource_4v3dn")
 background = ExtResource("1_ttiap")
 bgscale = Vector2(0.4709994, 0.35566404)
-bgpos = Vector2(842, 353)
-small_obstacles = Array[ExtResource("2_aeemu")]([SubResource("Resource_slhfk"), SubResource("Resource_uqvvn")])
-clouds = Array[ExtResource("2_aeemu")]([SubResource("Resource_1rmhn"), SubResource("Resource_5n8wb"), SubResource("Resource_q10b3"), SubResource("Resource_tmgrn")])
-decorations = Array[ExtResource("2_aeemu")]([SubResource("Resource_p8k3d")])
-wind_strength = 500.0
-wind_direction = Vector2(1, 0)
+bgpos = Vector2(853.00006, 360.00003)
+small_obstacles = Array[ExtResource("2_aeemu")]([SubResource("Resource_1rmhn"), SubResource("Resource_5n8wb")])
+clouds = Array[ExtResource("2_aeemu")]([SubResource("Resource_ttiap"), SubResource("Resource_aeemu"), SubResource("Resource_y1vi4"), SubResource("Resource_w3cv8")])
+decorations = Array[ExtResource("2_aeemu")]([SubResource("Resource_na50b"), SubResource("Resource_f5p6r")])

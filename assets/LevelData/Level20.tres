@@ -3,30 +3,38 @@
 [ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_x5x2w"]
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_h3jds"]
 [ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="3_7scph"]
+[ext_resource type="PackedScene" uid="uid://dvcc4g28gvnga" path="res://assets/scenes/Reuseable/Other/water.tscn" id="4_h3jds"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="4_luhre"]
 [ext_resource type="PackedScene" uid="uid://s4d0jxk7j8nq" path="res://assets/scenes/Reuseable/LevelLands/Level20.tscn" id="5_hi4c0"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="6_7boet"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="7_luex4"]
 
-[sub_resource type="Resource" id="Resource_pcs8p"]
+[sub_resource type="Resource" id="Resource_7scph"]
 script = ExtResource("2_h3jds")
 scene = ExtResource("3_7scph")
 position = Vector2(583, 733.99994)
 scale = Vector2(0.449024, 0.449024)
 
-[sub_resource type="Resource" id="Resource_o16lc"]
+[sub_resource type="Resource" id="Resource_luhre"]
+script = ExtResource("2_h3jds")
+scene = ExtResource("4_h3jds")
+position = Vector2(845.00006, 778)
+scale = Vector2(1.6800001, 1)
+
+[sub_resource type="Resource" id="Resource_hi4c0"]
 script = ExtResource("2_h3jds")
 scene = ExtResource("4_luhre")
 position = Vector2(1695, 765.71)
 scale = Vector2(0.35999998, 0.35999998)
 
-[sub_resource type="Resource" id="Resource_1c1h4"]
+[sub_resource type="Resource" id="Resource_7boet"]
 script = ExtResource("2_h3jds")
 scene = ExtResource("5_hi4c0")
 position = Vector2(180, -130)
 scale = Vector2(1.0400002, 1.0400002)
+zIndex = 10
 
-[sub_resource type="Resource" id="Resource_k25ud"]
+[sub_resource type="Resource" id="Resource_luex4"]
 script = ExtResource("2_h3jds")
 scene = ExtResource("7_luex4")
 position = Vector2(1368, 615)
@@ -34,11 +42,11 @@ scale = Vector2(0.18163246, 0.18163246)
 
 [resource]
 script = ExtResource("6_7boet")
-land = SubResource("Resource_1c1h4")
+land = SubResource("Resource_7boet")
 ball_spawn_position = Vector2(429, 763)
-goal = SubResource("Resource_o16lc")
+goal = SubResource("Resource_hi4c0")
 background = ExtResource("1_x5x2w")
 bgscale = Vector2(0.4709994, 0.35566404)
-bgpos = Vector2(842.00006, 368.00003)
-small_obstacles = Array[ExtResource("2_h3jds")]([SubResource("Resource_k25ud")])
-decorations = Array[ExtResource("2_h3jds")]([SubResource("Resource_pcs8p")])
+bgpos = Vector2(853.00006, 360.00003)
+small_obstacles = Array[ExtResource("2_h3jds")]([SubResource("Resource_luex4")])
+decorations = Array[ExtResource("2_h3jds")]([SubResource("Resource_7scph"), SubResource("Resource_luhre")])

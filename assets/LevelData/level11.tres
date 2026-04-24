@@ -10,57 +10,57 @@
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="8_h0a1t"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="9_i0glx"]
 
-[sub_resource type="Resource" id="Resource_q477u"]
+[sub_resource type="Resource" id="Resource_cvr6v"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("3_xdntc")
 position = Vector2(1496, 514)
 scale = Vector2(1.1600003, 0.7999994)
 
-[sub_resource type="Resource" id="Resource_t426x"]
+[sub_resource type="Resource" id="Resource_5kgpv"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("3_xdntc")
 position = Vector2(1207.0001, 381)
 scale = Vector2(1.1600003, 0.7999994)
 
-[sub_resource type="Resource" id="Resource_ylypa"]
+[sub_resource type="Resource" id="Resource_yhxsd"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("3_xdntc")
 position = Vector2(816, 430)
 scale = Vector2(1.1600003, 0.7999994)
 
-[sub_resource type="Resource" id="Resource_r07af"]
+[sub_resource type="Resource" id="Resource_s8k7i"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("3_xdntc")
 position = Vector2(375.00006, 271.00003)
 scale = Vector2(1.1600003, 0.7999994)
 
-[sub_resource type="Resource" id="Resource_wlyrc"]
+[sub_resource type="Resource" id="Resource_vfwcp"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("3_xdntc")
 position = Vector2(364.00003, 476.00003)
 scale = Vector2(1.1600003, 0.7999994)
 
-[sub_resource type="Resource" id="Resource_s6wwn"]
+[sub_resource type="Resource" id="Resource_gdv8n"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("3_xdntc")
 position = Vector2(364.00003, 476.00003)
 scale = Vector2(1.1600003, 0.7999994)
 
-[sub_resource type="Resource" id="Resource_q8jdx"]
+[sub_resource type="Resource" id="Resource_kgr8t"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("4_co46x")
 position = Vector2(713, 839)
 zIndex = 1
 Rotaion = -0.3013853
 
-[sub_resource type="Resource" id="Resource_p0tkr"]
+[sub_resource type="Resource" id="Resource_k6i0v"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("4_co46x")
 position = Vector2(943, 781)
 zIndex = 1
 Rotaion = -0.3013853
 
-[sub_resource type="Resource" id="Resource_nt0eu"]
+[sub_resource type="Resource" id="Resource_qgsud"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("4_co46x")
 position = Vector2(1165.0001, 729.00006)
@@ -68,37 +68,50 @@ scale = Vector2(0.8648611, 0.8648611)
 zIndex = 1
 Rotaion = -0.3013853
 
-[sub_resource type="Resource" id="Resource_84cko"]
+[sub_resource type="Resource" id="Resource_688oq"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("5_v6x6m")
 position = Vector2(546, 916)
+scale = Vector2(0.6400024, 0.6400024)
 
-[sub_resource type="Resource" id="Resource_jl3fp"]
+[sub_resource type="Resource" id="Resource_6n1sa"]
+script = ExtResource("2_2tpil")
+scene = ExtResource("5_v6x6m")
+position = Vector2(741, 914.99994)
+scale = Vector2(0.6400024, 0.6400024)
+
+[sub_resource type="Resource" id="Resource_f0wq0"]
+script = ExtResource("2_2tpil")
+scene = ExtResource("5_v6x6m")
+position = Vector2(986, 915)
+scale = Vector2(0.6400024, 0.6400024)
+
+[sub_resource type="Resource" id="Resource_qkwe3"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("6_13a7n")
 position = Vector2(1497, 816)
 scale = Vector2(0.44, 0.44)
 
-[sub_resource type="Resource" id="Resource_wa8do"]
+[sub_resource type="Resource" id="Resource_6joc7"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("7_eaxch")
 position = Vector2(212, 407)
 scale = Vector2(0.6800003, 0.6800003)
 zIndex = 10
 
-[sub_resource type="Resource" id="Resource_ha4we"]
+[sub_resource type="Resource" id="Resource_nvrbl"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("9_i0glx")
 position = Vector2(723.00006, 755)
 scale = Vector2(0.32000247, 0.32000247)
 
-[sub_resource type="Resource" id="Resource_si5xe"]
+[sub_resource type="Resource" id="Resource_mq7fp"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("9_i0glx")
 position = Vector2(949.99994, 702.00006)
 scale = Vector2(0.32000247, 0.32000247)
 
-[sub_resource type="Resource" id="Resource_kec0y"]
+[sub_resource type="Resource" id="Resource_rduth"]
 script = ExtResource("2_2tpil")
 scene = ExtResource("9_i0glx")
 position = Vector2(1169, 646.00006)
@@ -106,12 +119,12 @@ scale = Vector2(0.32000247, 0.32000247)
 
 [resource]
 script = ExtResource("8_h0a1t")
-land = SubResource("Resource_wa8do")
+land = SubResource("Resource_6joc7")
 ball_spawn_position = Vector2(351, 933)
-goal = SubResource("Resource_jl3fp")
+goal = SubResource("Resource_qkwe3")
 background = ExtResource("1_0mads")
 bgscale = Vector2(0.4709994, 0.35566404)
 bgpos = Vector2(853.00006, 360.00003)
-small_obstacles = Array[ExtResource("2_2tpil")]([SubResource("Resource_ha4we"), SubResource("Resource_si5xe"), SubResource("Resource_kec0y")])
-clouds = Array[ExtResource("2_2tpil")]([SubResource("Resource_q477u"), SubResource("Resource_t426x"), SubResource("Resource_ylypa"), SubResource("Resource_r07af"), SubResource("Resource_wlyrc"), SubResource("Resource_s6wwn")])
-decorations = Array[ExtResource("2_2tpil")]([SubResource("Resource_q8jdx"), SubResource("Resource_p0tkr"), SubResource("Resource_nt0eu"), SubResource("Resource_84cko")])
+small_obstacles = Array[ExtResource("2_2tpil")]([SubResource("Resource_nvrbl"), SubResource("Resource_mq7fp"), SubResource("Resource_rduth")])
+clouds = Array[ExtResource("2_2tpil")]([SubResource("Resource_cvr6v"), SubResource("Resource_5kgpv"), SubResource("Resource_yhxsd"), SubResource("Resource_s8k7i"), SubResource("Resource_vfwcp"), SubResource("Resource_gdv8n")])
+decorations = Array[ExtResource("2_2tpil")]([SubResource("Resource_kgr8t"), SubResource("Resource_k6i0v"), SubResource("Resource_qgsud"), SubResource("Resource_688oq"), SubResource("Resource_6n1sa"), SubResource("Resource_f0wq0")])
