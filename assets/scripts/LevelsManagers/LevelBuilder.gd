@@ -9,6 +9,7 @@ extends Node2D
 
 var ball: Node2D
 var last_level_data
+@onready var WindWarning =$"../WindCanvas"
 
 
 func _ready():
@@ -32,14 +33,19 @@ func spawn(data: SpawnData):
 	call_deferred("add_child", obj)
 
 
+
+
+
 func build_level():
 	if levels.is_empty():
 		return
 	UiManager.set_level(GameManager.current_level+1)
 	var level_data: LevelData = levels[GameManager.current_level]
-
+	
+	
 	# Clear old level
 	for child in get_children():
+		
 		if is_instance_valid(ball):
 			ball.queue_free()
 			
@@ -47,7 +53,7 @@ func build_level():
 			child.call_deferred("queue_free")
 			
 		
-
+	
 
 	if level_data.background != null:
 		background.texture = level_data.background
@@ -97,6 +103,17 @@ func build_level():
 	ball.adjustball(level_data)
 	ball.timeout =7+level_data.ExtraTimeout
 	
+	if level_data.wind_strength >0:
+		if GameManager.showWindWarn==false:
+			GameManager.showWindWarn=true
+			ball.can_shoot=false
+			WindWarning.show()
+			await get_tree().create_timer(3).timeout
+			ball.can_shoot=true
+			WindWarning.hide()
+		
+	
+	
 func _on_level_restarted():
 	build_level()
 
@@ -104,11 +121,11 @@ func _on_level_restarted():
 func next_level():
 	if is_instance_valid(ball):
 		ball.queue_free()
-
+	
 	GameManager.current_level += 1
 	if GameManager.current_level >= levels.size():
 		GameManager.current_level = 0
-
+	GameManager.showWindWarn=false
 	build_level()
 
 

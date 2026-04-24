@@ -19,7 +19,7 @@ var SoundOn = true
 var TOTAL_LEVELS=27
 var max_unlocked_level=27
 var current_language: String = "en"
-
+var showWindWarn =false
 
 
 signal level_restarted(level)
@@ -29,6 +29,7 @@ func _ready():
 	
 
 func reset_game():
+	showWindWarn =false
 	lives = max_lives
 	state = GameState.PLAYING
 	UiManager._updateLife(lives)

@@ -75,3 +75,5 @@ bgpos = Vector2(853.00006, 360.00003)
 small_obstacles = Array[ExtResource("2_aeemu")]([SubResource("Resource_1rmhn"), SubResource("Resource_5n8wb")])
 clouds = Array[ExtResource("2_aeemu")]([SubResource("Resource_ttiap"), SubResource("Resource_aeemu"), SubResource("Resource_y1vi4"), SubResource("Resource_w3cv8")])
 decorations = Array[ExtResource("2_aeemu")]([SubResource("Resource_na50b"), SubResource("Resource_f5p6r")])
+wind_strength = 500.0
+wind_direction = Vector2(1, 0)

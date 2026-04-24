@@ -188,6 +188,7 @@ func _setup_confirmation_home():
 		
 
 func _open_home():
+	GameManager.showWindWarn=false
 	get_tree().change_scene_to_file("res://assets/scenes/UI/UI_Scenes/main_menu.tscn")
 
 	
