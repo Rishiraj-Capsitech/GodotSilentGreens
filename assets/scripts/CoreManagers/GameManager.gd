@@ -2,6 +2,7 @@ extends Node
 
 
 enum GameState {
+	HOME,
 	PLAYING,
 	PAUSED,
 	GAME_OVER,
