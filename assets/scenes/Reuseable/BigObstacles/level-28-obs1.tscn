@@ -20,7 +20,7 @@ texture = ExtResource("1_a5vgy")
 position = Vector2(0, 501)
 rotation = -0.08049948
 script = ExtResource("2_m3cuc")
-rotation_speed = 30.0
+rotation_speed = 25.0
 reverse = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatableBody2D" unique_id=783071522]
