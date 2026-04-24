@@ -16,8 +16,8 @@ var builder
 var lives: int
 var current_level: int = 0
 var SoundOn = true
-var TOTAL_LEVELS=30
-var max_unlocked_level=30
+var TOTAL_LEVELS=27
+var max_unlocked_level=27
 var current_language: String = "en"
 
 
