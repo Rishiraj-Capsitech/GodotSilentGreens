@@ -18,6 +18,8 @@ var current_level: int = 0
 var SoundOn = true
 var TOTAL_LEVELS=30
 var max_unlocked_level=30
+var current_language: String = "en"
+
 
 
 signal level_restarted(level)

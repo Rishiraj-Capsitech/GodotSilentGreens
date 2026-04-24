@@ -154,6 +154,23 @@ func _setup_settings():
 				SoundToggel.pressed.disconnect(toggel_sound)
 			SoundToggel.pressed.connect(toggel_sound)
 
+			# Language selection
+			EnglishButton.pressed.connect(_on_english_pressed)
+			PortugueseButton.pressed.connect(_on_portuguese_pressed)
+			SpanishButton.pressed.connect(_on_spanish_pressed)
+
+func _on_english_pressed():
+	LocalizationManager.set_locale("en")
+	GameManager.current_language = "en"
+
+func _on_portuguese_pressed():
+	LocalizationManager.set_locale("pt-BR")
+	GameManager.current_language = "pt-BR"
+
+func _on_spanish_pressed():
+	LocalizationManager.set_locale("es")
+	GameManager.current_language = "es"
+
 func _setup_confirmation_home():
 	if not HomeCnf:
 		print("Home cnf Not found")
