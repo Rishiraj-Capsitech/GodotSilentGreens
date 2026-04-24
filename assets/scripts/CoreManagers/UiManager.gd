@@ -41,6 +41,10 @@ var ResumeButtonPause:TextureButton
 var SettingsButtonPause:TextureButton
 
 func _ready():
+	_setup_ui()
+	
+func _setup_ui():
+	print("setting up")
 	PausePanel = get_tree().get_first_node_in_group("pause_ui")
 	HudPanel = get_tree().get_first_node_in_group("hud_ui")
 	GameOver = get_tree().get_first_node_in_group("game_over_ui")
@@ -119,28 +123,33 @@ func _setup_GameOver():
 		oops_lable=oops_node.get_node("Label")
 
 
-		
-		
-
 func _setup_settings():
 	if not SettingPannel:
 		print("settings not found")
 		return
 		
-		
 	var setting_node = SettingPannel.get_node("Settings")
 	if setting_node:
 		CLoseSetiings = setting_node.get_node("CloseButton")
-		SoundToggel= setting_node.get_node("VBoxContainer/SoundButton")
-		EnglishButton=setting_node.get_node("VBoxContainer/EnglishButton")
-		PortugueseButton=setting_node.get_node("VBoxContainer/PortugueseButton")
-		SpanishButton=setting_node.get_node("VBoxContainer/SpanishButton")
-		Senstivity=setting_node.get_node("VBoxContainer/Senstivity/Senstivity_Slider")
-		SoundIcon=setting_node.get_node("VBoxContainer/SoundButton/Off")
+		SoundToggel = setting_node.get_node("VBoxContainer/SoundButton")
+		EnglishButton = setting_node.get_node("VBoxContainer/EnglishButton")
+		PortugueseButton = setting_node.get_node("VBoxContainer/PortugueseButton")
+		SpanishButton = setting_node.get_node("VBoxContainer/SpanishButton")
+		Senstivity = setting_node.get_node("VBoxContainer/Senstivity/Senstivity_Slider")
+		SoundIcon = setting_node.get_node("VBoxContainer/SoundButton/Off")
+
 		if (CLoseSetiings and SoundToggel and 
 			EnglishButton and PortugueseButton and 
 			SpanishButton and Senstivity):
+
+			# Close button
+			if CLoseSetiings.pressed.is_connected(Close_settings):
+				CLoseSetiings.pressed.disconnect(Close_settings)
 			CLoseSetiings.pressed.connect(Close_settings)
+
+			# Sound toggle
+			if SoundToggel.pressed.is_connected(toggel_sound):
+				SoundToggel.pressed.disconnect(toggel_sound)
 			SoundToggel.pressed.connect(toggel_sound)
 
 
@@ -175,8 +184,9 @@ func toggel_sound():
 
 func Close_settings():
 	SettingPannel.hide()
-	GameOver.hide()
-	HudPanel.hide() 
+	if GameOver and HudPanel:
+		GameOver.hide()
+		HudPanel.hide() 
 
 func _on_pause_button_pressed() -> void:
 	GameManager.state= GameManager.GameState.PAUSED

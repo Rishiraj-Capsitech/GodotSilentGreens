@@ -156,8 +156,12 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("can_interact_with_water"):
 		var vy := _get_body_velocity_y(body)
 		splash(body.global_position, -vy * player_splash_multiplier)
+		var sprite := body.get_node("Sprite2D")
+		sprite.modulate.a = 0.5
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("can_interact_with_water"):
 		var vy := _get_body_velocity_y(body)
 		splash(body.global_position,  vy * player_splash_multiplier)
+		var sprite := body.get_node("Sprite2D")
+		sprite.modulate.a = 1

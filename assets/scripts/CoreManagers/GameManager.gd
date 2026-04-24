@@ -16,7 +16,7 @@ var lives: int
 var current_level: int = 0
 var SoundOn = true
 var TOTAL_LEVELS=30
-var max_unlocked_level=2
+var max_unlocked_level=30
 
 
 signal level_restarted(level)
@@ -33,7 +33,11 @@ func reset_game():
 	get_tree().paused = false
 	
 	
+func _start(GAME_PATH):
+	get_tree().change_scene_to_file(GAME_PATH)
 
+
+	
 
 
 func lose_life(amount := 1):

@@ -2,8 +2,8 @@
 extends Control
 
 const LEVEL_ITEM_PATH := "res://assets/scenes/UI/UI_Scenes/LevelItem.tscn"
-#const SETTINGS_PATH   := "res://assets/UI_Scenes/Settings.tscn"
-#const GAME_PATH       := "res://assets/scenes/Main/game.tscn"
+var SETTINGS
+const GAME_PATH       := "res://assets/scenes/Main/game.tscn"
  
 const ITEM_SIZE       := 75.0        
 const ITEM_SPACING    := 30.0      
@@ -134,10 +134,8 @@ func _on_level_selected(level_number: int) -> void:
 
 	await get_tree().create_timer(SCROLL_DURATION + 0.1).timeout
 
-	GameManager.current_level = level_number
-	GameManager.reset_run()
-	#get_tree().change_scene_to_file(GAME_PATH)
- 
+	GameManager.current_level = level_number-1
+	GameManager._start(GAME_PATH)
 
 func _update_carousel_scales(delta: float) -> void:
 	if _items.is_empty():
@@ -214,7 +212,9 @@ func _on_arrow_right() -> void:
  
 
 func _on_settings() -> void:
-	if not has_node("Settings"):
-		pass
-		#var settings = load(SETTINGS_PATH).instantiate()
-		#add_child(settings)
+	SETTINGS=get_tree().get_first_node_in_group("setting_ui")
+	if SETTINGS:
+		print("found setting enabling")
+		SETTINGS.show()
+	else:
+		print("notFound")
