@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://dgh1mo5322lcn"
 UiManager="*uid://d4la2twnqy1sn"
+SaveManager="*uid://b617p06w8kg4"
 
 [display]
 
@@ -38,7 +39,7 @@ movie_writer/fps=120
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/save_system_tools/plugin.cfg")
 
 [global_group]
 
