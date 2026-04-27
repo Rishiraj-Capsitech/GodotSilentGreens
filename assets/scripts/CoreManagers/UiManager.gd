@@ -32,7 +32,7 @@ var EnglishButton:TextureButton
 var PortugueseButton:TextureButton
 var SpanishButton:TextureButton
 var Senstivity:Slider
-
+signal SenstivityChange()
 
 #pasue menu buttons
 var HomeButtonPause:TextureButton
@@ -71,6 +71,7 @@ func _setup_hud():
 	LevelNumber = hud.get_node("Level/LevelCount")
 	LevelNumber.text =str(GameManager.current_level+1)
 	CoinCount= hud.get_node("CoinGroup/CoinsCount")
+	LevelNumber.text =str(GameManager.current_level+1)
 	pauseButton=hud.get_node("PauseButton")
 	
 	
@@ -144,7 +145,8 @@ func _setup_settings():
 		if (CLoseSetiings and SoundToggel and 
 			EnglishButton and PortugueseButton and 
 			SpanishButton and Senstivity):
-
+			Senstivity.value=GameManager.sensitivity
+			SoundIcon.visible = GameManager.SoundOn
 			# Close button
 			if CLoseSetiings.pressed.is_connected(Close_settings):
 				CLoseSetiings.pressed.disconnect(Close_settings)
@@ -154,23 +156,32 @@ func _setup_settings():
 			if SoundToggel.pressed.is_connected(toggel_sound):
 				SoundToggel.pressed.disconnect(toggel_sound)
 			SoundToggel.pressed.connect(toggel_sound)
+			
+			if Senstivity.value_changed.is_connected(_on_sensitivity_changed):
+				Senstivity.value_changed.disconnect(_on_sensitivity_changed)
 
+			Senstivity.value_changed.connect(_on_sensitivity_changed)
+			
 			# Language selection
 			EnglishButton.pressed.connect(_on_english_pressed)
 			PortugueseButton.pressed.connect(_on_portuguese_pressed)
 			SpanishButton.pressed.connect(_on_spanish_pressed)
 
+
 func _on_english_pressed():
 	LocalizationManager.set_locale("en")
 	GameManager.current_language = "en"
+	GameManager.save_game_data()
 
 func _on_portuguese_pressed():
 	LocalizationManager.set_locale("pt-BR")
 	GameManager.current_language = "pt-BR"
+	GameManager.save_game_data()
 
 func _on_spanish_pressed():
 	LocalizationManager.set_locale("es")
 	GameManager.current_language = "es"
+	GameManager.save_game_data()
 
 func _setup_confirmation_home():
 	if not HomeCnf:
@@ -192,7 +203,10 @@ func _open_home():
 	GameManager.showWindWarn=false
 	get_tree().change_scene_to_file("res://assets/scenes/UI/UI_Scenes/main_menu.tscn")
 
-	
+func _on_sensitivity_changed(value):
+	GameManager.sensitivity = value
+	SenstivityChange.emit()
+	GameManager.save_game_data()
 	
 func _cancel_home():
 	HomeCnf.hide()
@@ -223,7 +237,12 @@ func _play_oops():
 
 func toggel_sound():
 	GameManager.SoundOn = false if GameManager.SoundOn else true
+	GameManager.SfxOn = GameManager.SoundOn
+	var master_bus_idx = AudioServer.get_bus_index("Master")
+	if master_bus_idx != -1:
+		AudioServer.set_bus_mute(master_bus_idx, not GameManager.SoundOn)
 	SoundIcon.visible = GameManager.SoundOn
+	GameManager.save_game_data()
 
 func Close_settings():
 	SettingPannel.hide()

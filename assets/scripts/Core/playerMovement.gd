@@ -3,8 +3,6 @@ extends RigidBody2D
 @export var dot_scene: PackedScene
 @export var dot_count := 25
 @export var spacing := 0.2
-@export var power := 8.0
-@export var max_drag :=200.0
 @onready var dots_container = $dots
 @onready var trail:Line2D = $Line2D
 @onready var sprite: Sprite2D = $Sprite2D
@@ -17,6 +15,10 @@ var can_shoot = true
 var goal = false
 var dots = []
 var dragging = false
+var base_drag = 200.0
+var base_power = 8.0
+var power
+var max_drag
 var drag_start = Vector2.ZERO
 var spawn_position
 var min_drag := 10.0
@@ -24,16 +26,26 @@ var out_of_screen_time := 0.0
 var max_out_time := 0.5
 var wind_force := Vector2.ZERO
 
-
 func _ready():
+	UiManager.SenstivityChange.connect(_on_SenstivityChange)
+	var sensitivity = clamp(GameManager.sensitivity / 100.0, 0.01, 1.0)
+	max_drag = lerp(800.0, 200.0, sensitivity)
+	power = (base_drag * base_power) / max_drag
+
 	freeze = true
 	freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
-	
+
 	for i in range(dot_count):
 		var dot = dot_scene.instantiate()
 		dots_container.add_child(dot)
 		dots.append(dot)
 		dot.visible = false
+
+
+func _on_SenstivityChange():
+	var sensitivity = clamp(GameManager.sensitivity / 100.0, 0.01, 1.0)
+	max_drag = lerp(800.0, 200.0, sensitivity)
+	power = (base_drag * base_power) / max_drag
 
 
 func _input(event):

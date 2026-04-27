@@ -8,13 +8,18 @@ static func create_default_data() -> Dictionary:
 	return {
 		"progression": {
 			"levels_unlocked": [1],
-			"levels_cleared": [],
-			"test_value": 0    # Added for visual testing
+			"levels_cleared": []
+		},
+		"player_data": {
+			"level_attempts_by_level": {},
+			"game_lives": 3,
+			"game_coins": 0
 		},
 		"settings": {
-			"language": "pt-BR",
+			"language": "en",
 			"music_enabled": true,
-			"sfx_enabled": true
+			"sfx_enabled": true,
+			"sensitivity": 0.0
 		},
 		"metadata": {
 			"last_played": Time.get_datetime_dict_from_system(),

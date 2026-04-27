@@ -39,6 +39,7 @@ func spawn(data: SpawnData):
 func build_level():
 	if levels.is_empty():
 		return
+	GameManager.register_current_level_for_tracking()
 	UiManager.set_level(GameManager.current_level+1)
 	var level_data: LevelData = levels[GameManager.current_level]
 	
@@ -122,9 +123,10 @@ func next_level():
 	if is_instance_valid(ball):
 		ball.queue_free()
 	
-	GameManager.current_level += 1
+	GameManager.complete_level()
 	if GameManager.current_level >= levels.size():
 		GameManager.current_level = 0
+	GameManager.state = GameManager.GameState.PLAYING
 	GameManager.showWindWarn=false
 	build_level()
 

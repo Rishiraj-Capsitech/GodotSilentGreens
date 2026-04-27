@@ -10,6 +10,8 @@ const SAVE_FILE_EXTENSION = ".json"
 func _ready():
 	# Ensure the save directory exists when the manager starts
 	verify_save_directory()
+	var abs_path = ProjectSettings.globalize_path(SAVE_DIR)
+	print("SaveSystem: Save directory (absolute): ", abs_path)
 
 
 ## Verifies if the save directory exists, creates it if not.
@@ -27,25 +29,39 @@ func get_save_path(slot: int) -> String:
 func save_game(slot: int, data: Dictionary) -> bool:
 	verify_save_directory()
 	var path = get_save_path(slot)
+	print("SaveSystem: Attempting to save to: ", path)
+	print("SaveSystem: Absolute path: ", ProjectSettings.globalize_path(path))
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	if file == null:
 		push_error("SaveSystem: Could not open file for writing at %s. Error: %s" % [path, FileAccess.get_open_error()])
 		return false
 	
-	var json_string = JSON.stringify(data, "\t") # Pretty-print with tabs
+	var json_string = JSON.stringify(data, "\t")
+	if json_string == null or json_string == "":
+		push_error("SaveSystem: JSON.stringify returned empty!")
+		file.close()
+		return false
+	
 	file.store_string(json_string)
 	file.close()
 	
-	print("SaveSystem: Game saved to slot %d" % slot)
+	# Verify the file was actually written
+	if FileAccess.file_exists(path):
+		print("SaveSystem: ✓ Game saved to slot %d (file confirmed on disk)" % slot)
+	else:
+		push_error("SaveSystem: ✗ File NOT found after writing!")
+		return false
 	return true
 
 
 ## Loads and returns data from a specific slot. Returns an empty dictionary if loading fails or file doesn't exist.
 func load_game(slot: int) -> Dictionary:
 	var path = get_save_path(slot)
+	print("SaveSystem: Attempting to load from: ", path)
+	print("SaveSystem: Absolute path: ", ProjectSettings.globalize_path(path))
 	
 	if not FileAccess.file_exists(path):
-		print("SaveSystem: No save file found at %s" % path)
+		print("SaveSystem: ✗ No save file found at %s" % path)
 		return {}
 		
 	var file = FileAccess.open(path, FileAccess.READ)
@@ -55,13 +71,15 @@ func load_game(slot: int) -> Dictionary:
 		
 	var json_string = file.get_as_text()
 	file.close()
+	print("SaveSystem: Read %d characters from save file" % json_string.length())
 	
 	var json = JSON.new()
 	var error = json.parse(json_string)
 	if error != OK:
 		push_error("SaveSystem: JSON parse error in %s: %s at line %d" % [path, json.get_error_message(), json.get_error_line()])
 		return {}
-		
+	
+	print("SaveSystem: ✓ Save loaded successfully from slot %d" % slot)
 	return json.data
 
 

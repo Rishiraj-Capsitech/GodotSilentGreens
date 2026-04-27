@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bk02hi5vyx42s" path="res://assets/scenes/Reuseable/Core/ball.tscn" id="2_1cyye"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_hh3qc"]
 [ext_resource type="Resource" uid="uid://dj43t4y17xhwu" path="res://assets/LevelData/Level16.tres" id="4_3rsi6"]
-[ext_resource type="Resource" uid="uid://bvtbj5xmafotf" path="res://assets/LevelData/Level11.tres" id="4_6wnq6"]
+[ext_resource type="Resource" uid="uid://bvtbj5xmafotf" path="res://assets/LevelData/level11.tres" id="4_6wnq6"]
 [ext_resource type="Resource" uid="uid://b02abb00r8we1" path="res://assets/LevelData/Level14.tres" id="4_7ergh"]
 [ext_resource type="Resource" uid="uid://b1002k1c3jdm5" path="res://assets/LevelData/Level12.tres" id="4_db5ja"]
 [ext_resource type="Resource" uid="uid://whs5gt0j6gby" path="res://assets/LevelData/Level1.tres" id="4_eu5vx"]
