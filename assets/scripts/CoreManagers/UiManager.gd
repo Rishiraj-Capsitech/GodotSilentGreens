@@ -70,6 +70,7 @@ func _setup_hud():
 	
 	LevelNumber = hud.get_node("Level/LevelCount")
 	CoinCount= hud.get_node("CoinGroup/CoinsCount")
+	LevelNumber.text =str(GameManager.current_level+1)
 	pauseButton=hud.get_node("PauseButton")
 	
 	
@@ -162,14 +163,17 @@ func _setup_settings():
 func _on_english_pressed():
 	LocalizationManager.set_locale("en")
 	GameManager.current_language = "en"
+	GameManager.save_game_data()
 
 func _on_portuguese_pressed():
 	LocalizationManager.set_locale("pt-BR")
 	GameManager.current_language = "pt-BR"
+	GameManager.save_game_data()
 
 func _on_spanish_pressed():
 	LocalizationManager.set_locale("es")
 	GameManager.current_language = "es"
+	GameManager.save_game_data()
 
 func _setup_confirmation_home():
 	if not HomeCnf:
@@ -223,6 +227,7 @@ func _play_oops():
 func toggel_sound():
 	GameManager.SoundOn = false if GameManager.SoundOn else true
 	SoundIcon.visible = GameManager.SoundOn
+	GameManager.save_game_data()
 
 func Close_settings():
 	SettingPannel.hide()

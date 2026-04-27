@@ -23,9 +23,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SaveManager="*uid://b617p06w8kg4"
 GameManager="*uid://dgh1mo5322lcn"
 UiManager="*uid://d4la2twnqy1sn"
-SaveManager="*uid://b617p06w8kg4"
 LocalizationManager="*uid://ikqf6ke78fcw"
 
 [display]
