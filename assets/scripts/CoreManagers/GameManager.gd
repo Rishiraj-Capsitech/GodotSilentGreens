@@ -24,7 +24,7 @@ var current_language: String = "en"
 var showWindWarn = false
 var sensitivity := 0.0
 var level_attempts_by_level: Dictionary = {}
-
+var current_coins =0
 
 signal level_restarted(level)
 
@@ -84,6 +84,9 @@ func _apply_loaded_data(data: Dictionary) -> void:
 	var master_bus_idx = AudioServer.get_bus_index("Master")
 	if master_bus_idx != -1:
 		AudioServer.set_bus_mute(master_bus_idx, not SoundOn)
+
+
+
 
 
 func save_game_data():

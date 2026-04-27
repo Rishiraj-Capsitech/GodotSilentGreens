@@ -71,6 +71,7 @@ func _setup_hud():
 	LevelNumber = hud.get_node("Level/LevelCount")
 	LevelNumber.text =str(GameManager.current_level+1)
 	CoinCount= hud.get_node("CoinGroup/CoinsCount")
+	CoinCount.text = str(GameManager.current_coins)
 	LevelNumber.text =str(GameManager.current_level+1)
 	pauseButton=hud.get_node("PauseButton")
 	
@@ -275,9 +276,11 @@ func _gameOver():
 	SettingPannel.hide()
 
 func add_coin(coin: int):
-	var current = int(CoinCount.text)
-	current += coin
-	CoinCount.text = str(current)
+	if not GameManager.current_level < GameManager.max_unlocked_level-1:
+		var current = GameManager.current_coins
+		current += coin
+		CoinCount.text = str(current)
+		GameManager.current_coins=current
 	
 func set_level(level:int):
 	if LevelNumber:

@@ -120,6 +120,7 @@ func _on_level_restarted():
 
 
 func next_level():
+	UiManager.add_coin(5)
 	if is_instance_valid(ball):
 		ball.queue_free()
 	
