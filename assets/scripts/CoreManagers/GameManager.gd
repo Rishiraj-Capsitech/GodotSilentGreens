@@ -21,7 +21,8 @@ var TOTAL_LEVELS=27
 var max_unlocked_level=1
 var current_language: String = "en"
 var showWindWarn = false
-var sensitivity = 0
+var sensitivity := 0.0
+var level_attempts := 0
 
 
 signal level_restarted(level)
@@ -34,18 +35,28 @@ func _ready():
 # ── Save System Integration ──────────────────────────────────────────
 
 func _load_save_data():
+	print("GameManager: _load_save_data() called")
 	var data = SaveManager.load_game(SAVE_SLOT)
 	if data.is_empty():
-		print("GameManager: No save found, using defaults.")
+		print("GameManager: No save found — creating initial save with defaults.")
+		save_game_data()
 		return
 
 	# Progression
 	if "progression" in data:
 		var prog = data["progression"]
 		if "levels_unlocked" in prog:
-			var levels = prog["levels_unlocked"]
-			if levels is Array and levels.size() > 0:
-				max_unlocked_level = int(levels.max())
+			var levels_arr = prog["levels_unlocked"]
+			if levels_arr is Array and levels_arr.size() > 0:
+				max_unlocked_level = int(levels_arr.max())
+				print("GameManager: Loaded max_unlocked_level = ", max_unlocked_level)
+
+	# Player data
+	if "player_data" in data:
+		var pdata = data["player_data"]
+		if "level_attempts" in pdata:
+			level_attempts = int(pdata["level_attempts"])
+			print("GameManager: Loaded level_attempts = ", level_attempts)
 
 	# Settings
 	if "settings" in data:
@@ -54,11 +65,16 @@ func _load_save_data():
 			current_language = settings["language"]
 		if "music_enabled" in settings:
 			SoundOn = settings["music_enabled"]
+		if "sensitivity" in settings:
+			sensitivity = float(settings["sensitivity"])
+		print("GameManager: Loaded settings — lang=", current_language, " sound=", SoundOn)
 
-	print("GameManager: Save loaded. Max unlocked level: ", max_unlocked_level)
+	print("GameManager: ✓ Save data applied successfully.")
 
 
 func save_game_data():
+	print("GameManager: save_game_data() called")
+
 	# Build the levels_unlocked array from max_unlocked_level
 	var unlocked_arr := []
 	for i in range(1, max_unlocked_level + 1):
@@ -76,7 +92,7 @@ func save_game_data():
 			"levels_cleared": cleared_arr
 		},
 		"player_data": {
-			"level_attempts": 0,
+			"level_attempts": level_attempts,
 			"game_lives": lives,
 			"game_coins": 0
 		},
@@ -84,14 +100,18 @@ func save_game_data():
 			"language": current_language,
 			"music_enabled": SoundOn,
 			"sfx_enabled": SoundOn,
-			"sensitivity": 0.0
+			"sensitivity": sensitivity
 		},
 		"metadata": {
 			"last_played": Time.get_datetime_dict_from_system(),
 			"version": "1.0"
 		}
 	}
-	SaveManager.save_game(SAVE_SLOT, data)
+
+	print("GameManager: Saving — max_unlocked=", max_unlocked_level, " attempts=", level_attempts, " lang=", current_language)
+	var success = SaveManager.save_game(SAVE_SLOT, data)
+	if not success:
+		push_error("GameManager: ✗ save_game_data FAILED!")
 
 
 # ── Game Logic ───────────────────────────────────────────────────────
@@ -114,6 +134,7 @@ func lose_life(amount := 1):
 		return
 	lives -= amount
 	lives = clamp(lives, 0, max_lives)
+	level_attempts += 1
 	UiManager._updateLife(lives)
 	if lives <= 0:
 		game_over()
@@ -140,7 +161,7 @@ func resume_game():
 func game_over():
 	state = GameState.GAME_OVER
 	UiManager._gameOver()
-	
+	save_game_data()
 
 
 func complete_level():
@@ -149,4 +170,5 @@ func complete_level():
 	# Update progression if the player reached a new high
 	if current_level + 1 > max_unlocked_level:
 		max_unlocked_level = mini(current_level + 1, TOTAL_LEVELS)
+	print("GameManager: complete_level() — current_level=", current_level, " max_unlocked=", max_unlocked_level)
 	save_game_data()

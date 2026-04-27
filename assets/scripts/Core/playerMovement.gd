@@ -26,20 +26,26 @@ var out_of_screen_time := 0.0
 var max_out_time := 0.5
 var wind_force := Vector2.ZERO
 
-
 func _ready():
+	UiManager.SenstivityChange.connect(_on_SenstivityChange)
 	var sensitivity = clamp(GameManager.sensitivity / 100.0, 0.01, 1.0)
 	max_drag = lerp(800.0, 200.0, sensitivity)
 	power = (base_drag * base_power) / max_drag
-	
+
 	freeze = true
 	freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
-	
+
 	for i in range(dot_count):
 		var dot = dot_scene.instantiate()
 		dots_container.add_child(dot)
 		dots.append(dot)
 		dot.visible = false
+
+
+func _on_SenstivityChange():
+	var sensitivity = clamp(GameManager.sensitivity / 100.0, 0.01, 1.0)
+	max_drag = lerp(800.0, 200.0, sensitivity)
+	power = (base_drag * base_power) / max_drag
 
 
 func _input(event):

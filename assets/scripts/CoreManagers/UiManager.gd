@@ -32,7 +32,7 @@ var EnglishButton:TextureButton
 var PortugueseButton:TextureButton
 var SpanishButton:TextureButton
 var Senstivity:Slider
-
+signal SenstivityChange()
 
 #pasue menu buttons
 var HomeButtonPause:TextureButton
@@ -144,7 +144,7 @@ func _setup_settings():
 		if (CLoseSetiings and SoundToggel and 
 			EnglishButton and PortugueseButton and 
 			SpanishButton and Senstivity):
-
+			Senstivity.value=GameManager.sensitivity
 			# Close button
 			if CLoseSetiings.pressed.is_connected(Close_settings):
 				CLoseSetiings.pressed.disconnect(Close_settings)
@@ -154,11 +154,17 @@ func _setup_settings():
 			if SoundToggel.pressed.is_connected(toggel_sound):
 				SoundToggel.pressed.disconnect(toggel_sound)
 			SoundToggel.pressed.connect(toggel_sound)
+			
+			if Senstivity.value_changed.is_connected(_on_sensitivity_changed):
+				Senstivity.value_changed.disconnect(_on_sensitivity_changed)
 
+			Senstivity.value_changed.connect(_on_sensitivity_changed)
+			
 			# Language selection
 			EnglishButton.pressed.connect(_on_english_pressed)
 			PortugueseButton.pressed.connect(_on_portuguese_pressed)
 			SpanishButton.pressed.connect(_on_spanish_pressed)
+
 
 func _on_english_pressed():
 	LocalizationManager.set_locale("en")
@@ -195,7 +201,8 @@ func _open_home():
 	GameManager.showWindWarn=false
 	get_tree().change_scene_to_file("res://assets/scenes/UI/UI_Scenes/main_menu.tscn")
 
-	
+func _on_sensitivity_changed(value):
+	GameManager.sensitivity = value
 	
 func _cancel_home():
 	HomeCnf.hide()
