@@ -10,12 +10,16 @@
 script = ExtResource("3_2f2o5")
 clip = ExtResource("4_2f2o5")
 loop = true
+min_volume = 0.5
+max_volume = 0.6
 metadata/_custom_type_script = "uid://d4m1j4wil0nll"
 
 [sub_resource type="Resource" id="Resource_2f2o5"]
 script = ExtResource("3_2f2o5")
 sound_type = 1
 clip = ExtResource("5_ulbdi")
+min_volume = 0.1
+max_volume = 0.3
 metadata/_custom_type_script = "uid://d4m1j4wil0nll"
 
 [sub_resource type="Resource" id="Resource_ulbdi"]
