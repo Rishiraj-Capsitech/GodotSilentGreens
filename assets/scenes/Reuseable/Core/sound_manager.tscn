@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dnjrhvgwgmxb3" path="res://assets/scripts/SoundSystem/sound_database.gd" id="2_mn52p"]
 [ext_resource type="Script" uid="uid://d4m1j4wil0nll" path="res://assets/scripts/SoundSystem/sound_data.gd" id="3_2f2o5"]
 [ext_resource type="AudioStream" uid="uid://d08cp0h1y3xn7" path="res://assets/Audio/Bgm.mp3" id="4_2f2o5"]
+[ext_resource type="AudioStream" uid="uid://upurtecy8evk" path="res://assets/Audio/GolfHit.mp3" id="5_ulbdi"]
 
 [sub_resource type="Resource" id="Resource_ukst8"]
 script = ExtResource("3_2f2o5")
@@ -11,9 +12,15 @@ clip = ExtResource("4_2f2o5")
 loop = true
 metadata/_custom_type_script = "uid://d4m1j4wil0nll"
 
+[sub_resource type="Resource" id="Resource_2f2o5"]
+script = ExtResource("3_2f2o5")
+sound_type = 1
+clip = ExtResource("5_ulbdi")
+metadata/_custom_type_script = "uid://d4m1j4wil0nll"
+
 [sub_resource type="Resource" id="Resource_ulbdi"]
 script = ExtResource("2_mn52p")
-sounds = Array[ExtResource("3_2f2o5")]([SubResource("Resource_ukst8")])
+sounds = Array[ExtResource("3_2f2o5")]([SubResource("Resource_ukst8"), SubResource("Resource_2f2o5")])
 metadata/_custom_type_script = "uid://dnjrhvgwgmxb3"
 
 [node name="Node2D" type="Node2D" unique_id=541939222]
