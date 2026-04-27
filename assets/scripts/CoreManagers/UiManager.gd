@@ -69,6 +69,7 @@ func _setup_hud():
 	var hud = HudPanel.get_node("GameHUD")
 	
 	LevelNumber = hud.get_node("Level/LevelCount")
+	LevelNumber.text =str(GameManager.current_level+1)
 	CoinCount= hud.get_node("CoinGroup/CoinsCount")
 	pauseButton=hud.get_node("PauseButton")
 	
@@ -262,8 +263,8 @@ func add_coin(coin: int):
 func set_level(level:int):
 	if LevelNumber:
 		LevelNumber.text =str(level)
-	else:
-		print(" Not Found")
+
+
 
 func _home():
 	HomeCnf.show()

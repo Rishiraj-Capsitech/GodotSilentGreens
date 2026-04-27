@@ -39,6 +39,8 @@ func _process(delta):
 		var dist = target_ball.global_position.distance_to(target_pos)
 		var speed = dist * 2.0
 		if self_velocity.length() > 10:
+			
+			
 			speed = 200
 
 		target_ball.global_position = target_ball.global_position.move_toward(
