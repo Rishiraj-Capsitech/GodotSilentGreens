@@ -125,6 +125,7 @@ func next_level():
 	GameManager.complete_level()
 	if GameManager.current_level >= levels.size():
 		GameManager.current_level = 0
+	GameManager.state = GameManager.GameState.PLAYING
 	GameManager.showWindWarn=false
 	build_level()
 

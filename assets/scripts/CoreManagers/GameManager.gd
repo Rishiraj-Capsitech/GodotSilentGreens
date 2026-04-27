@@ -23,6 +23,7 @@ var current_language: String = "en"
 var showWindWarn = false
 var sensitivity := 0.0
 var level_attempts := 0
+var level_attempts_by_level: Dictionary = {}
 
 
 signal level_restarted(level)
@@ -63,6 +64,9 @@ func _apply_loaded_data(data: Dictionary) -> void:
 		if "level_attempts" in pdata:
 			level_attempts = int(pdata["level_attempts"])
 			print("GameManager: Loaded level_attempts = ", level_attempts)
+		if "level_attempts_by_level" in pdata and pdata["level_attempts_by_level"] is Dictionary:
+			level_attempts_by_level = pdata["level_attempts_by_level"].duplicate(true)
+			print("GameManager: Loaded per-level attempts for ", level_attempts_by_level.size(), " levels")
 
 	# Settings
 	if "settings" in data:
@@ -101,6 +105,7 @@ func save_game_data():
 		},
 		"player_data": {
 			"level_attempts": level_attempts,
+			"level_attempts_by_level": level_attempts_by_level,
 			"game_lives": lives,
 			"game_coins": 0
 		},
@@ -143,6 +148,9 @@ func lose_life(amount := 1):
 	lives -= amount
 	lives = clamp(lives, 0, max_lives)
 	level_attempts += 1
+	var level_key := str(current_level + 1)
+	level_attempts_by_level[level_key] = int(level_attempts_by_level.get(level_key, 0)) + 1
+	save_game_data()
 	UiManager._updateLife(lives)
 	if lives <= 0:
 		game_over()
