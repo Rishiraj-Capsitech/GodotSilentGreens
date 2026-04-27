@@ -282,6 +282,7 @@ func add_coin(coin: int):
 		current += coin
 		CoinCount.text = str(current)
 		GameManager.current_coins=current
+		GameManager.save_game_data()
 	
 func set_level(level:int):
 	if LevelNumber:

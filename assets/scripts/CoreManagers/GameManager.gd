@@ -64,6 +64,9 @@ func _apply_loaded_data(data: Dictionary) -> void:
 		if "level_attempts_by_level" in pdata and pdata["level_attempts_by_level"] is Dictionary:
 			level_attempts_by_level = pdata["level_attempts_by_level"].duplicate(true)
 			print("GameManager: Loaded per-level attempts for ", level_attempts_by_level.size(), " levels")
+		if "game_coins" in pdata:
+			current_coins = int(pdata["game_coins"])
+			print("GameManager: Loaded coins = ", current_coins)
 	_sanitize_level_attempts_map()
 
 	# Settings
@@ -112,7 +115,7 @@ func save_game_data():
 		"player_data": {
 			"level_attempts_by_level": level_attempts_by_level,
 			"game_lives": lives,
-			"game_coins": 0
+			"game_coins": current_coins
 		},
 		"settings": {
 			"language": current_language,
