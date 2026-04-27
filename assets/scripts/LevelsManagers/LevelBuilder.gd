@@ -39,6 +39,7 @@ func spawn(data: SpawnData):
 func build_level():
 	if levels.is_empty():
 		return
+	GameManager.register_current_level_for_tracking()
 	UiManager.set_level(GameManager.current_level+1)
 	var level_data: LevelData = levels[GameManager.current_level]
 	

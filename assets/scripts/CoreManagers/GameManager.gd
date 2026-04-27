@@ -16,13 +16,13 @@ var state: GameState = GameState.PLAYING
 var builder
 var lives: int
 var current_level: int = 0
-var SoundOn = true
+var SoundOn := true
+var SfxOn := true
 var TOTAL_LEVELS=27
 var max_unlocked_level=1
 var current_language: String = "en"
 var showWindWarn = false
 var sensitivity := 0.0
-var level_attempts := 0
 var level_attempts_by_level: Dictionary = {}
 
 
@@ -61,12 +61,10 @@ func _apply_loaded_data(data: Dictionary) -> void:
 	# Player data
 	if "player_data" in data:
 		var pdata = data["player_data"]
-		if "level_attempts" in pdata:
-			level_attempts = int(pdata["level_attempts"])
-			print("GameManager: Loaded level_attempts = ", level_attempts)
 		if "level_attempts_by_level" in pdata and pdata["level_attempts_by_level"] is Dictionary:
 			level_attempts_by_level = pdata["level_attempts_by_level"].duplicate(true)
 			print("GameManager: Loaded per-level attempts for ", level_attempts_by_level.size(), " levels")
+	_sanitize_level_attempts_map()
 
 	# Settings
 	if "settings" in data:
@@ -75,9 +73,13 @@ func _apply_loaded_data(data: Dictionary) -> void:
 			current_language = settings["language"]
 		if "music_enabled" in settings:
 			SoundOn = settings["music_enabled"]
+		if "sfx_enabled" in settings:
+			SfxOn = settings["sfx_enabled"]
+		else:
+			SfxOn = SoundOn
 		if "sensitivity" in settings:
 			sensitivity = float(settings["sensitivity"])
-		print("GameManager: Loaded settings — lang=", current_language, " sound=", SoundOn)
+		print("GameManager: Loaded settings — lang=", current_language, " music=", SoundOn, " sfx=", SfxOn)
 
 	var master_bus_idx = AudioServer.get_bus_index("Master")
 	if master_bus_idx != -1:
@@ -86,6 +88,7 @@ func _apply_loaded_data(data: Dictionary) -> void:
 
 func save_game_data():
 	print("GameManager: save_game_data() called")
+	_sanitize_level_attempts_map()
 
 	# Build the levels_unlocked array from max_unlocked_level
 	var unlocked_arr := []
@@ -104,7 +107,6 @@ func save_game_data():
 			"levels_cleared": cleared_arr
 		},
 		"player_data": {
-			"level_attempts": level_attempts,
 			"level_attempts_by_level": level_attempts_by_level,
 			"game_lives": lives,
 			"game_coins": 0
@@ -112,7 +114,7 @@ func save_game_data():
 		"settings": {
 			"language": current_language,
 			"music_enabled": SoundOn,
-			"sfx_enabled": SoundOn,
+			"sfx_enabled": SfxOn,
 			"sensitivity": sensitivity
 		},
 		"metadata": {
@@ -121,10 +123,32 @@ func save_game_data():
 		}
 	}
 
-	print("GameManager: Saving — max_unlocked=", max_unlocked_level, " attempts=", level_attempts, " lang=", current_language)
+	print("GameManager: Saving — max_unlocked=", max_unlocked_level, " lang=", current_language)
 	var success = SaveManager.save_game(SAVE_SLOT, data)
 	if not success:
 		push_error("GameManager: ✗ save_game_data FAILED!")
+
+
+func _sanitize_level_attempts_map() -> void:
+	var cleaned: Dictionary = {}
+	for raw_key in level_attempts_by_level.keys():
+		var key_str := str(raw_key)
+		if key_str.is_valid_int():
+			var key_int := int(key_str)
+			if key_int >= 1 and key_int <= TOTAL_LEVELS:
+				cleaned[key_str] = int(level_attempts_by_level.get(raw_key, 0))
+	level_attempts_by_level = cleaned
+
+
+func _register_level_entry(level_number: int) -> void:
+	var safe_level := clampi(level_number, 1, TOTAL_LEVELS)
+	var key := str(safe_level)
+	if not level_attempts_by_level.has(key):
+		level_attempts_by_level[key] = 0
+
+
+func register_current_level_for_tracking() -> void:
+	_register_level_entry(current_level + 1)
 
 
 # ── Game Logic ───────────────────────────────────────────────────────
@@ -133,12 +157,14 @@ func reset_game():
 	showWindWarn =false
 	lives = max_lives
 	state = GameState.PLAYING
+	_register_level_entry(current_level + 1)
 	UiManager._updateLife(lives)
 	emit_signal("level_restarted")
 	get_tree().paused = false
 	
 	
 func _start(GAME_PATH):
+	_register_level_entry(current_level + 1)
 	get_tree().change_scene_to_file(GAME_PATH)
 
 
@@ -147,8 +173,9 @@ func lose_life(amount := 1):
 		return
 	lives -= amount
 	lives = clamp(lives, 0, max_lives)
-	level_attempts += 1
-	var level_key := str(current_level + 1)
+	var safe_level := clampi(current_level + 1, 1, TOTAL_LEVELS)
+	_register_level_entry(safe_level)
+	var level_key := str(safe_level)
 	level_attempts_by_level[level_key] = int(level_attempts_by_level.get(level_key, 0)) + 1
 	save_game_data()
 	UiManager._updateLife(lives)
@@ -186,5 +213,6 @@ func complete_level():
 	# Update progression if the player reached a new high
 	if current_level + 1 > max_unlocked_level:
 		max_unlocked_level = mini(current_level + 1, TOTAL_LEVELS)
+	_register_level_entry(current_level + 1)
 	print("GameManager: complete_level() — current_level=", current_level, " max_unlocked=", max_unlocked_level)
 	save_game_data()

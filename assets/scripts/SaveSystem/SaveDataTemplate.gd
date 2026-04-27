@@ -11,7 +11,6 @@ static func create_default_data() -> Dictionary:
 			"levels_cleared": []
 		},
 		"player_data": {
-			"level_attempts": 0,
 			"level_attempts_by_level": {},
 			"game_lives": 3,
 			"game_coins": 0
