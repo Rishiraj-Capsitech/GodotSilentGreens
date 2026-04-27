@@ -147,7 +147,8 @@ func _setup_settings():
 			EnglishButton and PortugueseButton and 
 			SpanishButton and Senstivity):
 			Senstivity.value=GameManager.sensitivity
-			SoundIcon.visible = GameManager.SoundOn
+			# "Off" icon should be visible only when sound is disabled.
+			SoundIcon.visible = not GameManager.SoundOn
 			# Close button
 			if CLoseSetiings.pressed.is_connected(Close_settings):
 				CLoseSetiings.pressed.disconnect(Close_settings)
@@ -242,7 +243,7 @@ func toggel_sound():
 	var master_bus_idx = AudioServer.get_bus_index("Master")
 	if master_bus_idx != -1:
 		AudioServer.set_bus_mute(master_bus_idx, not GameManager.SoundOn)
-	SoundIcon.visible = GameManager.SoundOn
+	SoundIcon.visible = not GameManager.SoundOn
 	GameManager.save_game_data()
 
 func Close_settings():

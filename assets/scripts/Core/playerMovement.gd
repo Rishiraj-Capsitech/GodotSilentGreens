@@ -154,6 +154,7 @@ func update_dots():
 func shoot():
 	if not can_shoot: return
 	if GameManager.state != GameManager.GameState.PLAYING:return
+	SoundManager.play_sfx(SoundType.BALL_SHOOT)
 	print(GameManager.state)
 	can_shoot = false
 	linear_velocity = Vector2.ZERO
