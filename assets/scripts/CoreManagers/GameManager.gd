@@ -39,9 +39,15 @@ func _load_save_data():
 	var data = SaveManager.load_game(SAVE_SLOT)
 	if data.is_empty():
 		print("GameManager: No save found — creating initial save with defaults.")
-		save_game_data()
+		data = SaveDataTemplate.create_default_data()
+		_apply_loaded_data(data)
+		SaveManager.save_game(SAVE_SLOT, data)
 		return
+	_apply_loaded_data(data)
+	print("GameManager: ✓ Save data applied successfully.")
 
+
+func _apply_loaded_data(data: Dictionary) -> void:
 	# Progression
 	if "progression" in data:
 		var prog = data["progression"]
@@ -69,7 +75,9 @@ func _load_save_data():
 			sensitivity = float(settings["sensitivity"])
 		print("GameManager: Loaded settings — lang=", current_language, " sound=", SoundOn)
 
-	print("GameManager: ✓ Save data applied successfully.")
+	var master_bus_idx = AudioServer.get_bus_index("Master")
+	if master_bus_idx != -1:
+		AudioServer.set_bus_mute(master_bus_idx, not SoundOn)
 
 
 func save_game_data():

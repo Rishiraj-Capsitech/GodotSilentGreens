@@ -203,6 +203,8 @@ func _open_home():
 
 func _on_sensitivity_changed(value):
 	GameManager.sensitivity = value
+	SenstivityChange.emit()
+	GameManager.save_game_data()
 	
 func _cancel_home():
 	HomeCnf.hide()

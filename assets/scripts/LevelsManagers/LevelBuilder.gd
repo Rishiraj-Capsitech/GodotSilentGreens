@@ -122,8 +122,7 @@ func next_level():
 	if is_instance_valid(ball):
 		ball.queue_free()
 	
-	#GameManager.complete_level()
-	GameManager.current_level += 1
+	GameManager.complete_level()
 	if GameManager.current_level >= levels.size():
 		GameManager.current_level = 0
 	GameManager.showWindWarn=false
