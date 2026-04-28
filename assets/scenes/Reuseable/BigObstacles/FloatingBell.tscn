@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://djfg2bxxkc7mx" path="res://assets/sprites/Obstacles/SwingingBell_1.png" id="2_vrj33"]
 
 [node name="FloatingBell" type="Node2D" unique_id=969255053]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.15, 0.15)
 script = ExtResource("1_4x5k8")
 max_angle_degrees = 11.0
 swing_speed = 1.4

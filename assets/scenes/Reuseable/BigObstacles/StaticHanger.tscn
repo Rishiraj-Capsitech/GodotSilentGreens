@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ckh8f2l5w4fkl" path="res://assets/sprites/Obstacles/SwingingBellHanger.png" id="1_o2a40"]
 
 [node name="StaticHanger" type="Node2D" unique_id=969255053]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 
 [node name="HangerBody" type="AnimatableBody2D" parent="." unique_id=10708536]
 

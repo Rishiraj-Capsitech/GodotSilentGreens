@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cptovpj5bpeps" path="res://assets/scripts/Reuseables/bell_swing.gd" id="1_kg51m"]
 [ext_resource type="Texture2D" uid="uid://cjv50manx70fp" path="res://assets/sprites/Obstacles/SwingingBell_2.png" id="2_m5w0g"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="3_74nqg"]
 
 [node name="FloatingBellOpen" type="Node2D" unique_id=876101739]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.15, 0.15)
 script = ExtResource("1_kg51m")
 max_angle_degrees = 10.0
 swing_speed = 1.25
@@ -21,3 +22,7 @@ polygon = PackedVector2Array(-273.08542, 2046.807, -225.7768, 1957.6407, -169.36
 [node name="Sprite2D" type="Sprite2D" parent="BellBody" unique_id=1198174555]
 texture = ExtResource("2_m5w0g")
 offset = Vector2(0, 1093.5)
+
+[node name="MainFlag" parent="." unique_id=493944793 instance=ExtResource("3_74nqg")]
+position = Vector2(5.788982, 1955.3452)
+scale = Vector2(0.57333434, 0.57333434)
