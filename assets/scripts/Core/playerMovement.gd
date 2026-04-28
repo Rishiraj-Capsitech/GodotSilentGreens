@@ -15,7 +15,7 @@ var can_shoot = true
 var goal = false
 var dots = []
 var dragging = false
-var base_drag = 200.0
+var base_drag = 250.0
 var base_power = 8.0
 var power
 var max_drag
@@ -28,6 +28,9 @@ var wind_force := Vector2.ZERO
 
 func _ready():
 	UiManager.SenstivityChange.connect(_on_SenstivityChange)
+	contact_monitor = true
+	max_contacts_reported = 10
+	body_entered.connect(_on_body_enter)
 	var sensitivity = clamp(GameManager.sensitivity / 100.0, 0.01, 1.0)
 	max_drag = lerp(800.0, 200.0, sensitivity)
 	power = (base_drag * base_power) / max_drag
@@ -208,4 +211,11 @@ func losseLife():
 		position = spawn_position
 		GameManager.lose_life()
 		get_tree().get_root().get_node("Game/LevelLoader").build_level()
-		
+
+
+func _on_body_enter(body:Node):
+	if body.is_in_group("land"):
+		SoundManager.play_sfx(SoundType.GROUND_HIT)
+
+	elif body.is_in_group("tree"):
+		SoundManager.play_sfx(SoundType.TREE_HIT)

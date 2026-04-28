@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dqy1esydfmsmv" path="res://assets/sprites/Obstacles/ObsTree.png" id="1_au3k8"]
 
-[node name="ObsTree" type="StaticBody2D" unique_id=1433651913]
+[node name="ObsTree" type="StaticBody2D" unique_id=1433651913 groups=["tree"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=373377717]
 scale = Vector2(0.2937271, 0.2937271)

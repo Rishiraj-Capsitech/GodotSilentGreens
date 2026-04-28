@@ -105,7 +105,7 @@ fill_textures = Array[Texture2D]([ExtResource("6_ateev")])
 fill_texture_z_index = 0
 render_offset = -0.9
 
-[node name="Level13" type="StaticBody2D" unique_id=198867441]
+[node name="Level13" type="StaticBody2D" unique_id=198867441 groups=["land"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1641077931]
 polygon = PackedVector2Array(-84.829834, 801.67126, 2013.2952, 801.30145, 2477.4536, 1283.5171, -657.4674, 1283.8413)

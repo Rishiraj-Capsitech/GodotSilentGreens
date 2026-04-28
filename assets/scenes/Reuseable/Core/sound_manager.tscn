@@ -5,6 +5,12 @@
 [ext_resource type="Script" uid="uid://d4m1j4wil0nll" path="res://assets/scripts/SoundSystem/sound_data.gd" id="3_2f2o5"]
 [ext_resource type="AudioStream" uid="uid://d08cp0h1y3xn7" path="res://assets/Audio/Bgm.mp3" id="4_2f2o5"]
 [ext_resource type="AudioStream" uid="uid://upurtecy8evk" path="res://assets/Audio/GolfHit.mp3" id="5_ulbdi"]
+[ext_resource type="AudioStream" uid="uid://cxyhk02kguxgk" path="res://assets/Audio/oops2.mp3" id="6_ktj1v"]
+[ext_resource type="AudioStream" uid="uid://u763a5f03sim" path="res://assets/Audio/gameover2.mp3" id="7_qbgpx"]
+[ext_resource type="AudioStream" uid="uid://dbb5j8uicud1o" path="res://assets/Audio/GameWin.mp3" id="7_slrwj"]
+[ext_resource type="AudioStream" uid="uid://dp4g1aci7i3rj" path="res://assets/Audio/UI_click.mp3" id="9_aj44e"]
+[ext_resource type="AudioStream" uid="uid://bo8e70f1gajve" path="res://assets/Audio/ball_collide2-trimmed.mp3" id="10_qbgpx"]
+[ext_resource type="AudioStream" uid="uid://ta8qs4iofiq1" path="res://assets/Audio/ball-collide-trimmed.mp3" id="11_aj44e"]
 
 [sub_resource type="Resource" id="Resource_ukst8"]
 script = ExtResource("3_2f2o5")
@@ -22,9 +28,49 @@ min_volume = 0.1
 max_volume = 0.3
 metadata/_custom_type_script = "uid://d4m1j4wil0nll"
 
+[sub_resource type="Resource" id="Resource_slrwj"]
+script = ExtResource("3_2f2o5")
+sound_type = 5
+clip = ExtResource("6_ktj1v")
+metadata/_custom_type_script = "uid://d4m1j4wil0nll"
+
+[sub_resource type="Resource" id="Resource_rky6f"]
+script = ExtResource("3_2f2o5")
+sound_type = 4
+clip = ExtResource("7_qbgpx")
+metadata/_custom_type_script = "uid://d4m1j4wil0nll"
+
+[sub_resource type="Resource" id="Resource_ktj1v"]
+script = ExtResource("3_2f2o5")
+sound_type = 3
+clip = ExtResource("7_slrwj")
+metadata/_custom_type_script = "uid://d4m1j4wil0nll"
+
+[sub_resource type="Resource" id="Resource_1nip2"]
+script = ExtResource("3_2f2o5")
+sound_type = 2
+clip = ExtResource("9_aj44e")
+metadata/_custom_type_script = "uid://d4m1j4wil0nll"
+
+[sub_resource type="Resource" id="Resource_aj44e"]
+script = ExtResource("3_2f2o5")
+sound_type = 6
+clip = ExtResource("10_qbgpx")
+metadata/_custom_type_script = "uid://d4m1j4wil0nll"
+
+[sub_resource type="Resource" id="Resource_agwvb"]
+script = ExtResource("3_2f2o5")
+sound_type = 7
+clip = ExtResource("11_aj44e")
+metadata/_custom_type_script = "uid://d4m1j4wil0nll"
+
+[sub_resource type="Resource" id="Resource_k73r2"]
+script = ExtResource("3_2f2o5")
+metadata/_custom_type_script = "uid://d4m1j4wil0nll"
+
 [sub_resource type="Resource" id="Resource_ulbdi"]
 script = ExtResource("2_mn52p")
-sounds = Array[ExtResource("3_2f2o5")]([SubResource("Resource_ukst8"), SubResource("Resource_2f2o5")])
+sounds = Array[ExtResource("3_2f2o5")]([SubResource("Resource_ukst8"), SubResource("Resource_2f2o5"), SubResource("Resource_slrwj"), SubResource("Resource_rky6f"), SubResource("Resource_ktj1v"), SubResource("Resource_1nip2"), SubResource("Resource_aj44e"), SubResource("Resource_agwvb"), SubResource("Resource_k73r2")])
 metadata/_custom_type_script = "uid://dnjrhvgwgmxb3"
 
 [node name="Node2D" type="Node2D" unique_id=541939222]

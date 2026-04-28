@@ -1,23 +1,18 @@
 [gd_scene format=3 uid="uid://cg0y3ugxi52al"]
 
-[ext_resource type="Script" uid="uid://cptovpj5bpeps" path="res://assets/scripts/Reuseables/bell_swing.gd" id="1_4x5k8"]
+[ext_resource type="Script" uid="uid://cptovpj5bpeps" path="res://assets/scripts/Reuseables/bell_swing.gd" id="1_aqnhe"]
 [ext_resource type="Texture2D" uid="uid://djfg2bxxkc7mx" path="res://assets/sprites/Obstacles/SwingingBell_1.png" id="2_vrj33"]
 
-[node name="FloatingBell" type="Node2D" unique_id=969255053]
-scale = Vector2(0.15, 0.15)
-script = ExtResource("1_4x5k8")
-max_angle_degrees = 11.0
-swing_speed = 1.4
+[node name="FloatingBell" type="AnimatableBody2D" unique_id=2136735842]
+script = ExtResource("1_aqnhe")
 
-[node name="BellBody" type="AnimatableBody2D" parent="." unique_id=10708536]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BellBody" unique_id=1654391407]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=226334446]
 polygon = PackedVector2Array(-227, 1918, -109, 1937, -24, 1944, 51, 1944, 134, 1934, 223, 1919, 270, 2007, 272, 2025, 266, 2042, 254, 2054, 185, 2075, 113, 2090, 83, 2095, 52, 2097, 44, 2122, 39, 2131, 28, 2139, 8, 2147, -19, 2147, -36, 2142, -48, 2134, -59, 2118, -65, 2097, -130, 2086, -206, 2067, -261, 2050, -276, 2018)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="BellBody" unique_id=861534938]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1635629009]
 polygon = PackedVector2Array(-10, 1445, -9, 6, 1, 1, 10, 7, 11, 1445, 22, 1449, 37, 1464, 42, 1480, 42, 1491, 78, 1504, 97, 1516, 124, 1538, 145, 1565, 164, 1604, 172, 1633, 174, 1665, 178, 1716, 185, 1781, 199, 1839, 214, 1881, 148, 1895, 107, 1901, 61, 1906, 35, 1908, 3, 1909, -40, 1908, -73, 1905, -110, 1900, -172, 1889, -214, 1881, -199, 1847, -188, 1809, -181, 1767, -176, 1722, -168, 1630, -157, 1594, -149, 1577, -135, 1555, -118, 1536, -83, 1509, -41, 1491, -42, 1483, -40, 1473, -33, 1459, -22, 1449)
 
-[node name="Sprite2D" type="Sprite2D" parent="BellBody" unique_id=348778361]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=519922271]
 position = Vector2(0, 1)
 texture = ExtResource("2_vrj33")
 offset = Vector2(0, 1073.5)

@@ -26,6 +26,7 @@ func _on_body_entered(body):
 		body.z_index = -5
 		target_ball = body
 		_spawn_coin()
+		SoundManager.play_sfx(SoundType.GAME_WIN)
 		call_deferred("_finish_level")
 
 

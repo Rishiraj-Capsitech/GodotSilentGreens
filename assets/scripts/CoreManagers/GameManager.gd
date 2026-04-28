@@ -18,13 +18,14 @@ var lives: int
 var current_level: int = 0
 var SoundOn := true
 var SfxOn := true
-var TOTAL_LEVELS=27
+var TOTAL_LEVELS=30
 var max_unlocked_level=1
 var current_language: String = "en"
 var showWindWarn = false
 var sensitivity := 0.0
 var level_attempts_by_level: Dictionary = {}
 var current_coins =0
+var Game_scene = preload("res://assets/scenes/Main/game.tscn")
 
 signal level_restarted(level)
 
@@ -33,7 +34,6 @@ func _ready():
 	reset_game()
 
 
-# ── Save System Integration ──────────────────────────────────────────
 
 func _load_save_data():
 	print("GameManager: _load_save_data() called")
@@ -168,15 +168,25 @@ func reset_game():
 	emit_signal("level_restarted")
 	get_tree().paused = false
 	
+
+
 	
+
+
 func _start(GAME_PATH):
 	_register_level_entry(current_level + 1)
-	get_tree().change_scene_to_file(GAME_PATH)
+	get_tree().change_scene_to_packed(Game_scene)
+
+
+
 
 
 func lose_life(amount := 1):
 	if state != GameState.PLAYING:
 		return
+		
+	if lives >1:
+		SoundManager.play_sfx(SoundType.OOPS)
 	lives -= amount
 	lives = clamp(lives, 0, max_lives)
 	var safe_level := clampi(current_level + 1, 1, TOTAL_LEVELS)
@@ -208,6 +218,7 @@ func resume_game():
 
 
 func game_over():
+	SoundManager.play_sfx(SoundType.GAME_OVER)
 	state = GameState.GAME_OVER
 	UiManager._gameOver()
 	save_game_data()

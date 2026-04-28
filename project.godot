@@ -48,6 +48,8 @@ enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg"
 [global_group]
 
 can_interact_with_water=""
+land=""
+tree=""
 
 [physics]
 

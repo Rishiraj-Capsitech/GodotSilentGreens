@@ -171,16 +171,19 @@ func _setup_settings():
 
 
 func _on_english_pressed():
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	LocalizationManager.set_locale("en")
 	GameManager.current_language = "en"
 	GameManager.save_game_data()
 
 func _on_portuguese_pressed():
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	LocalizationManager.set_locale("pt-BR")
 	GameManager.current_language = "pt-BR"
 	GameManager.save_game_data()
 
 func _on_spanish_pressed():
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	LocalizationManager.set_locale("es")
 	GameManager.current_language = "es"
 	GameManager.save_game_data()
@@ -202,6 +205,7 @@ func _setup_confirmation_home():
 		
 
 func _open_home():
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	GameManager.showWindWarn=false
 	get_tree().change_scene_to_file("res://assets/scenes/UI/UI_Scenes/main_menu.tscn")
 
@@ -211,6 +215,7 @@ func _on_sensitivity_changed(value):
 	GameManager.save_game_data()
 	
 func _cancel_home():
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	HomeCnf.hide()
 
 func _play_oops():
@@ -232,12 +237,14 @@ func _play_oops():
 	_current_tween.parallel().tween_property(oops_lable, "modulate:a", 0.0, 1.0)
 	 
 	_current_tween.finished.connect(func():
-		oops_lable.visible = false
+		if oops_lable:
+			oops_lable.visible = false
 	)
 	await get_tree().create_timer(1).timeout
 	OopsPannel.hide()
 
 func toggel_sound():
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	GameManager.SoundOn = false if GameManager.SoundOn else true
 	GameManager.SfxOn = GameManager.SoundOn
 	var master_bus_idx = AudioServer.get_bus_index("Master")
@@ -247,12 +254,14 @@ func toggel_sound():
 	GameManager.save_game_data()
 
 func Close_settings():
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	SettingPannel.hide()
 	if GameOver and HudPanel:
 		GameOver.hide()
 		HudPanel.hide() 
 
 func _on_pause_button_pressed() -> void:
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	GameManager.state= GameManager.GameState.PAUSED
 	GameOver.hide()
 	PausePanel.show()
@@ -260,6 +269,7 @@ func _on_pause_button_pressed() -> void:
 	SettingPannel.hide()
 
 func _on_resume_button_pressed() -> void:
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	PausePanel.hide()
 	GameOver.hide()
 	HudPanel.show()
@@ -291,15 +301,18 @@ func set_level(level:int):
 
 
 func _home():
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	HomeCnf.show()
 
 func _open_setting():
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	SettingPannel.show()
 	if GameOver and HudPanel:
 		GameOver.hide()
 		HudPanel.hide() 
 
-func _on_restart_button_pressed() -> void:	
+func _on_restart_button_pressed() -> void:
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	PausePanel.hide()
 	GameOver.hide()
 	SettingPannel.hide()

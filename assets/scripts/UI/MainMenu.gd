@@ -126,6 +126,7 @@ func _spawn_levels() -> void:
 
 
 func _on_level_selected(level_number: int) -> void:
+	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
  
 	if _drag_started:
 		return

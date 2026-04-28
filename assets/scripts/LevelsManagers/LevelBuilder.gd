@@ -18,6 +18,7 @@ func _ready():
 	UiManager._setup_ui()
 	GameManager.state=GameManager.GameState.PLAYING
 	GameManager.level_restarted.connect(_on_level_restarted)
+	GameManager.TOTAL_LEVELS =levels.size()
 
 
 func spawn(data: SpawnData):
@@ -72,7 +73,7 @@ func build_level():
 		spawn(data)
 
 
-	for i in range(min(3, level_data.big_obstacles.size())):
+	for i in range(min(4, level_data.big_obstacles.size())):
 		spawn(level_data.big_obstacles[i])
 
 

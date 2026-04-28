@@ -187,7 +187,7 @@ _edge_meta_materials = Array[ExtResource("7_xrdcv")]([SubResource("Resource_62jh
 fill_textures = Array[Texture2D]([ExtResource("5_ajqxb")])
 fill_texture_z_index = 0
 
-[node name="Level28" type="StaticBody2D" unique_id=67724213]
+[node name="Level28" type="StaticBody2D" unique_id=67724213 groups=["land"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1269844695]
 polygon = PackedVector2Array(-732.53784, 763.2756, 729.16833, 760.47986, 730.1415, 761.9367, 730.8948, 763.675, 731.84503, 767.8166, 732.24, 777.5055, 731.99945, 786.6786, 732.15533, 790.1756, 732.39233, 791.4949, 732.76965, 792.4682, 892.7186, 793.6868, 894.87085, 793.1552, 895.0108, 792.36945, 895.0707, 791.15173, 894.16614, 767.6341, 894.34314, 763.39154, 894.5621, 761.69476, 894.8856, 760.35626, 2328.6548, 760.16473, 2321.9946, 1351.5964, -741.5211, 1323.7968)

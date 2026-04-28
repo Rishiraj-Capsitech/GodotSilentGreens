@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://boghide4ju5ad"]
+
+[ext_resource type="Script" uid="uid://ccmuyf61ktem5" path="res://assets/scripts/Reuseables/MovingPlatform.gd" id="1_5kk0f"]
+[ext_resource type="Texture2D" uid="uid://b2ekyg3786y00" path="res://assets/sprites/Obstacles/Level-29-obs2.png" id="1_5ymnm"]
+[ext_resource type="Script" uid="uid://cnc0o4e1euv7p" path="res://assets/scripts/Reuseables/Bounce.gd" id="3_a2unt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a2unt"]
+bounce = 1.0
+
+[node name="MovingPlatform29" type="AnimatableBody2D" unique_id=423373603]
+physics_material_override = SubResource("PhysicsMaterial_a2unt")
+script = ExtResource("1_5kk0f")
+speed = 50.0
+distance = 100.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1201566115]
+polygon = PackedVector2Array(-298, -97, -299, 83, -297, 87, -293, 91, -275, 97, -233, 111, -181, 125, -144, 133, -92, 143, -49, 147, -1, 150, 43, 148, 93, 143, 148, 133, 192, 122, 242, 108, 294, 91, 298, 87, 299, 82, 299, -97)
+
+[node name="Level29Obs2" type="Sprite2D" parent="." unique_id=391498085]
+scale = Vector2(0.6799992, 0.6799992)
+texture = ExtResource("1_5ymnm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1606947354]
+script = ExtResource("3_a2unt")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=1664790749]
+polygon = PackedVector2Array(-298, -97, -299, 83, -297, 87, -293, 91, -275, 97, -233, 111, -181, 125, -144, 133, -92, 143, -49, 147, -1, 150, 43, 148, 93, 143, 148, 133, 192, 122, 242, 108, 294, 91, 298, 87, 299, 82, 299, -97)

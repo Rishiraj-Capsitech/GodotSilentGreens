@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bk02hi5vyx42s" path="res://assets/scenes/Reuseable/Core/ball.tscn" id="2_1cyye"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="2_hh3qc"]
 [ext_resource type="Resource" uid="uid://dj43t4y17xhwu" path="res://assets/LevelData/Level16.tres" id="4_3rsi6"]
-[ext_resource type="Resource" uid="uid://bvtbj5xmafotf" path="res://assets/LevelData/level11.tres" id="4_6wnq6"]
+[ext_resource type="Resource" uid="uid://bvtbj5xmafotf" path="res://assets/LevelData/Level11.tres" id="4_6wnq6"]
 [ext_resource type="Resource" uid="uid://b02abb00r8we1" path="res://assets/LevelData/Level14.tres" id="4_7ergh"]
 [ext_resource type="Resource" uid="uid://b1002k1c3jdm5" path="res://assets/LevelData/Level12.tres" id="4_db5ja"]
 [ext_resource type="Resource" uid="uid://whs5gt0j6gby" path="res://assets/LevelData/Level1.tres" id="4_eu5vx"]
@@ -33,9 +33,12 @@
 [ext_resource type="Resource" uid="uid://bstkaungdjsli" path="res://assets/LevelData/Level24.tres" id="27_6wnq6"]
 [ext_resource type="Resource" uid="uid://bxnbdxm716rih" path="res://assets/LevelData/Level25.tres" id="28_nmrpg"]
 [ext_resource type="Resource" uid="uid://dmb24735knbld" path="res://assets/LevelData/Level26.tres" id="29_ovvts"]
+[ext_resource type="Resource" uid="uid://bll6d824dge7w" path="res://assets/LevelData/Level27.tres" id="30_b2koc"]
+[ext_resource type="Resource" uid="uid://6xv23fkr88ui" path="res://assets/LevelData/Level29.tres" id="31_5ysak"]
 [ext_resource type="PackedScene" uid="uid://bb3ydebmxjwsu" path="res://assets/scenes/UI/UI_Scenes/Pause_Panel.tscn" id="33_hp838"]
 [ext_resource type="PackedScene" uid="uid://d120dh8bsfkto" path="res://assets/scenes/UI/UI_Scenes/Game_HUD.tscn" id="33_jdh45"]
 [ext_resource type="PackedScene" uid="uid://bwjj46l7rekkg" path="res://assets/scenes/UI/UI_Scenes/Oops Scene.tscn" id="33_kgmh8"]
+[ext_resource type="Resource" uid="uid://dcrp3bfpvvtch" path="res://assets/LevelData/Level30.tres" id="33_yeore"]
 [ext_resource type="PackedScene" uid="uid://dlh5jkk1gh5ud" path="res://assets/scenes/UI/UI_Scenes/GameOver.tscn" id="35_g5ui1"]
 [ext_resource type="PackedScene" uid="uid://dgujnooocvwvy" path="res://assets/scenes/UI/UI_Scenes/Settings.tscn" id="36_mtgfi"]
 [ext_resource type="PackedScene" uid="uid://lcu5f8v3gtwq" path="res://assets/scenes/UI/UI_Scenes/Home_Confirmation.tscn" id="39_ynn86"]
@@ -56,7 +59,7 @@ texture = ExtResource("5_8tmc4")
 [node name="LevelLoader" type="Node2D" parent="." unique_id=1529268812 groups=["can_interact_with_water"]]
 position = Vector2(-1, 1)
 script = ExtResource("1_bsujg")
-levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("6_0spaw"), ExtResource("7_g1d8a"), ExtResource("8_3b0cj"), ExtResource("9_rdh8f"), ExtResource("4_n5vlt"), ExtResource("18_66hse"), ExtResource("4_q88wm"), ExtResource("4_wlrb8"), ExtResource("4_6wnq6"), ExtResource("4_db5ja"), ExtResource("4_ovvts"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6"), ExtResource("9_7ergh"), ExtResource("10_io3sb"), ExtResource("12_a72lb"), ExtResource("13_0spaw"), ExtResource("24_ouccx"), ExtResource("25_5nbo7"), ExtResource("26_wyy3h"), ExtResource("27_6wnq6"), ExtResource("28_nmrpg"), ExtResource("29_ovvts"), ExtResource("4_kgmh8")])
+levels = Array[ExtResource("2_hh3qc")]([ExtResource("4_eu5vx"), ExtResource("5_eu5vx"), ExtResource("6_0spaw"), ExtResource("7_g1d8a"), ExtResource("8_3b0cj"), ExtResource("9_rdh8f"), ExtResource("4_n5vlt"), ExtResource("18_66hse"), ExtResource("4_q88wm"), ExtResource("4_wlrb8"), ExtResource("4_6wnq6"), ExtResource("4_db5ja"), ExtResource("4_ovvts"), ExtResource("4_7ergh"), ExtResource("6_7ergh"), ExtResource("4_3rsi6"), ExtResource("9_7ergh"), ExtResource("10_io3sb"), ExtResource("12_a72lb"), ExtResource("13_0spaw"), ExtResource("24_ouccx"), ExtResource("25_5nbo7"), ExtResource("26_wyy3h"), ExtResource("27_6wnq6"), ExtResource("28_nmrpg"), ExtResource("29_ovvts"), ExtResource("30_b2koc"), ExtResource("4_kgmh8"), ExtResource("31_5ysak"), ExtResource("33_yeore")])
 ball_scene = ExtResource("2_1cyye")
 wind_particle_scene = ExtResource("11_kfp35")
 
