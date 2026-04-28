@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dvm8ns8tpmwde"]
+
+[ext_resource type="Texture2D" uid="uid://ckh8f2l5w4fkl" path="res://assets/sprites/Obstacles/SwingingBellHanger.png" id="1_o2a40"]
+
+[node name="StaticHanger" type="Node2D" unique_id=969255053]
+scale = Vector2(0.3, 0.3)
+
+[node name="HangerBody" type="AnimatableBody2D" parent="." unique_id=10708536]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HangerBody" unique_id=1654391407]
+polygon = PackedVector2Array(-2056.8582, -357.51407, -2077.1633, -351.36102, -2091.9307, -341.5161, -2101.7756, -328.5947, -2110.39, -310.44315, -2110.0376, -95.51791, -2105.0032, -78.457146, -2095.972, -63.819717, -2082.8682, -52.92637, -2073.08, -47.558617, -2061.3906, -44.01306, 1803.65, -44.084217, 1803.4016, 2452.9092, 1805.1563, 2461.6638, 1806.7765, 2467.1875, 1809.7961, 2473.816, 1813.7174, 2479.5205, 1816.8555, 2484.5583, 1820.1755, 2488.5977, 1826.5942, 2493.7441, 1831.851, 2497.2856, 1837.4396, 2500.6057, 1844.5778, 2503.3723, 1852.3099, 2505.354, 2058.5586, 2505.913, 2072.826, 2502.627, 2087.1926, 2494.1016, 2098.506, 2482.8767, 2104.6526, 2473.2798, 2110.9084, 2455.5952, 2110.0955, -304.2845, 2107.9482, -316.53796, 2101.4783, -329.3698, 2094.038, -339.1824, 2083.255, -348.24017, 2071.9326, -354.063, 2058.7769, -357.31747)
+
+[node name="Sprite2D" type="Sprite2D" parent="HangerBody" unique_id=348778361]
+position = Vector2(0, 1)
+texture = ExtResource("1_o2a40")
+offset = Vector2(0, 1073.5)
