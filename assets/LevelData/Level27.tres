@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bll6d824dge7w"]
+
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_7a64q"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_fl473"]
+[ext_resource type="PackedScene" uid="uid://dvm8ns8tpmwde" path="res://assets/scenes/Reuseable/BigObstacles/StaticHanger.tscn" id="3_i17h7"]
+[ext_resource type="PackedScene" uid="uid://cg0y3ugxi52al" path="res://assets/scenes/Reuseable/BigObstacles/FloatingBell.tscn" id="4_xudbs"]
+[ext_resource type="PackedScene" uid="uid://b1dcsr1b0rodb" path="res://assets/scenes/Reuseable/BigObstacles/FloatingBellOpen.tscn" id="5_oejhy"]
+[ext_resource type="PackedScene" uid="uid://bmxglc5sblw8k" path="res://assets/scenes/Reuseable/LevelLands/Level27.tscn" id="6_d0d1t"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="7_404o7"]
+
+[sub_resource type="Resource" id="Resource_3f866"]
+script = ExtResource("2_fl473")
+scene = ExtResource("3_i17h7")
+position = Vector2(1352, 451)
+scale = Vector2(0.2, 0.2)
+zIndex = 2
+
+[sub_resource type="Resource" id="Resource_ofwhb"]
+script = ExtResource("2_fl473")
+scene = ExtResource("4_xudbs")
+position = Vector2(1024, 437)
+scale = Vector2(0.15, 0.15)
+
+[sub_resource type="Resource" id="Resource_1kjhh"]
+script = ExtResource("2_fl473")
+scene = ExtResource("4_xudbs")
+position = Vector2(1278, 394.00003)
+scale = Vector2(0.15, 0.15)
+
+[sub_resource type="Resource" id="Resource_vb87g"]
+script = ExtResource("2_fl473")
+scene = ExtResource("5_oejhy")
+position = Vector2(1547, 435)
+scale = Vector2(0.15, 0.15)
+
+[sub_resource type="Resource" id="Resource_ys36e"]
+script = ExtResource("2_fl473")
+scene = ExtResource("6_d0d1t")
+position = Vector2(602, 1072)
+
+[resource]
+script = ExtResource("7_404o7")
+land = SubResource("Resource_ys36e")
+background = ExtResource("1_7a64q")
+bgscale = Vector2(0.4709994, 0.35566404)
+bgpos = Vector2(853.00006, 360.00003)
+big_obstacles = Array[ExtResource("2_fl473")]([SubResource("Resource_3f866"), SubResource("Resource_ofwhb"), SubResource("Resource_1kjhh"), SubResource("Resource_vb87g")])
