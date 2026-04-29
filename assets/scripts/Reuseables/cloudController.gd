@@ -31,6 +31,7 @@ func _on_body_entered(body):
 			elif body is RigidBody2D:
 				body.linear_velocity *= 0.25
 			SoundManager.play_sfx(SoundType.CLOUD_HIT)
+			Input.vibrate_handheld(50)
 			collider.queue_free()
 			sprite.queue_free()
 			if particles:

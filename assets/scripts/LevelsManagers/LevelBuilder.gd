@@ -121,11 +121,13 @@ func _on_level_restarted():
 
 
 func next_level():
-	UiManager.add_coin(5)
 	if is_instance_valid(ball):
 		ball.queue_free()
-	
+		
+	UiManager.add_coin(5)
 	GameManager.complete_level()
+	
+	
 	if GameManager.current_level >= levels.size():
 		GameManager.current_level = 0
 	GameManager.state = GameManager.GameState.PLAYING

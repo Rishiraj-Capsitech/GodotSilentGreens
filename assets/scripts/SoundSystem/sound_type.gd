@@ -24,4 +24,4 @@ const GAME_OVER          = Values.GAME_OVER
 const OOPS               = Values.OOPS
 const GROUND_HIT         = Values.GROUND_HIT
 const TREE_HIT           = Values.TREE_HIT
-const CLOUD_HIT           = Values.CLOUD_HIT
+const CLOUD_HIT          = Values.CLOUD_HIT

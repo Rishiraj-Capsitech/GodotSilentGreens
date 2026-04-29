@@ -26,6 +26,7 @@ var sensitivity := 0.0
 var level_attempts_by_level: Dictionary = {}
 var current_coins =0
 var Game_scene = preload("res://assets/scenes/Main/game.tscn")
+var ComboCount=0
 
 signal level_restarted(level)
 
@@ -173,15 +174,22 @@ func reset_game():
 	
 
 
-func _start(GAME_PATH):
+func _start():
 	_register_level_entry(current_level + 1)
+	lives=3 
 	get_tree().change_scene_to_packed(Game_scene)
+	get_tree().paused = false
 
 
 
-
+func _play_hit_feedback():
+	Input.vibrate_handheld(150)
+	await get_tree().create_timer(0.1).timeout
+	Input.vibrate_handheld(200)
 
 func lose_life(amount := 1):
+	Input.vibrate_handheld(500)
+	ComboCount=0
 	if state != GameState.PLAYING:
 		return
 		
@@ -207,7 +215,6 @@ func gain_life(amount := 1):
 func pause_game():
 	if state == GameState.PAUSED:
 		return
-	
 	state = GameState.PAUSED
 	get_tree().paused = true
 	
@@ -225,6 +232,9 @@ func game_over():
 
 
 func complete_level():
+	ComboCount += 1
+	if ComboCount >=3:
+		UiManager._play_conmbo()
 	state = GameState.LEVEL_COMPLETE
 	current_level += 1
 	# Update progression if the player reached a new high

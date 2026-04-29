@@ -204,9 +204,36 @@ func _setup_confirmation_home():
 			cancelButton.pressed.connect(_cancel_home)
 		
 
+func _play_conmbo():
+	OopsPannel.show()
+	oops_lable.text = "Combo!"
+	print(oops_lable.get_script())
+	if _current_tween and _current_tween.is_running():
+		_current_tween.kill()
+ 
+	oops_lable.visible = true
+	oops_lable.scale = Vector2.ZERO
+	oops_lable.modulate.a = 1.0
+	oops_lable.pivot_offset = oops_lable.size / 2.0  
+ 
+	_current_tween = create_tween()
+ 
+	_current_tween.parallel().tween_property(oops_lable, "scale", Vector2.ONE, 0.5)
+ 
+	_current_tween.parallel().tween_property(oops_lable, "modulate:a", 0.0, 1.0)
+	 
+	_current_tween.finished.connect(func():
+		if oops_lable:
+			oops_lable.visible = false
+	)
+	await get_tree().create_timer(1).timeout
+	OopsPannel.hide()
+
+
 func _open_home():
 	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
 	GameManager.showWindWarn=false
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://assets/scenes/UI/UI_Scenes/main_menu.tscn")
 
 func _on_sensitivity_changed(value):
@@ -262,7 +289,7 @@ func Close_settings():
 
 func _on_pause_button_pressed() -> void:
 	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
-	GameManager.state= GameManager.GameState.PAUSED
+	GameManager.pause_game()
 	GameOver.hide()
 	PausePanel.show()
 	HudPanel.hide() 
@@ -274,7 +301,7 @@ func _on_resume_button_pressed() -> void:
 	GameOver.hide()
 	HudPanel.show()
 	SettingPannel.hide()
-	GameManager.state= GameManager.GameState.PLAYING
+	GameManager.resume_game()
 
 func _updateLife(life: int):
 	for i in range(Lifes.size()):
@@ -287,7 +314,9 @@ func _gameOver():
 	SettingPannel.hide()
 
 func add_coin(coin: int):
-	if not GameManager.current_level < GameManager.max_unlocked_level-1:
+	var Current_Level= GameManager.current_level
+	var max_coin = GameManager.TOTAL_LEVELS *5
+	if Current_Level == GameManager.max_unlocked_level - 1 and not max_coin == GameManager.current_coins:
 		var current = GameManager.current_coins
 		current += coin
 		CoinCount.text = str(current)
@@ -297,8 +326,6 @@ func add_coin(coin: int):
 func set_level(level:int):
 	if LevelNumber:
 		LevelNumber.text =str(level)
-
-
 
 func _home():
 	SoundManager.play_sfx(SoundType.BUTTON_CLICK)

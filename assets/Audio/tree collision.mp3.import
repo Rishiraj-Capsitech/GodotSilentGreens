@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bey84sgeik5vp"
+path="res://.godot/imported/tree collision.mp3-8ccddefdb7572338d738f6c48fa69556.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/tree collision.mp3"
+dest_files=["res://.godot/imported/tree collision.mp3-8ccddefdb7572338d738f6c48fa69556.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

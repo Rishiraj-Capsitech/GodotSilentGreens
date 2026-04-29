@@ -170,7 +170,7 @@ func shoot():
 	if drag_vector.length() > max_drag:
 		drag_vector = drag_vector.normalized() * max_drag
 	apply_impulse(drag_vector * power)
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false).timeout
 	detect_low_velovity()
 	
 	for i in range(timeout - 1):
@@ -201,7 +201,6 @@ func hide_dots():
 
 
 func losseLife():
-	#get_tree().get_root().get_node("Game/AudioStreamPlayer").play()
 	if not goal:
 		UiManager._play_oops()
 		can_shoot = true
@@ -215,7 +214,10 @@ func losseLife():
 
 func _on_body_enter(body:Node):
 	if body.is_in_group("land"):
-		SoundManager.play_sfx(SoundType.GROUND_HIT)
+		Input.vibrate_handheld(30)
 
 	elif body.is_in_group("tree"):
+		Input.vibrate_handheld(100)
 		SoundManager.play_sfx(SoundType.TREE_HIT)
+		
+		
