@@ -78,5 +78,10 @@
 		"en": "Update",
 		"pt-BR": "Atualizar",
 		"id": "Perbarui"
+	},
+	"CANCEL_SHOT": {
+		"en": "Cancel Shot",
+		"pt-BR": "Cancelar disparo",
+		"id": "Batalkan tembakan"
 	}
 }
