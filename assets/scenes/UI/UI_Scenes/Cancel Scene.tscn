@@ -5,6 +5,16 @@
 [ext_resource type="Script" uid="uid://dvm643dw33qfp" path="res://assets/scripts/Reuseables/cancel_scene.gd" id="2_jcqwx"]
 [ext_resource type="Texture2D" uid="uid://dtbrixc4lu65u" path="res://assets/sprites/UI_art/warning_background.png" id="3_jcqwx"]
 
+[sub_resource type="Gradient" id="Gradient_radial"]
+offsets = PackedFloat32Array(0, 0.7, 1)
+colors = PackedColorArray(0, 0, 0, 0.705882, 0, 0, 0, 0.705882, 0.866667, 0.207843, 0.180392, 0.470588)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_radial"]
+gradient = SubResource("Gradient_radial")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="CancelScene" type="Control" unique_id=1137277131]
 layout_mode = 3
 anchors_preset = 15
@@ -32,6 +42,7 @@ grow_vertical = 2
 texture = ExtResource("2_58enm")
 expand_mode = 1
 
+
 [node name="warning_panel" type="TextureRect" parent="." unique_id=30355501]
 layout_mode = 1
 anchors_preset = 12
@@ -43,6 +54,15 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_jcqwx")
 expand_mode = 1
+
+[node name="GradientOverlay" type="TextureRect" parent="warning_panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_radial")
 
 [node name="TextureRect2" type="TextureRect" parent="warning_panel" unique_id=803199557]
 layout_mode = 1

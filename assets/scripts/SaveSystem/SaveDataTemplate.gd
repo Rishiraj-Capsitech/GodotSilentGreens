@@ -8,7 +8,8 @@ static func create_default_data() -> Dictionary:
 	return {
 		"progression": {
 			"levels_unlocked": [1],
-			"levels_cleared": []
+			"levels_cleared": [],
+			"tutorial_played": false
 		},
 		"player_data": {
 			"level_attempts_by_level": {},
