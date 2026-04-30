@@ -42,6 +42,8 @@ var SettingsButtonPause:TextureButton
 var HomeCnf:CanvasLayer
 var cnfButton:TextureButton
 var cancelButton:TextureButton
+var Pause_node
+
 
 
 func _notification(what):
@@ -73,6 +75,9 @@ func _handle_back_button():
 	if get_tree().current_scene.name == "main_menu":
 		# Optional: You could trigger an exit confirmation here
 		pass
+
+
+
 	
 func _setup_ui():
 	print("setting up")
@@ -119,7 +124,7 @@ func _setup_pause():
 		print("PausePanel not found!")
 		return
 	
-	var Pause_node = PausePanel.get_node("PausePanel")
+	Pause_node = PausePanel.get_node("PausePanel")
 	
 	if Pause_node:
 		print("pause node found")
@@ -319,6 +324,7 @@ func Close_settings():
 
 func _on_pause_button_pressed() -> void:
 	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
+	Pause_node.show_panel()
 	GameManager.pause_game()
 	GameOver.hide()
 	PausePanel.show()
@@ -327,6 +333,8 @@ func _on_pause_button_pressed() -> void:
 
 func _on_resume_button_pressed() -> void:
 	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
+	Pause_node.hide_panel()
+	await  get_tree().create_timer(0.2).timeout
 	PausePanel.hide()
 	GameOver.hide()
 	HudPanel.show()

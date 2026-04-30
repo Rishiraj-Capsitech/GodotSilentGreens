@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dswlf3jeai7h2" path="res://assets/sprites/UI_art/pause.png" id="1_cfug5"]
 [ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_y0lva"]
+[ext_resource type="Script" uid="uid://c0rqtcqwrxbuv" path="res://assets/scripts/Reuseables/PanelTransition.gd" id="2_0w1bi"]
 [ext_resource type="Texture2D" uid="uid://chiy0lwiuipj2" path="res://assets/sprites/UI_art/pause options (2).png" id="2_cfug5"]
 [ext_resource type="Texture2D" uid="uid://boiifjfusl4iy" path="res://assets/sprites/UI_art/home (3).png" id="3_sx5kr"]
 [ext_resource type="Texture2D" uid="uid://cg5h3amuj4rwr" path="res://assets/sprites/UI_art/restart (3).png" id="4_3bbij"]
@@ -16,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_y0lva")
+script = ExtResource("2_0w1bi")
 
 [node name="Pause_Background" type="TextureRect" parent="." unique_id=375933595]
 layout_mode = 1
