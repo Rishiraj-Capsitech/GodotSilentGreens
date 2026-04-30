@@ -114,7 +114,9 @@ func build_level():
 			ball.can_shoot=true
 			WindWarning.hide()
 		
-	
+	if GameManager.current_level == 0 and not GameManager.tutorial_played:
+		var ball_screen_pos = get_viewport().get_canvas_transform() * level_data.ball_spawn_position
+		UiManager.show_tutorial(ball_screen_pos)
 	
 func _on_level_restarted():
 	build_level()

@@ -21,6 +21,7 @@ var SfxOn := true
 var TOTAL_LEVELS=30
 var max_unlocked_level=1
 var current_language: String = "en"
+var tutorial_played := false
 var showWindWarn = false
 var sensitivity := 0.0
 var level_attempts_by_level: Dictionary = {}
@@ -58,6 +59,9 @@ func _apply_loaded_data(data: Dictionary) -> void:
 			if levels_arr is Array and levels_arr.size() > 0:
 				max_unlocked_level = int(levels_arr.max())
 				print("GameManager: Loaded max_unlocked_level = ", max_unlocked_level)
+		if "tutorial_played" in prog:
+			tutorial_played = prog["tutorial_played"]
+			print("GameManager: Loaded tutorial_played = ", tutorial_played)
 
 	# Player data
 	if "player_data" in data:
@@ -111,7 +115,8 @@ func save_game_data():
 	var data := {
 		"progression": {
 			"levels_unlocked": unlocked_arr,
-			"levels_cleared": cleared_arr
+			"levels_cleared": cleared_arr,
+			"tutorial_played": tutorial_played
 		},
 		"player_data": {
 			"level_attempts_by_level": level_attempts_by_level,
