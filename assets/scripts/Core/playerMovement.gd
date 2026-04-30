@@ -62,6 +62,9 @@ func _input(event):
 		if event.pressed:
 			dragging = true
 			drag_start = get_global_mouse_position()
+			if not GameManager.tutorial_played:
+				GameManager.tutorial_played = true
+				GameManager.save_game_data()
 			UiManager.hide_tutorial()
 		else:
 			if dragging:
