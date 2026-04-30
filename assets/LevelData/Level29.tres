@@ -9,34 +9,34 @@
 [ext_resource type="PackedScene" uid="uid://bujtcenq2tlfb" path="res://assets/scenes/Reuseable/LevelLands/Level29.tscn" id="7_2km6b"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="8_73lbj"]
 
-[sub_resource type="Resource" id="Resource_id1t7"]
+[sub_resource type="Resource" id="Resource_mrslp"]
 script = ExtResource("2_ek44c")
 scene = ExtResource("3_cnjaw")
-position = Vector2(939, -24)
-scale = Vector2(0.8991384, 1.549401)
+position = Vector2(957, 392)
+scale = Vector2(0.76, 0.76)
 zIndex = 2
 
-[sub_resource type="Resource" id="Resource_avk5k"]
+[sub_resource type="Resource" id="Resource_ek44c"]
 script = ExtResource("2_ek44c")
 scene = ExtResource("4_706xo")
 position = Vector2(983, 796)
 scale = Vector2(0.24000001, 0.24000001)
 zIndex = 2
 
-[sub_resource type="Resource" id="Resource_gsgf1"]
+[sub_resource type="Resource" id="Resource_cnjaw"]
 script = ExtResource("2_ek44c")
 scene = ExtResource("5_fljxh")
 position = Vector2(660, 807)
 scale = Vector2(2.0799987, 2.0799987)
 
-[sub_resource type="Resource" id="Resource_ndl12"]
+[sub_resource type="Resource" id="Resource_706xo"]
 script = ExtResource("2_ek44c")
 scene = ExtResource("6_4486b")
 position = Vector2(1258, 474.99997)
 scale = Vector2(0.44, 0.44)
 zIndex = 16
 
-[sub_resource type="Resource" id="Resource_rei76"]
+[sub_resource type="Resource" id="Resource_fljxh"]
 script = ExtResource("2_ek44c")
 scene = ExtResource("7_2km6b")
 position = Vector2(1140, 940)
@@ -44,11 +44,11 @@ zIndex = 10
 
 [resource]
 script = ExtResource("8_73lbj")
-land = SubResource("Resource_rei76")
+land = SubResource("Resource_fljxh")
 ball_spawn_position = Vector2(575, 698)
-goal = SubResource("Resource_ndl12")
+goal = SubResource("Resource_706xo")
 background = ExtResource("1_mrslp")
 bgscale = Vector2(0.4709994, 0.35566404)
 bgpos = Vector2(853.00006, 360.00003)
-big_obstacles = Array[ExtResource("2_ek44c")]([SubResource("Resource_id1t7"), SubResource("Resource_avk5k")])
-decorations = Array[ExtResource("2_ek44c")]([SubResource("Resource_gsgf1")])
+big_obstacles = Array[ExtResource("2_ek44c")]([SubResource("Resource_mrslp"), SubResource("Resource_ek44c")])
+decorations = Array[ExtResource("2_ek44c")]([SubResource("Resource_cnjaw")])
