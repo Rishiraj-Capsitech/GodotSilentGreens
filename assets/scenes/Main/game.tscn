@@ -65,6 +65,10 @@ wind_particle_scene = ExtResource("11_kfp35")
 position = Vector2(957, 543)
 script = ExtResource("10_uhqxe")
 
+[node name="CancelPannel" type="CanvasLayer" parent="." unique_id=1092796275]
+
+[node name="CancelScene" parent="CancelPannel" unique_id=1137277131 instance=ExtResource("44_5dwm1")]
+
 [node name="WindCanvas" type="CanvasLayer" parent="." unique_id=1709555396]
 process_mode = 3
 visible = false
@@ -110,7 +114,3 @@ process_mode = 3
 visible = false
 
 [node name="HomeConfirmation2" parent="HomeConfirmation" unique_id=1251715950 instance=ExtResource("39_ynn86")]
-
-[node name="CancelPannel" type="CanvasLayer" parent="." unique_id=1092796275]
-
-[node name="CancelScene" parent="CancelPannel" unique_id=1137277131 instance=ExtResource("44_5dwm1")]
