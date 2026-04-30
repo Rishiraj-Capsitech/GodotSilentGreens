@@ -66,6 +66,14 @@ wind_particle_scene = ExtResource("11_kfp35")
 position = Vector2(957, 543)
 script = ExtResource("10_uhqxe")
 
+[node name="TutorialCanvas" type="CanvasLayer" parent="." unique_id=1092796276 groups=["tutorial_ui"]]
+process_mode = 3
+visible = false
+
+[node name="TutorialDrag" parent="TutorialCanvas" unique_id=2048011281 instance=ExtResource("45_dg8m5")]
+position = Vector2(960, 540)
+scale = Vector2(0.2, 0.2)
+
 [node name="CancelPannel" type="CanvasLayer" parent="." unique_id=1092796275]
 
 [node name="CancelScene" parent="CancelPannel" unique_id=1137277131 instance=ExtResource("44_5dwm1")]
@@ -95,12 +103,6 @@ visible = false
 [node name="PausePanel" parent="PauseCanvas" unique_id=869592419 instance=ExtResource("33_hp838")]
 theme = null
 
-[node name="GameOverPannel" type="CanvasLayer" parent="." unique_id=238665439 groups=["game_over_ui"]]
-process_mode = 3
-visible = false
-
-[node name="GameOver" parent="GameOverPannel" unique_id=835076097 instance=ExtResource("35_g5ui1")]
-
 [node name="SettingsPannel" type="CanvasLayer" parent="." unique_id=2121411957 groups=["setting_ui"]]
 process_mode = 3
 visible = false
@@ -116,10 +118,8 @@ visible = false
 
 [node name="HomeConfirmation2" parent="HomeConfirmation" unique_id=1251715950 instance=ExtResource("39_ynn86")]
 
-[node name="TutorialCanvas" type="CanvasLayer" parent="." unique_id=1092796276 groups=["tutorial_ui"]]
+[node name="GameOverPannel" type="CanvasLayer" parent="." unique_id=238665439 groups=["game_over_ui"]]
 process_mode = 3
 visible = false
 
-[node name="TutorialDrag" parent="TutorialCanvas" unique_id=2048011281 instance=ExtResource("45_dg8m5")]
-position = Vector2(960, 540)
-scale = Vector2(0.2, 0.2)
+[node name="GameOver" parent="GameOverPannel" unique_id=835076097 instance=ExtResource("35_g5ui1")]
