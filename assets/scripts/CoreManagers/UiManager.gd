@@ -5,6 +5,7 @@ var PausePanel:CanvasLayer
 var HudPanel:CanvasLayer
 var GameOver:CanvasLayer
 var SettingPannel:CanvasLayer
+var TutorialPanel:CanvasLayer
 
 
 #hud 
@@ -87,6 +88,11 @@ func _setup_ui():
 	SettingPannel = get_tree().get_first_node_in_group("setting_ui")
 	OopsPannel = get_tree().get_first_node_in_group("Oops_ui")
 	HomeCnf = get_tree().get_first_node_in_group("home_confirmation")
+	TutorialPanel = get_tree().get_first_node_in_group("tutorial_ui")
+	_setup_ui_elements()
+	_setup_confirmation_home()
+
+func _setup_ui_elements():
 	_setup_hud()
 	_setup_GameOver()
 	_setup_settings()
@@ -400,3 +406,16 @@ func _on_restart_button_pressed() -> void:
 	SettingPannel.hide()
 	HudPanel.show()
 	GameManager.reset_game() 
+
+func show_tutorial(screen_pos: Vector2):
+	if TutorialPanel:
+		TutorialPanel.show()
+		var tutorial_node = TutorialPanel.get_child(0)
+		if tutorial_node:
+			tutorial_node.position = screen_pos
+			if tutorial_node.has_method("play_animation"):
+				tutorial_node.play_animation()
+
+func hide_tutorial():
+	if TutorialPanel:
+		TutorialPanel.hide()

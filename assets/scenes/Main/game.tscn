@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://lcu5f8v3gtwq" path="res://assets/scenes/UI/UI_Scenes/Home_Confirmation.tscn" id="39_ynn86"]
 [ext_resource type="PackedScene" uid="uid://dhssboh3rrfa6" path="res://assets/scenes/UI/UI_Scenes/Wind_Warning.tscn" id="40_q1lpk"]
 [ext_resource type="PackedScene" uid="uid://dduyy5k0v2tt6" path="res://assets/scenes/UI/UI_Scenes/Cancel Scene.tscn" id="44_5dwm1"]
+[ext_resource type="PackedScene" uid="uid://dg8m5p3j8u4x1" path="res://assets/scenes/Tutorials/TutorialDrag.tscn" id="45_dg8m5"]
 
 [node name="Game" type="Node2D" unique_id=2141789961]
 z_index = -10
@@ -114,3 +115,10 @@ process_mode = 3
 visible = false
 
 [node name="HomeConfirmation2" parent="HomeConfirmation" unique_id=1251715950 instance=ExtResource("39_ynn86")]
+
+[node name="TutorialCanvas" type="CanvasLayer" parent="." unique_id=1092796276 groups=["tutorial_ui"]]
+process_mode = 3
+visible = false
+
+[node name="TutorialDrag" parent="TutorialCanvas" unique_id=2048011281 instance=ExtResource("45_dg8m5")]
+position = Vector2(960, 540)

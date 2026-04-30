@@ -62,6 +62,7 @@ func _input(event):
 		if event.pressed:
 			dragging = true
 			drag_start = get_global_mouse_position()
+			UiManager.hide_tutorial()
 		else:
 			if dragging:
 				var drag_distance = (drag_start - get_global_mouse_position()).length()
