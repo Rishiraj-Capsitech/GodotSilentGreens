@@ -43,6 +43,36 @@ var HomeCnf:CanvasLayer
 var cnfButton:TextureButton
 var cancelButton:TextureButton
 
+
+func _notification(what):
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		_handle_back_button()
+
+func _handle_back_button():
+	# Priority 1: Home Confirmation
+	if HomeCnf and HomeCnf.visible:
+		_cancel_home()
+		return
+		
+	# Priority 2: Settings Panel
+	if SettingPannel and SettingPannel.visible:
+		Close_settings()
+		return
+		
+	# Priority 3: Pause Panel
+	if PausePanel and PausePanel.visible:
+		_on_resume_button_pressed()
+		return
+		
+	# Priority 4: In-game (If Hud is visible and we aren't paused)
+	if HudPanel and HudPanel.visible:
+		_on_pause_button_pressed()
+		return
+	
+	# Priority 5: Main Menu (If we are at home)
+	if get_tree().current_scene.name == "main_menu":
+		# Optional: You could trigger an exit confirmation here
+		pass
 	
 func _setup_ui():
 	print("setting up")
