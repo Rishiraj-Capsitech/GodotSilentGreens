@@ -163,8 +163,9 @@ func _setup_GameOver():
 	var GameOverNode = GameOver.get_node("GameOver")
 	
 	SkipGameOver = GameOverNode.get_node("Container/SkipButton")
+	HomeGameOver= GameOverNode.get_node("Container/HomeButton")
 	RestartGameOver= GameOverNode.get_node("Container/RestartButton")
-	if  HomeGameOver and RestartGameOver:
+	if HomeGameOver and RestartGameOver:
 		if HomeGameOver.pressed.is_connected(_home): HomeGameOver.pressed.disconnect(_home)
 		HomeGameOver.pressed.connect(_home)
 		
@@ -391,6 +392,8 @@ func _gameOver():
 	PausePanel.hide()
 	HudPanel.hide()
 	SettingPannel.hide()
+	if OopsPannel:
+		OopsPannel.hide()
 
 func add_coin(coin: int):
 	var Current_Level= GameManager.current_level
