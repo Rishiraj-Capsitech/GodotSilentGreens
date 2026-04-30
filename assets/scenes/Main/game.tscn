@@ -122,3 +122,4 @@ visible = false
 
 [node name="TutorialDrag" parent="TutorialCanvas" unique_id=2048011281 instance=ExtResource("45_dg8m5")]
 position = Vector2(960, 540)
+scale = Vector2(0.2, 0.2)

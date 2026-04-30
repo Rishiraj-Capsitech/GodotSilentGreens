@@ -5,8 +5,8 @@ extends Node2D
 @onready var start_sprite: Sprite2D = $StartPoint
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
-@export var start_pos: Vector2 = Vector2.ZERO
-@export var end_pos: Vector2 = Vector2(-300, 150)
+@export var start_pos: Vector2 = Vector2(1600, -1600)
+@export var end_pos: Vector2 = Vector2(1000, -1100)
 @export var animation_name: String = "drag_tutorial"
 
 func _ready():
