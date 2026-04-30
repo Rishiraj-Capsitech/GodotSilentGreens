@@ -90,7 +90,6 @@ func _setup_ui():
 	HomeCnf = get_tree().get_first_node_in_group("home_confirmation")
 	TutorialPanel = get_tree().get_first_node_in_group("tutorial_ui")
 	_setup_ui_elements()
-	_setup_confirmation_home()
 
 func _setup_ui_elements():
 	_setup_hud()
@@ -123,6 +122,8 @@ func _setup_hud():
 		hud.get_node("Life_Bar/life3/Done3")
 	]
 	
+	if pauseButton.pressed.is_connected(_on_pause_button_pressed):
+		pauseButton.pressed.disconnect(_on_pause_button_pressed)
 	pauseButton.pressed.connect(_on_pause_button_pressed)
 
 func _setup_pause():
@@ -140,9 +141,16 @@ func _setup_pause():
 		SettingsButtonPause = Pause_node.get_node("SettingsButton")
 		if (HomeButtonPause and SettingsButtonPause and ResumeButtonPause and RestartButtonPause):
 			print("Found all buttons")
+			if HomeButtonPause.pressed.is_connected(_home): HomeButtonPause.pressed.disconnect(_home)
 			HomeButtonPause.pressed.connect(_home)
+			
+			if RestartButtonPause.pressed.is_connected(_on_restart_button_pressed): RestartButtonPause.pressed.disconnect(_on_restart_button_pressed)
 			RestartButtonPause.pressed.connect(_on_restart_button_pressed)
+			
+			if ResumeButtonPause.pressed.is_connected(_on_resume_button_pressed): ResumeButtonPause.pressed.disconnect(_on_resume_button_pressed)
 			ResumeButtonPause.pressed.connect(_on_resume_button_pressed)
+			
+			if SettingsButtonPause.pressed.is_connected(_open_setting): SettingsButtonPause.pressed.disconnect(_open_setting)
 			SettingsButtonPause.pressed.connect(_open_setting)
 	else:
 		print("node not found")
@@ -155,10 +163,12 @@ func _setup_GameOver():
 	var GameOverNode = GameOver.get_node("GameOver")
 	
 	SkipGameOver = GameOverNode.get_node("Container/SkipButton")
-	HomeGameOver= GameOverNode.get_node("Container/HomeButton")
 	RestartGameOver= GameOverNode.get_node("Container/RestartButton")
 	if  HomeGameOver and RestartGameOver:
+		if HomeGameOver.pressed.is_connected(_home): HomeGameOver.pressed.disconnect(_home)
 		HomeGameOver.pressed.connect(_home)
+		
+		if RestartGameOver.pressed.is_connected(_on_restart_button_pressed): RestartGameOver.pressed.disconnect(_on_restart_button_pressed)
 		RestartGameOver.pressed.connect(_on_restart_button_pressed)
 		
 	if OopsPannel == null:
@@ -206,8 +216,13 @@ func _setup_settings():
 			Senstivity.value_changed.connect(_on_sensitivity_changed)
 			
 			# Language selection
+			if EnglishButton.pressed.is_connected(_on_english_pressed): EnglishButton.pressed.disconnect(_on_english_pressed)
 			EnglishButton.pressed.connect(_on_english_pressed)
+			
+			if PortugueseButton.pressed.is_connected(_on_portuguese_pressed): PortugueseButton.pressed.disconnect(_on_portuguese_pressed)
 			PortugueseButton.pressed.connect(_on_portuguese_pressed)
+			
+			if SpanishButton.pressed.is_connected(_on_spanish_pressed): SpanishButton.pressed.disconnect(_on_spanish_pressed)
 			SpanishButton.pressed.connect(_on_spanish_pressed)
 			
 			# Sync the pressed button to match the saved language
@@ -258,7 +273,10 @@ func _setup_confirmation_home():
 		
 
 		if (cnfButton and cancelButton):
+			if cnfButton.pressed.is_connected(_open_home): cnfButton.pressed.disconnect(_open_home)
 			cnfButton.pressed.connect(_open_home)
+			
+			if cancelButton.pressed.is_connected(_cancel_home): cancelButton.pressed.disconnect(_cancel_home)
 			cancelButton.pressed.connect(_cancel_home)
 		
 
