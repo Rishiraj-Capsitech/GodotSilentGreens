@@ -203,7 +203,24 @@ func _setup_settings():
 			EnglishButton.pressed.connect(_on_english_pressed)
 			PortugueseButton.pressed.connect(_on_portuguese_pressed)
 			SpanishButton.pressed.connect(_on_spanish_pressed)
+			
+			# Sync the pressed button to match the saved language
+			_sync_language_buttons()
 
+
+func _sync_language_buttons():
+
+	var lang = GameManager.current_language
+	match lang:
+		"en":
+			EnglishButton.button_pressed = true
+		"pt-BR":
+			PortugueseButton.button_pressed = true
+		"es":
+			SpanishButton.button_pressed = true
+		_:
+			# Fallback to English for any unknown language code
+			EnglishButton.button_pressed = true
 
 func _on_english_pressed():
 	SoundManager.play_sfx(SoundType.BUTTON_CLICK)
