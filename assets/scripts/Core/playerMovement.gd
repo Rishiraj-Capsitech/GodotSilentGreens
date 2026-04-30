@@ -9,7 +9,7 @@ extends RigidBody2D
 @onready var colider: CollisionShape2D = $CollisionShape2D
 @onready var DotNode: Node2D = $dots
 
-
+var Cancel_ui
 var timeout = 7
 var can_shoot = true
 var goal = false
@@ -25,8 +25,12 @@ var min_drag := 10.0
 var out_of_screen_time := 0.0
 var max_out_time := 0.5
 var wind_force := Vector2.ZERO
+var cancel_zone_percent = 0.10  
+var in_zone
+
 
 func _ready():
+	Cancel_ui = get_tree().root.get_node("Game/CancelPannel/CancelScene")
 	UiManager.SenstivityChange.connect(_on_SenstivityChange)
 	contact_monitor = true
 	max_contacts_reported = 10
@@ -73,6 +77,21 @@ func _process(delta):
 	if dragging:
 		update_dots()
 	check_out_of_bounds(delta)
+	check_cancel_zone()
+
+
+func check_cancel_zone():
+	var mouse_pos = get_viewport().get_mouse_position()
+	var screen_height = get_viewport_rect().size.y
+
+	var threshold = screen_height * (1.0 - cancel_zone_percent)
+	in_zone = mouse_pos.y > threshold
+	if in_zone and dragging:
+		Cancel_ui.active_cancel()
+	else:
+		if Cancel_ui:
+			Cancel_ui.inactive_cancel()
+
 
 
 func _physics_process(_delta):
@@ -156,6 +175,9 @@ func update_dots():
 #  SHOOT BALL
 func shoot():
 	if not can_shoot: return
+	if in_zone and dragging:
+		Cancel_ui.cancel_pop()
+		return
 	if GameManager.state != GameManager.GameState.PLAYING:return
 	SoundManager.play_sfx(SoundType.BALL_SHOOT)
 	print(GameManager.state)

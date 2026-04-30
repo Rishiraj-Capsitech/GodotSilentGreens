@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://dgujnooocvwvy" path="res://assets/scenes/UI/UI_Scenes/Settings.tscn" id="36_mtgfi"]
 [ext_resource type="PackedScene" uid="uid://lcu5f8v3gtwq" path="res://assets/scenes/UI/UI_Scenes/Home_Confirmation.tscn" id="39_ynn86"]
 [ext_resource type="PackedScene" uid="uid://dhssboh3rrfa6" path="res://assets/scenes/UI/UI_Scenes/Wind_Warning.tscn" id="40_q1lpk"]
+[ext_resource type="PackedScene" uid="uid://dduyy5k0v2tt6" path="res://assets/scenes/UI/UI_Scenes/Cancel Scene.tscn" id="44_5dwm1"]
 
 [node name="Game" type="Node2D" unique_id=2141789961]
 z_index = -10
@@ -109,3 +110,7 @@ process_mode = 3
 visible = false
 
 [node name="HomeConfirmation2" parent="HomeConfirmation" unique_id=1251715950 instance=ExtResource("39_ynn86")]
+
+[node name="CancelPannel" type="CanvasLayer" parent="." unique_id=1092796275]
+
+[node name="CancelScene" parent="CancelPannel" unique_id=1137277131 instance=ExtResource("44_5dwm1")]
