@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://barpgr6waaqgd"]
+
+[ext_resource type="Texture2D" uid="uid://dg17bqtquicqx" path="res://assets/sprites/Core/Flag_3.png" id="1_a1cen"]
+[ext_resource type="Texture2D" uid="uid://ctcm45mqc6qx1" path="res://assets/sprites/Core/FlagStand.png" id="2_1dvcm"]
+[ext_resource type="Script" uid="uid://vyp6uxpwwvgb" path="res://assets/scripts/Core/Flag.gd" id="3_a1cen"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8fhb"]
+size = Vector2(136.36365, 34.545456)
+
+[sub_resource type="Gradient" id="Gradient_a1cen"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1dvcm"]
+gradient = SubResource("Gradient_a1cen")
+
+[node name="MainFlag" type="Area2D" unique_id=493944793]
+z_index = 16
+position = Vector2(15, 22)
+scale = Vector2(0.44, 0.44)
+script = ExtResource("3_a1cen")
+
+[node name="Flag" type="Sprite2D" parent="." unique_id=158801216]
+position = Vector2(43, 24)
+scale = Vector2(0.17919073, 0.17919075)
+texture = ExtResource("1_a1cen")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=393116416]
+position = Vector2(-13.636358, 187.27274)
+shape = SubResource("RectangleShape2D_a8fhb")
+
+[node name="pole" type="Sprite2D" parent="." unique_id=1403509170]
+position = Vector2(0, 84)
+scale = Vector2(0.3157895, 0.3008346)
+texture = ExtResource("2_1dvcm")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=424326727]
+position = Vector2(-14, 188.15909)
+scale = Vector2(2.181817, 0.58309644)
+texture = SubResource("GradientTexture2D_1dvcm")
+
+[node name="TargetPoint" type="Area2D" parent="." unique_id=89093647]
+position = Vector2(-11.363636, 200)

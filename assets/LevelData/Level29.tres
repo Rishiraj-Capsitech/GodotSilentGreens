@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://6xv23fkr88ui"]
+
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_mrslp"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_ek44c"]
+[ext_resource type="PackedScene" uid="uid://d1f7nvq4tyfe7" path="res://assets/scenes/Reuseable/BigObstacles/level-29.tscn" id="3_cnjaw"]
+[ext_resource type="PackedScene" uid="uid://boghide4ju5ad" path="res://assets/scenes/Reuseable/BigObstacles/moving_platform_29.tscn" id="4_706xo"]
+[ext_resource type="PackedScene" uid="uid://dvcc4g28gvnga" path="res://assets/scenes/Reuseable/Other/water.tscn" id="5_fljxh"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="6_4486b"]
+[ext_resource type="PackedScene" uid="uid://bujtcenq2tlfb" path="res://assets/scenes/Reuseable/LevelLands/Level29.tscn" id="7_2km6b"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="8_73lbj"]
+
+[sub_resource type="Resource" id="Resource_mrslp"]
+script = ExtResource("2_ek44c")
+scene = ExtResource("3_cnjaw")
+position = Vector2(957, 392)
+scale = Vector2(0.76, 0.76)
+zIndex = 2
+
+[sub_resource type="Resource" id="Resource_ek44c"]
+script = ExtResource("2_ek44c")
+scene = ExtResource("4_706xo")
+position = Vector2(983, 796)
+scale = Vector2(0.24000001, 0.24000001)
+zIndex = 2
+
+[sub_resource type="Resource" id="Resource_cnjaw"]
+script = ExtResource("2_ek44c")
+scene = ExtResource("5_fljxh")
+position = Vector2(660, 807)
+scale = Vector2(2.0799987, 2.0799987)
+
+[sub_resource type="Resource" id="Resource_706xo"]
+script = ExtResource("2_ek44c")
+scene = ExtResource("6_4486b")
+position = Vector2(1258, 474.99997)
+scale = Vector2(0.44, 0.44)
+zIndex = 16
+
+[sub_resource type="Resource" id="Resource_fljxh"]
+script = ExtResource("2_ek44c")
+scene = ExtResource("7_2km6b")
+position = Vector2(1140, 940)
+zIndex = 10
+
+[resource]
+script = ExtResource("8_73lbj")
+land = SubResource("Resource_fljxh")
+ball_spawn_position = Vector2(575, 698)
+goal = SubResource("Resource_706xo")
+background = ExtResource("1_mrslp")
+bgscale = Vector2(0.4709994, 0.35566404)
+bgpos = Vector2(853.00006, 360.00003)
+big_obstacles = Array[ExtResource("2_ek44c")]([SubResource("Resource_mrslp"), SubResource("Resource_ek44c")])
+decorations = Array[ExtResource("2_ek44c")]([SubResource("Resource_cnjaw")])

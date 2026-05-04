@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dduyy5k0v2tt6"]
+
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_d0s0b"]
+[ext_resource type="Texture2D" uid="uid://bx2e8fp8ufdiv" path="res://assets/sprites/UI_art/forbidden.png" id="2_58enm"]
+[ext_resource type="Script" uid="uid://dvm643dw33qfp" path="res://assets/scripts/Reuseables/cancel_scene.gd" id="2_jcqwx"]
+[ext_resource type="Texture2D" uid="uid://dtbrixc4lu65u" path="res://assets/sprites/UI_art/warning_background.png" id="3_jcqwx"]
+[ext_resource type="Script" uid="uid://bmspeiqey6rn5" path="res://assets/scripts/Reuseables/LocalizedLabel.gd" id="5_jcqwx"]
+
+[sub_resource type="Gradient" id="Gradient_radial"]
+offsets = PackedFloat32Array(0, 0.7, 1)
+colors = PackedColorArray(0, 0, 0, 0.705882, 0, 0, 0, 0.705882, 0.866667, 0.207843, 0.180392, 0.470588)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_radial"]
+gradient = SubResource("Gradient_radial")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="CancelScene" type="Control" unique_id=1137277131]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_d0s0b")
+script = ExtResource("2_jcqwx")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2104303224]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -698.0
+offset_top = -105.0
+offset_right = -542.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_58enm")
+expand_mode = 1
+
+[node name="warning_panel" type="TextureRect" parent="." unique_id=30355501]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -106.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_jcqwx")
+expand_mode = 1
+
+[node name="GradientOverlay" type="TextureRect" parent="warning_panel" unique_id=567260259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_radial")
+
+[node name="TextureRect2" type="TextureRect" parent="warning_panel" unique_id=803199557]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -19.0
+offset_right = -161.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_58enm")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="warning_panel" unique_id=37042660]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -38.0
+offset_right = 420.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8666667, 0.20784314, 0.18039216, 1)
+theme_override_font_sizes/font_size = 52
+text = "Cancel shot"
+vertical_alignment = 1
+script = ExtResource("5_jcqwx")
+translation_key = "CANCEL_SHOT"

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://rc14qsm0jmsm"]
+
+[ext_resource type="Script" uid="uid://my26jyhcna6s" path="res://assets/scripts/Reuseables/Sticks.gd" id="1_r1q6g"]
+[ext_resource type="Texture2D" uid="uid://d2ejpnusyux43" path="res://assets/sprites/Obstacles/Level30-Stick.png" id="2_ckvry"]
+
+[node name="stick" type="StaticBody2D" unique_id=967722399]
+rotation = 1.3355234
+script = ExtResource("1_r1q6g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=724357498]
+polygon = PackedVector2Array(-65, -57, -53, -68, 64, 56, 54, 66)
+
+[node name="Level30Stick" type="Sprite2D" parent="." unique_id=736125940]
+texture = ExtResource("2_ckvry")

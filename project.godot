@@ -15,15 +15,28 @@ ss2d/version="3.3.1"
 [application]
 
 config/name="silent Greens"
-run/main_scene="uid://d3dxlbr0d3n22"
+run/main_scene="uid://dnih6bnkgp5cy"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.03529412, 0.03529412, 0.03529412, 1)
+boot_splash/image="uid://c3k4v6bq3srqw"
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://dgh1mo5322lcn"
+UiManager="*uid://d4la2twnqy1sn"
+SaveManager="*uid://b617p06w8kg4"
+LocalizationManager="*uid://ikqf6ke78fcw"
+SoundManager="*uid://ddj03x3sei0p7"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/initial_position_type=0
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor]
 
@@ -31,14 +44,17 @@ movie_writer/fps=120
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg", "res://addons/save_system_tools/plugin.cfg")
 
 [global_group]
 
 can_interact_with_water=""
+land=""
+tree=""
 
 [physics]
 
+common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
 
 [rendering]

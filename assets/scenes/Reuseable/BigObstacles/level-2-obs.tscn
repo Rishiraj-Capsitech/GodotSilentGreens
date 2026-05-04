@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://qyn8i7pij0os"]
+
+[ext_resource type="Texture2D" uid="uid://j1f2xwn0vnr" path="res://assets/sprites/Obstacles/Level-29-obs1.png" id="1_2jep7"]
+
+[node name="Level29" type="StaticBody2D" unique_id=1136261567]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=167724302]
+scale = Vector2(0.06409202, 0.06409202)
+polygon = PackedVector2Array(1020.3999, -796, -1020.2, -796, -1027.5, -792, -1030, -792, -1044, -773.4, -1044, -558.7, -1034, -545.4, -1034, -543.9, -1022, -536.9, -1022, -535.5, -1009.3, -532, -448, -532, -448, 764.5, -440, 779.5, -440, 781.9, -431, 789.80005, -431, 791.30005, -420.5, 796, 541.6, 796, 547.6, 792, 550, 792, 562, 777, 563.4, 777, 568, 764.4, 568, -532, 1009.3999, -532, 1025.3, -539, 1028, -539, 1031, -543, 1033.1001, -543, 1044, -559.9, 1044, -773.7, 1040, -779.7, 1040, -781.9, 1031, -789.9, 1031, -791.3)
+
+[node name="Level29Obs1" type="Sprite2D" parent="." unique_id=81654887]
+scale = Vector2(0.06409202, 0.06409202)
+texture = ExtResource("1_2jep7")

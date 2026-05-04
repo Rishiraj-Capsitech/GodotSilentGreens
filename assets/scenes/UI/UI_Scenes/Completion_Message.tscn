@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://ds07pghoaclf"]
+
+[ext_resource type="Texture2D" uid="uid://cvfxc4kys2jhx" path="res://assets/sprites/UI_art/Completed.png" id="1_mpapy"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_x6drc"]
+[ext_resource type="Texture2D" uid="uid://hl72rckp3d1l" path="res://assets/sprites/UI_art/options (2).png" id="3_l646w"]
+[ext_resource type="Texture2D" uid="uid://k1jwrf7sgmhx" path="res://assets/sprites/UI_art/Home (4).png" id="3_oyd6e"]
+[ext_resource type="Script" uid="uid://bmspeiqey6rn5" path="res://assets/scripts/Reuseables/LocalizedLabel.gd" id="4_vbr54"]
+[ext_resource type="Script" uid="uid://cqurxdmhed458" path="res://assets/scripts/UI/CompletionMessage.gd" id="5_scrpt"]
+
+[node name="CompletionMessage" type="Control" unique_id=1793439769]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_x6drc")
+script = ExtResource("5_scrpt")
+
+[node name="Completion_backgroound" type="TextureRect" parent="." unique_id=1731788948]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mpapy")
+expand_mode = 1
+
+[node name="message1" type="Label" parent="." unique_id=2056465960]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -192.0
+offset_right = 204.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_font_sizes/font_size = 107
+text = "Hurray!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_vbr54")
+translation_key = "HURRAY"
+
+[node name="message2" type="Label" parent="." unique_id=1452160373]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -534.0
+offset_top = -47.0
+offset_right = 541.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_font_sizes/font_size = 50
+text = "You have completed all the levels!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_vbr54")
+translation_key = "ALL_LEVELS_COMPLETE"
+
+[node name="Options" type="TextureRect" parent="." unique_id=1677924491]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 117.0
+offset_right = 112.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_l646w")
+expand_mode = 1
+
+[node name="HomeButton" type="TextureButton" parent="Options" unique_id=1203926331]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -66.0
+offset_right = 188.0
+offset_bottom = 74.0
+grow_vertical = 2
+texture_normal = ExtResource("3_oyd6e")
+ignore_texture_size = true
+stretch_mode = 6

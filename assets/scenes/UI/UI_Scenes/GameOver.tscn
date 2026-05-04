@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://dlh5jkk1gh5ud"]
+
+[ext_resource type="Texture2D" uid="uid://bhc0a2gdnb3vh" path="res://assets/sprites/UI_art/Game over screen.png" id="1_40baj"]
+[ext_resource type="Theme" uid="uid://cloucgk25gloy" path="res://assets/scenes/UI/Text_Font/NotoSans.tres" id="1_vj25f"]
+[ext_resource type="Texture2D" uid="uid://k1jwrf7sgmhx" path="res://assets/sprites/UI_art/Home (4).png" id="2_jywu3"]
+[ext_resource type="Script" uid="uid://bmspeiqey6rn5" path="res://assets/scripts/Reuseables/LocalizedLabel.gd" id="3_3nggf"]
+[ext_resource type="Texture2D" uid="uid://c1jsn60uqgrka" path="res://assets/sprites/UI_art/restart (6).png" id="3_3y56u"]
+[ext_resource type="Texture2D" uid="uid://d2bx6mtbvbsvp" path="res://assets/sprites/UI_art/skip_ad.png" id="4_ua7od"]
+[ext_resource type="Texture2D" uid="uid://cr62oeohef2p5" path="res://assets/sprites/UI_art/options.png" id="5_3fonj"]
+
+[node name="GameOver" type="Control" unique_id=835076097]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vj25f")
+
+[node name="GameOver_Background" type="TextureRect" parent="." unique_id=766532870]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 4.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_40baj")
+expand_mode = 1
+
+[node name="GameOver_Text" type="Label" parent="." unique_id=1343162422]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -223.0
+offset_right = 310.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_font_sizes/font_size = 106
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_3nggf")
+translation_key = "GAME_OVER"
+
+[node name="Back_panel" type="TextureRect" parent="." unique_id=1665000358]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -43.0
+offset_right = 301.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3fonj")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Container" type="HBoxContainer" parent="." unique_id=16790177]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -277.0
+offset_top = -19.0
+offset_right = 265.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="HomeButton" type="TextureButton" parent="Container" unique_id=1898658873]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_jywu3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RestartButton" type="TextureButton" parent="Container" unique_id=688359110]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_3y56u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SkipButton" type="TextureButton" parent="Container" unique_id=1387195857]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("4_ua7od")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Container/HomeButton" to="." method="_on_home_button_pressed"]

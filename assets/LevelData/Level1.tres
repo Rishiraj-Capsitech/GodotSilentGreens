@@ -28,6 +28,7 @@ script = ExtResource("1_pp5sw")
 scene = ExtResource("2_gj7k8")
 position = Vector2(1682, 743.335)
 scale = Vector2(0.44, 0.44)
+zIndex = 20
 
 [sub_resource type="Resource" id="Resource_4spvo"]
 script = ExtResource("1_pp5sw")

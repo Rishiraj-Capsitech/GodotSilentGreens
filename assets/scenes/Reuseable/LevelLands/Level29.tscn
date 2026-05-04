@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://br32u6oipqlju"]
+[gd_scene format=4 uid="uid://bujtcenq2tlfb"]
 
 [ext_resource type="Script" uid="uid://c6kxvfqr4ewu1" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="1_hmsys"]
 [ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="2_3qk4r"]
@@ -141,7 +141,7 @@ _edge_meta_materials = Array[ExtResource("7_xnmgb")]([SubResource("Resource_h6h2
 fill_textures = Array[Texture2D]([ExtResource("5_bg6qp")])
 fill_texture_z_index = 0
 
-[node name="Level29" type="StaticBody2D" unique_id=67724213]
+[node name="Level29" type="StaticBody2D" unique_id=67724213 groups=["land"]]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1276433970]
 polygon = PackedVector2Array(-1407.1398, -231.93945, -373.72394, -228.4151, -372.06143, -221.25565, -371.01425, -212.33005, -370.30157, -190.33093, -371.1512, -137.79404, -368.84106, -89.21115, -366.8989, -79.8403, -364.17862, -72.1546, -360.56415, -66.441666, -355.93933, -62.989098, -347.26794, -60.88421, 14.113061, -58.265697, 28.991566, -60.18291, 37.44618, -62.433514, 41.531963, -67.886116, 44.089466, -78.873955, 45.669968, -114.26788, 42.045406, -216.41624, 43.378124, -317.87878, 46.455288, -337.16068, 51.15522, -352.4154, 57.740505, -362.846, 66.47374, -367.6556, 1409.3308, -375.95627, 1414.023, -365.90802, 1417.9955, -340.66934, 1417.0189, 346.45056, 1413.5054, 369.01547, 1409.5594, 375.9786, -1403.8757, 375.7783, -1411.0361, 367.71216, -1416.9844, 348.03625, -1425.4874, 280.38718, -1430.6305, 77.626175, -1423.212, -127.9882, -1416.0134, -199.204, -1411.7555, -221.19832)

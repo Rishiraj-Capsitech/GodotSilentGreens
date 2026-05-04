@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bstkaungdjsli"]
+
+[ext_resource type="Texture2D" uid="uid://du5yl5y37yc3l" path="res://assets/sprites/Bgs/Final level 1.png" id="1_dw4yi"]
+[ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_xjyl5"]
+[ext_resource type="PackedScene" uid="uid://cwy7tbfgy1o5q" path="res://assets/scenes/Reuseable/BigObstacles/Level-24-obs.tscn" id="3_pis5s"]
+[ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="4_ifyf0"]
+[ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="5_rvfhi"]
+[ext_resource type="PackedScene" uid="uid://xufm836841vw" path="res://assets/scenes/Reuseable/Other/Tree.tscn" id="5_xjyl5"]
+[ext_resource type="PackedScene" uid="uid://q6u34c7oyncl" path="res://assets/scenes/Reuseable/LevelLands/Level24.tscn" id="6_xylqx"]
+[ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="7_g180n"]
+
+[sub_resource type="Resource" id="Resource_pis5s"]
+script = ExtResource("2_xjyl5")
+scene = ExtResource("3_pis5s")
+position = Vector2(1382.0001, 788)
+scale = Vector2(0.55999875, 0.55999875)
+
+[sub_resource type="Resource" id="Resource_ifyf0"]
+script = ExtResource("2_xjyl5")
+scene = ExtResource("4_ifyf0")
+position = Vector2(1370, 421)
+scale = Vector2(0.47100836, 0.47100836)
+
+[sub_resource type="Resource" id="Resource_rvfhi"]
+script = ExtResource("2_xjyl5")
+scene = ExtResource("4_ifyf0")
+position = Vector2(1243, 475.00003)
+scale = Vector2(0.50804347, 0.5200055)
+
+[sub_resource type="Resource" id="Resource_xylqx"]
+script = ExtResource("2_xjyl5")
+scene = ExtResource("5_xjyl5")
+position = Vector2(1593.9999, 822.00006)
+scale = Vector2(0.37179488, 0.37179485)
+
+[sub_resource type="Resource" id="Resource_g180n"]
+script = ExtResource("2_xjyl5")
+scene = ExtResource("5_rvfhi")
+position = Vector2(1636, 581)
+scale = Vector2(0.2870811, 0.2870811)
+
+[sub_resource type="Resource" id="Resource_ta308"]
+script = ExtResource("2_xjyl5")
+scene = ExtResource("6_xylqx")
+position = Vector2(806, 1084)
+scale = Vector2(1.6970409, 1.6970409)
+zIndex = 10
+
+[resource]
+script = ExtResource("7_g180n")
+land = SubResource("Resource_ta308")
+ball_spawn_position = Vector2(413, 796)
+goal = SubResource("Resource_g180n")
+background = ExtResource("1_dw4yi")
+bgscale = Vector2(0.4709994, 0.35566404)
+bgpos = Vector2(853.00006, 360.00003)
+big_obstacles = Array[ExtResource("2_xjyl5")]([SubResource("Resource_pis5s")])
+clouds = Array[ExtResource("2_xjyl5")]([SubResource("Resource_ifyf0"), SubResource("Resource_rvfhi")])
+decorations = Array[ExtResource("2_xjyl5")]([SubResource("Resource_xylqx")])

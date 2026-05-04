@@ -3,11 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://byrexcglac4w7" path="res://assets/scenes/Reuseable/Core/dots.tscn" id="2_d42dg"]
 [ext_resource type="Script" uid="uid://c7r0sh4q1nwjx" path="res://assets/scripts/Core/playerMovement.gd" id="2_fg1pn"]
 [ext_resource type="Texture2D" uid="uid://boy64t727et5b" path="res://assets/sprites/Core/ball.png" id="4_qj3el"]
+[ext_resource type="Texture2D" uid="uid://bkc7a8wd6opj6" path="res://assets/sprites/Core/dot.png" id="4_sovus"]
 [ext_resource type="Script" uid="uid://c7gxtmskfugjl" path="res://assets/scripts/Core/Trail.gd" id="4_x46uw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wf3kl"]
-friction = 0.45
-bounce = 0.4
+friction = 0.34
+bounce = 0.55
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fg1pn"]
 radius = 62.49811
@@ -17,12 +18,14 @@ _data = [Vector2(0.075, 0), 0.0, 0.0, 0, 0, Vector2(0.995, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_x46uw"]
-offsets = PackedFloat32Array(0, 0.37037036, 0.7839506, 1)
-colors = PackedColorArray(0.7325927, 0.23436928, 0, 1, 0.9865878, 0.41376662, 0.14995468, 1, 0.99380416, 0.63319516, 3.85046e-07, 1, 0.9721944, 0.7385659, 0, 1)
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 0.79607844)
 
 [node name="ball" type="RigidBody2D" unique_id=1301821953 groups=["can_interact_with_water"]]
 z_index = 15
 physics_material_override = SubResource("PhysicsMaterial_wf3kl")
+continuous_cd = 2
+angular_damp = -0.2
 script = ExtResource("2_fg1pn")
 dot_scene = ExtResource("2_d42dg")
 
@@ -31,13 +34,18 @@ z_index = 1
 scale = Vector2(0.12900001, 0.12900001)
 texture = ExtResource("4_qj3el")
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=375047162]
+z_index = 1
+scale = Vector2(0.0834815, 0.08348149)
+texture = ExtResource("4_sovus")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1923962811]
 process_physics_priority = 2
 scale = Vector2(0.12900001, 0.12900001)
 shape = SubResource("CircleShape2D_fg1pn")
 
 [node name="dots" parent="." unique_id=613193221 instance=ExtResource("2_d42dg")]
-scale = Vector2(0.7, 0.7)
+scale = Vector2(1.1400005, 1.1400005)
 
 [node name="Line2D" type="Line2D" parent="." unique_id=784151493 groups=["can_interact_with_water"]]
 top_level = true

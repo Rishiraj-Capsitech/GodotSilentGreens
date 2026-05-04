@@ -8,13 +8,17 @@ extends Node2D
 
 
 var ball: Node2D
-var current_level: int = 0
 var last_level_data
+@onready var WindWarning =$"../WindCanvas"
 
 
 func _ready():
 	add_to_group("LevelLoader")
 	build_level()
+	UiManager._setup_ui()
+	GameManager.state=GameManager.GameState.PLAYING
+	GameManager.level_restarted.connect(_on_level_restarted)
+	GameManager.TOTAL_LEVELS =levels.size()
 
 
 func spawn(data: SpawnData):
@@ -25,20 +29,25 @@ func spawn(data: SpawnData):
 	obj.position = data.position
 	obj.scale = data.scale
 	obj.z_index = data.zIndex
+	obj.rotation=data.Rotaion
 	
 	call_deferred("add_child", obj)
 
 
-func build_level():
 
-		
+
+
+func build_level():
 	if levels.is_empty():
 		return
-
-	var level_data: LevelData = levels[current_level]
-
+	GameManager.register_current_level_for_tracking()
+	UiManager.set_level(GameManager.current_level+1)
+	var level_data: LevelData = levels[GameManager.current_level]
+	
+	
 	# Clear old level
 	for child in get_children():
+		
 		if is_instance_valid(ball):
 			ball.queue_free()
 			
@@ -46,7 +55,7 @@ func build_level():
 			child.call_deferred("queue_free")
 			
 		
-
+	
 
 	if level_data.background != null:
 		background.texture = level_data.background
@@ -64,7 +73,7 @@ func build_level():
 		spawn(data)
 
 
-	for i in range(min(3, level_data.big_obstacles.size())):
+	for i in range(min(4, level_data.big_obstacles.size())):
 		spawn(level_data.big_obstacles[i])
 
 
@@ -94,16 +103,37 @@ func build_level():
 
 	ball.name = "ball"
 	ball.adjustball(level_data)
+	ball.timeout =7+level_data.ExtraTimeout
 	
+	if level_data.wind_strength >0:
+		if GameManager.showWindWarn==false:
+			GameManager.showWindWarn=true
+			ball.can_shoot=false
+			WindWarning.show()
+			await get_tree().create_timer(3).timeout
+			ball.can_shoot=true
+			WindWarning.hide()
+		
+	if GameManager.current_level == 0 and not GameManager.tutorial_played:
+		var ball_screen_pos = get_viewport().get_canvas_transform() * level_data.ball_spawn_position
+		UiManager.show_tutorial(ball_screen_pos)
+	
+func _on_level_restarted():
+	build_level()
+
 
 func next_level():
 	if is_instance_valid(ball):
 		ball.queue_free()
-
-	current_level += 1
-	if current_level >= levels.size():
-		current_level = 0
-
+		
+	UiManager.add_coin(5)
+	GameManager.complete_level()
+	
+	
+	if GameManager.current_level >= levels.size():
+		GameManager.current_level = 0
+	GameManager.state = GameManager.GameState.PLAYING
+	GameManager.showWindWarn=false
 	build_level()
 
 

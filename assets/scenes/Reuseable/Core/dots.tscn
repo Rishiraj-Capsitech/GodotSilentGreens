@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://byrexcglac4w7"]
 
-[ext_resource type="Texture2D" uid="uid://dxa3h0rx41vic" path="res://assets/sprites/Core/handel.webp" id="1_3rvqr"]
+[ext_resource type="Texture2D" uid="uid://bkc7a8wd6opj6" path="res://assets/sprites/Core/dot.png" id="1_h8qyl"]
 
 [node name="dots" type="Node2D" unique_id=613193221]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1120394690]
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("1_3rvqr")
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=300458624]
+modulate = Color(0.27450982, 0.8745098, 1, 1)
+scale = Vector2(0.032, 0.032)
+texture = ExtResource("1_h8qyl")

@@ -4,4 +4,4 @@
 
 [node name="Water" type="Node2D" unique_id=1557693287 groups=["can_interact_with_water"]]
 script = ExtResource("1_qi1wl")
-water_size = Vector2(1400.398, 100.88)
+water_size = Vector2(300, 100.88)

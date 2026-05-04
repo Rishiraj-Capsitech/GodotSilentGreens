@@ -2,10 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://dg17bqtquicqx" path="res://assets/sprites/Core/Flag_3.png" id="1_a1cen"]
 [ext_resource type="Texture2D" uid="uid://ctcm45mqc6qx1" path="res://assets/sprites/Core/FlagStand.png" id="2_1dvcm"]
+[ext_resource type="PackedScene" uid="uid://clvikgx1jljy3" path="res://assets/scenes/Reuseable/Other/coin.tscn" id="2_xeyu8"]
 [ext_resource type="Script" uid="uid://vyp6uxpwwvgb" path="res://assets/scripts/Core/Flag.gd" id="3_a1cen"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8fhb"]
-size = Vector2(63, 30)
+size = Vector2(102.27273, 34.545456)
 
 [sub_resource type="Gradient" id="Gradient_a1cen"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -14,9 +15,11 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_a1cen")
 
 [node name="MainFlag" type="Area2D" unique_id=493944793]
+z_index = 16
 position = Vector2(15, 22)
 scale = Vector2(0.44, 0.44)
 script = ExtResource("3_a1cen")
+coin_scene = ExtResource("2_xeyu8")
 
 [node name="Flag" type="Sprite2D" parent="." unique_id=158801216]
 position = Vector2(43, 24)
@@ -24,7 +27,7 @@ scale = Vector2(0.17919073, 0.17919075)
 texture = ExtResource("1_a1cen")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=393116416]
-position = Vector2(-14.5, 185)
+position = Vector2(-10.22727, 187.27274)
 shape = SubResource("RectangleShape2D_a8fhb")
 
 [node name="pole" type="Sprite2D" parent="." unique_id=1403509170]
@@ -33,6 +36,15 @@ scale = Vector2(0.3157895, 0.3008346)
 texture = ExtResource("2_1dvcm")
 
 [node name="Base" type="Sprite2D" parent="." unique_id=424326727]
-position = Vector2(-14, 185)
-scale = Vector2(2.181817, 0.48437497)
+position = Vector2(-14, 188.15909)
+scale = Vector2(2.181817, 0.58309644)
 texture = SubResource("GradientTexture2D_1dvcm")
+
+[node name="TargetPoint" type="StaticBody2D" parent="." unique_id=1419857851]
+position = Vector2(-4.545452, 206.81818)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TargetPoint" unique_id=787187949]
+position = Vector2(-6.818184, -206.81819)
+polygon = PackedVector2Array(-140.90909, 209.09091, -72.72727, 311.36365, 43.18182, 309.0909, 111.36363, 206.81818, 138.63635, 206.81818, 50.000004, 320.45453, -81.81818, 322.72726, -159.09091, 206.81818)

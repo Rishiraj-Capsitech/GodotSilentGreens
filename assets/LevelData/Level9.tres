@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bfsyf6kcrbauu" path="res://assets/scripts/LevelsManagers/SpawnData.gd" id="2_bwfpd"]
 [ext_resource type="PackedScene" uid="uid://c2uarfygy7ce6" path="res://assets/scenes/Reuseable/Other/cloud2.tscn" id="3_0r2nj"]
 [ext_resource type="PackedScene" uid="uid://barpgr6waaqgd" path="res://assets/scenes/Reuseable/Core/flag.tscn" id="4_fdejn"]
-[ext_resource type="PackedScene" path="res://assets/scenes/Reuseable/LevelLands/level9.tscn" id="5_ttvgk"]
+[ext_resource type="PackedScene" uid="uid://gckh4ipnpksc" path="res://assets/scenes/Reuseable/LevelLands/level9.tscn" id="5_ttvgk"]
 [ext_resource type="Script" uid="uid://70jfr6v8styy" path="res://assets/scripts/LevelsManagers/LevelData.gd" id="6_h2dup"]
 [ext_resource type="PackedScene" uid="uid://di3lp1aq0kb3f" path="res://assets/scenes/Reuseable/SmallObstacles/obs_tree.tscn" id="7_v7yti"]
 
